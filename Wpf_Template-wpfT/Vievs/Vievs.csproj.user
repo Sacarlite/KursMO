@@ -8,18 +8,12 @@
     <Compile Update="Windows\MainWindow\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\OptimizeWindow\OptimizeWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Windows\AboutWindow\AboutWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\MainWindow\MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\OptimizeWindow\OptimizeWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

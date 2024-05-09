@@ -41,3 +41,5 @@ C:\KursMO\Wpf_Template-wpfT\Bootstrapper\obj\Debug\net8.0-windows\Bootstrapper.d
 C:\KursMO\Wpf_Template-wpfT\Bootstrapper\obj\Debug\net8.0-windows\refint\Bootstrapper.dll
 C:\KursMO\Wpf_Template-wpfT\Bootstrapper\obj\Debug\net8.0-windows\Bootstrapper.pdb
 C:\KursMO\Wpf_Template-wpfT\Bootstrapper\obj\Debug\net8.0-windows\ref\Bootstrapper.dll
+C:\KursMO\Wpf_Template-wpfT\Bootstrapper\bin\Debug\net8.0-windows\PasswordService.dll
+C:\KursMO\Wpf_Template-wpfT\Bootstrapper\bin\Debug\net8.0-windows\PasswordService.pdb

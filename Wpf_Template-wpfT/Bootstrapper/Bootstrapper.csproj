@@ -10,11 +10,15 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="8.0.0" />
     <PackageReference Include="DevExpressMvvm" Version="23.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.4" />
     <PackageReference Include="NLog" Version="5.2.8" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\PasswordService\PasswordService.csproj" />
+    <ProjectReference Include="..\VievModels\VievModel.csproj" />
     <ProjectReference Include="..\Vievs\Vievs.csproj" />
   </ItemGroup>
 

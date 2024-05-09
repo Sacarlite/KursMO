@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 
-22121670234
+3-507780445
 
-91488918319
-210713858874
-Windows\AboutWindow\AboutWindow.xaml;Windows\MainWindow\MainWindow.xaml;
+11-203743398
+2312234700
+Windows\AboutWindow\AboutWindow.xaml;Windows\AutorizationWindow\AutorizationWindow.xaml;Windows\MainWindow\MainWindow.xaml;
 
-True
+False
 

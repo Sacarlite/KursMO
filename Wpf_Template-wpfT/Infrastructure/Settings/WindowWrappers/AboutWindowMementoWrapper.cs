@@ -10,5 +10,5 @@ internal class AboutWindowMementoWrapper : WindowMementoWrapper<AboutWindowMemen
     {
     }
 
-    protected override string MementoName => "MainWindowMemento";
+    protected override string MementoName => "AboutWindowMemento";
 }

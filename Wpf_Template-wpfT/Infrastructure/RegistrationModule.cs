@@ -20,6 +20,9 @@ namespace Infrastructure
             builder.RegisterType<AboutWindowMementoWrapper>().As<IAboutWindowMementoWrapper>()
                 .As<IWindowMementoWrapperInitializer>().SingleInstance();
 
+            builder.RegisterType<AutorizationWindowMementoWrapper>().As<IAutorizationWindowMementoWrapper>()
+               .As<IWindowMementoWrapperInitializer>().SingleInstance();
+
             builder.RegisterType<AplicationVersionProvider>().As<IAplicationVersionProvider>().SingleInstance();
             base.Load(builder);
         }

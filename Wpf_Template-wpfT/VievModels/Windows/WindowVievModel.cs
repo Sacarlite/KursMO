@@ -1,10 +1,12 @@
-﻿using DevExpress.Mvvm.UI.ModuleInjection;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using DevExpress.Mvvm.UI.ModuleInjection;
 using Domain.Settings;
+using System;
 using VievModels.Windows;
 
 namespace VievModel.Windows;
 
-public abstract class WindowVievModel<TWindowMementoWrapper> : IWindowViewModel
+public abstract class WindowVievModel<TWindowMementoWrapper> : ObservableObject, IWindowViewModel
 where TWindowMementoWrapper : class, IWindowMementoWrapper
 {
     private readonly TWindowMementoWrapper _windowMementoWrapper;

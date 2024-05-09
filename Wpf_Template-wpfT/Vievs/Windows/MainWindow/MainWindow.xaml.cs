@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using VievModel.VievModels.AdminMainVievModel;
+using VievModel.VievModels.ResearcherMainVievModel;
 using VievModels.VievModels.MainWindow;
 using Vievs.Windows.MainWindow;
 
@@ -18,10 +20,15 @@ namespace Vievs.MainWindow
 {
     public partial class MainWindow :System.Windows.Window,IMainWindow
     {
-        public MainWindow(IMainWindowVievModel mainWindowVievModel)
+        public MainWindow(IAdminMainVievModel adminMainWindowVievModel)
         {
             InitializeComponent();
-            DataContext=mainWindowVievModel;
+            DataContext = adminMainWindowVievModel;
+        }
+        public MainWindow(IResearcherMainVievModel researcherMainWindowVievModel)
+        {
+            InitializeComponent();
+            DataContext = researcherMainWindowVievModel;
         }
     }
 }

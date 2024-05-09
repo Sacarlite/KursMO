@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using DevExpress.Internal.WinApi.Windows.UI.Notifications;
 using Domain.Factories;
 
 namespace Application.Factory;

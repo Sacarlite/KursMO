@@ -8,10 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="DevExpressMvvm" Version="23.2.3" />
     <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="1.0.0" />
+    <PackageReference Include="WpfMath" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>

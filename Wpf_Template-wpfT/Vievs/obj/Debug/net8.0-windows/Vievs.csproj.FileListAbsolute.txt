@@ -47,3 +47,5 @@ C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Vievs.dll
 C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\refint\Vievs.dll
 C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Vievs.pdb
 C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\ref\Vievs.dll
+C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AutorizationWindow\AutorizationWindow.g.cs
+C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AutorizationWindow\AutorizationWindow.baml
