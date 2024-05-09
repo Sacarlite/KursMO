@@ -26,7 +26,7 @@ internal class Application : IApplication, IDisposable
     {
         InitializeDependencies();
         _applicationlifetimeScope.Resolve<IWindowMementoWrapperInitializer>();
-        var autorizationWindowVievModelFactory = _applicationlifetimeScope.Resolve<IFactory<IAdminMainVievModel>>();
+        var autorizationWindowVievModelFactory = _applicationlifetimeScope.Resolve<IFactory<IAutorizationVievModel>>();
         var autorizationWindowVievModel = autorizationWindowVievModelFactory.Create();
         var windowManager = _applicationlifetimeScope.Resolve<IWindowManager>();
         var autorizationWindow = windowManager.Show(autorizationWindowVievModel);
