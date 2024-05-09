@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\KursMO\\Wpf_Template-wpfT\\OptimizationMethods\\OptimizationMethods.csproj",
-      "projectName": "OptimizationMethods",
-      "projectPath": "C:\\KursMO\\Wpf_Template-wpfT\\OptimizationMethods\\OptimizationMethods.csproj",
+      "projectUniqueName": "C:\\KursMO\\Wpf_Template-wpfT\\OptimizationMethods\\OptimizationMathMethod.csproj",
+      "projectName": "OptimizationMathMethod",
+      "projectPath": "C:\\KursMO\\Wpf_Template-wpfT\\OptimizationMethods\\OptimizationMathMethod.csproj",
       "packagesPath": "C:\\Users\\bokov\\.nuget\\packages\\",
       "outputPath": "C:\\KursMO\\Wpf_Template-wpfT\\OptimizationMethods\\obj\\",
       "projectStyle": "PackageReference",

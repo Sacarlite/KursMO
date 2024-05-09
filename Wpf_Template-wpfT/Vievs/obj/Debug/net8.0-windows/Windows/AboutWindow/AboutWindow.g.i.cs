@@ -56,7 +56,7 @@ namespace Vievs.Windows.AboutWindow {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vievs;component/windows/aboutwindow/aboutwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vievs;V1.0.0.0;component/windows/aboutwindow/aboutwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\AboutWindow\AboutWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
