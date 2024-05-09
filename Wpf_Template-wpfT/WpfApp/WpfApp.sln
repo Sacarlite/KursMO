@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PasswordService", "..\PasswordService\PasswordService.csproj", "{4D107F00-82FA-4C6E-BF77-1949B7BBE059}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptimizationMathMethod", "..\OptimizationMethods\OptimizationMathMethod.csproj", "{6BC3CAE5-7B52-4588-ACE4-7178DC33AE3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptimizationMethods", "..\OptimizationMethods\OptimizationMethods.csproj", "{6BC3CAE5-7B52-4588-ACE4-7178DC33AE3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

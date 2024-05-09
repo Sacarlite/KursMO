@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vievs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d41f69c54ee42139700b48c3e27794526b7bf262")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3dcf16795117ac7381364e68bd7b8ad3193cbd51")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vievs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vievs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
