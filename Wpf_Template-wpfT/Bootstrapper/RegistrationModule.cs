@@ -17,7 +17,6 @@ public class RegistrationModule:Module
         builder.RegisterType<UserDatabaseLocator>().As<IUserDatabaseLocator>().SingleInstance();
         builder.RegisterType<UserDbContext>().SingleInstance();
         builder.RegisterType<PasswordHasher>().As<IPasswordHasher>().SingleInstance();
-        //builder.RegisterType<MainVievModelFactory>().As<IMainVievModelFactory>().SingleInstance();
         builder.RegisterGeneric(typeof(Factory<>)).As(typeof(IFactory<>)).SingleInstance();
         base.Load(builder);
     }

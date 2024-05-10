@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "4tnRvfGc/y7oSZfDCgkPHT3GCvd77lZI4AAM7IFNAb/D83A+C51yfwB4JSXeat3ETM0kqLQXYWXIynE+qdXULA==",
+  "success": true,
+  "projectFilePath": "C:\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bokov\\.nuget\\packages\\chartdirector.net\\7.1.0\\chartdirector.net.7.1.0.nupkg.sha512",
+    "C:\\Users\\bokov\\.nuget\\packages\\chartdirector.net.desktop.controls\\7.1.0\\chartdirector.net.desktop.controls.7.1.0.nupkg.sha512",
+    "C:\\Users\\bokov\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
+    "C:\\Users\\bokov\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\bokov\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\bokov\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
