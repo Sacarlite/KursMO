@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OptimizationMathMethods.ExhaustiveSearch.VievModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,10 @@ namespace OptimizationMathMethods.ExhaustiveSearch.VisualzationPages
     /// </summary>
     public partial class MainPage : Page
     {
-        public MainPage()
+        public MainPage(MainVisualizationPageVievModel mainVisualizationPageVievModel)
         {
             InitializeComponent();
+            DataContext=mainVisualizationPageVievModel;
         }
     }
 }

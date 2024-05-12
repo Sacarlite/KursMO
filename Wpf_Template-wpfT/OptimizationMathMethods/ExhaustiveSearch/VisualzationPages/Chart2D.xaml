@@ -6,8 +6,9 @@
       xmlns:local="clr-namespace:OptimizationMathMethods.ExhaustiveSearch.VisualzationPages" xmlns:ChartDirector="clr-namespace:ChartDirector;assembly=ChartDirector.Net.Desktop.Controls"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Window_Loaded"
       Title="Chart2D">
     <Grid>
-        <ChartDirector:WPFChartViewer Width="720" Height="600" Chart="{Binding _chartt}" />
+        <ChartDirector:WPFChartViewer x:Name="WPFChartViewer1" Width="720" Height="600" ViewPortChanged="WPFChartViewer1_ViewPortChanged" />
     </Grid>
 </Page>

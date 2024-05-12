@@ -7,40 +7,39 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage">
-
     <Grid>
         <TabControl>
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <Ellipse Height="10" Width="10" Fill="WhiteSmoke" />
                         <TextBlock Margin="3">Таблица</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <Frame></Frame>
+                    <Frame Content="{Binding TablePage}"/>
                 </TabItem.Content>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <Ellipse Height="10" Width="10" Fill="WhiteSmoke" />
                         <TextBlock Margin="3">2D график</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <Frame></Frame>
+                    <Frame Content="{Binding Chart2DPage}"/>
                 </TabItem.Content>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <Ellipse Height="10" Width="10" Fill="WhiteSmoke" />
                         <TextBlock Margin="3">3D график</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <Frame></Frame>
+                    <Frame Content="{Binding Chart3DPage}"/>
                 </TabItem.Content>
             </TabItem>
         </TabControl>

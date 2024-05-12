@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OptimizationMathMethods.ExhaustiveSearch.VievModels;
+using OptimizationMathMethods.ExhaustiveSearch.VisualzationPages;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -13,7 +15,7 @@ class ExhaustiveSearch
     private readonly Limitations limitations;
     private readonly ExhaustiveSearchFactors exhaustiveSearchFactors;
     private int roundCount;
-
+    public MainPage VisualPage { get; set; }
     public List<List<Point>>? points { get; private set; }
     public double minNum { get; private set; }
     public double maxNum { get; private set; }
@@ -25,6 +27,8 @@ class ExhaustiveSearch
         RoundCalc();
         GetPoints();
         GetExtr();
+        MainVisualizationPageVievModel visualizationPageVievModel = new MainVisualizationPageVievModel(points);
+        VisualPage =new MainPage(visualizationPageVievModel);
     }
     private void GetPoints()
     {
