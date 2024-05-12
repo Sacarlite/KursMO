@@ -17,8 +17,8 @@ class ExhaustiveSearch
     private int roundCount;
     public MainPage VisualPage { get; set; }
     public List<List<Point>>? points { get; private set; }
-    public double minNum { get; private set; }
-    public double maxNum { get; private set; }
+    public Point minNum { get; private set; }
+    public Point maxNum { get; private set; }
     public ExhaustiveSearch(CorrectionFactors correctionFactors, Limitations limitations, ExhaustiveSearchFactors exhaustiveSearchFactors)
     {
         this.correctionFactors = correctionFactors;
@@ -83,14 +83,4 @@ class ExhaustiveSearch
         roundCount = tokens.Length > 1 ? tokens[1].Length : 0;
     }
 }
-class ExhaustiveSearchFactors
-{
-    public ExhaustiveSearchFactors(double eps, double step)
-    {
-        Eps = eps;
-        Step = step;
-    }
 
-    public double Eps { get; }
-    public double Step { get; }
-}

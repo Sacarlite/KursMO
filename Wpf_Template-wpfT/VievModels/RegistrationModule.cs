@@ -9,7 +9,6 @@ using VievModel.VievModels.AutorizationVievModel;
 using VievModel.VievModels.MainWindow.ControlsVievModel;
 using VievModel.VievModels.ResearcherMainVievModel;
 using VievModels.VievModels.AboutWindowVievModel;
-using VievModels.VievModels.MainWindow;
 namespace VievModel
 {
     public class RegistrationModule:Module

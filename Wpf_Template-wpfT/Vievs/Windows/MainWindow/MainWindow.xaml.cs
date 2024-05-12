@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.ResearcherMainVievModel;
-using VievModels.VievModels.MainWindow;
 using Vievs.Windows.MainWindow;
 
 namespace Vievs.MainWindow

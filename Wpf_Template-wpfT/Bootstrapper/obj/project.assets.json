@@ -18,6 +18,38 @@
           }
         }
       },
+      "ChartDirector.Net/7.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/net50-windows/ChartDirector.Net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net50-windows/ChartDirector.Net.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ChartDirector.Net.Desktop.Controls/7.1.0": {
+        "type": "package",
+        "dependencies": {
+          "ChartDirector.Net": "7.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ChartDirector.Net.Desktop.Controls.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/ChartDirector.Net.Desktop.Controls.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CommunityToolkit.Mvvm/8.2.2": {
         "type": "package",
         "compile": {
@@ -443,6 +475,33 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.NETCore.Platforms/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.Win32.SystemEvents/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
         "type": "package",
         "compile": {
@@ -632,6 +691,29 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "System.Drawing.Common/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "Microsoft.Win32.SystemEvents": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -740,6 +822,23 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "OptimizationMathMethods/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ChartDirector.Net.Desktop.Controls": "7.1.0",
+          "CommunityToolkit.Mvvm": "8.2.2"
+        },
+        "compile": {
+          "bin/placeholder/OptimizationMathMethods.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OptimizationMathMethods.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "PasswordService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -762,7 +861,8 @@
           "DevExpressMvvm": "23.2.3",
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.4",
-          "NLog": "5.2.8"
+          "NLog": "5.2.8",
+          "OptimizationMathMethods": "1.0.0"
         },
         "compile": {
           "bin/placeholder/VievModel.dll": {}
@@ -820,6 +920,45 @@
         "lib/netstandard2.0/Autofac.xml",
         "lib/netstandard2.1/Autofac.dll",
         "lib/netstandard2.1/Autofac.xml"
+      ]
+    },
+    "ChartDirector.Net/7.1.0": {
+      "sha512": "s1N6cBen2MxJVpI3mSXpUCGdpAKXoru/nTClVbO5Wk055BJyqqfLjiwa/7pSVZcliCOMrvZ2a6lEAPBcIEqlew==",
+      "type": "package",
+      "path": "chartdirector.net/7.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "ase_logo_128.png",
+        "chartdirector.net.7.1.0.nupkg.sha512",
+        "chartdirector.net.nuspec",
+        "lib/net40/netchartdir.dll",
+        "lib/net40/netchartdir.xml",
+        "lib/net50-windows/ChartDirector.Net.dll",
+        "lib/net50-windows/ChartDirector.Net.xml",
+        "lib/net50/ChartDirector.Net.dll",
+        "lib/net50/ChartDirector.Net.xml",
+        "lib/netstandard2.0/ChartDirector.Net.dll",
+        "lib/netstandard2.0/ChartDirector.Net.xml"
+      ]
+    },
+    "ChartDirector.Net.Desktop.Controls/7.1.0": {
+      "sha512": "HMVxEGtszGgn5GRqd1tQcWcCgAk0fAiXUWKkFLFWQyG9DA8PFgjr0g7ri5mayed8JZGvu9ptvApLizZCRLBgtw==",
+      "type": "package",
+      "path": "chartdirector.net.desktop.controls/7.1.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "ase_logo_128.png",
+        "chartdirector.net.desktop.controls.7.1.0.nupkg.sha512",
+        "chartdirector.net.desktop.controls.nuspec",
+        "lib/net40/ChartDirector.Net.Desktop.Controls.dll",
+        "lib/netstandard2.0/ChartDirector.Net.Desktop.Controls.dll",
+        "lib/netstandard2.0/ChartDirector.Net.Desktop.Controls.xml",
+        "tools/VisualStudioToolsManifest.xml"
       ]
     },
     "CommunityToolkit.Mvvm/8.2.2": {
@@ -1480,6 +1619,43 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.NETCore.Platforms/2.0.0": {
+      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Win32.SystemEvents/4.5.0": {
+      "sha512": "LuI1oG+24TUj1ZRQQjM5Ew73BKnZE5NZ/7eAdh1o8ST5dPhUnJvIkiIn2re3MwnkRy6ELRnvEbBxHP8uALKhJw==",
+      "type": "package",
+      "path": "microsoft.win32.systemevents/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Win32.SystemEvents.dll",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+        "microsoft.win32.systemevents.nuspec",
+        "ref/net461/Microsoft.Win32.SystemEvents.dll",
+        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
       "sha512": "8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
       "type": "package",
@@ -1675,6 +1851,39 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Drawing.Common/4.5.0": {
+      "sha512": "AiJFxxVPdeITstiRS5aAu8+8Dpf5NawTMoapZ53Gfirml24p7HIfhjmCRxdXnmmf3IUA3AX3CcW7G73CjWxW/Q==",
+      "type": "package",
+      "path": "system.drawing.common/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "system.drawing.common.4.5.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Memory/4.5.3": {
       "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
       "type": "package",
@@ -1843,6 +2052,11 @@
       "type": "project",
       "path": "../Infrastructure/Infrastructure.csproj",
       "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+    },
+    "OptimizationMathMethods/1.0.0": {
+      "type": "project",
+      "path": "../OptimizationMathMethods/OptimizationMathMethods.csproj",
+      "msbuildProject": "../OptimizationMathMethods/OptimizationMathMethods.csproj"
     },
     "PasswordService/1.0.0": {
       "type": "project",

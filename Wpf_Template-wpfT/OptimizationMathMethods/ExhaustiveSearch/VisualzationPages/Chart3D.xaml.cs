@@ -36,7 +36,14 @@ namespace OptimizationMathMethods.ExhaustiveSearch.VisualzationPages
         public Chart3D(List<List<Point>> points)
         {
             InitializeComponent();
-            Points = points;
+            if (points != null)
+            {
+                Points = points;
+            }
+            else
+            {
+                points = new List<List<Point>>() { };
+            }
         }
         private readonly List<List<Point>> Points;
         private void Window_Loaded(object sender, RoutedEventArgs e)

@@ -31,6 +31,28 @@
           }
         }
       },
+      "ChartDirector.Net/7.1.0": {
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0"
+        },
+        "runtime": {
+          "lib/net50-windows/ChartDirector.Net.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
+          }
+        }
+      },
+      "ChartDirector.Net.Desktop.Controls/7.1.0": {
+        "dependencies": {
+          "ChartDirector.Net": "7.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ChartDirector.Net.Desktop.Controls.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
+          }
+        }
+      },
       "CommunityToolkit.Mvvm/8.2.2": {
         "runtime": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -284,6 +306,12 @@
           }
         }
       },
+      "Microsoft.NETCore.Platforms/2.0.0": {},
+      "Microsoft.Win32.SystemEvents/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
+        }
+      },
       "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
         "runtime": {
           "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
@@ -439,6 +467,12 @@
         }
       },
       "System.Diagnostics.DiagnosticSource/7.0.2": {},
+      "System.Drawing.Common/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "Microsoft.Win32.SystemEvents": "4.5.0"
+        }
+      },
       "System.Memory/4.5.3": {},
       "System.Text.Encodings.Web/8.0.0": {},
       "System.Text.Json/8.0.0": {
@@ -473,6 +507,15 @@
           "Domain.dll": {}
         }
       },
+      "OptimizationMathMethods/1.0.0": {
+        "dependencies": {
+          "ChartDirector.Net.Desktop.Controls": "7.1.0",
+          "CommunityToolkit.Mvvm": "8.2.2"
+        },
+        "runtime": {
+          "OptimizationMathMethods.dll": {}
+        }
+      },
       "VievModel/1.0.0": {
         "dependencies": {
           "Autofac": "8.0.0",
@@ -480,7 +523,8 @@
           "DevExpressMvvm": "23.2.3",
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.4",
-          "NLog": "5.2.8"
+          "NLog": "5.2.8",
+          "OptimizationMathMethods": "1.0.0"
         },
         "runtime": {
           "VievModel.dll": {}
@@ -500,6 +544,20 @@
       "sha512": "sha512-qxVqJcl3fixxa5aZc9TmIuYTwooI9GCL5RzfUiTZtTlbAF3NcWz7bPeEyJEAyS/0qGhSyGnXeku2eiu/7L+3qw==",
       "path": "autofac/8.0.0",
       "hashPath": "autofac.8.0.0.nupkg.sha512"
+    },
+    "ChartDirector.Net/7.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s1N6cBen2MxJVpI3mSXpUCGdpAKXoru/nTClVbO5Wk055BJyqqfLjiwa/7pSVZcliCOMrvZ2a6lEAPBcIEqlew==",
+      "path": "chartdirector.net/7.1.0",
+      "hashPath": "chartdirector.net.7.1.0.nupkg.sha512"
+    },
+    "ChartDirector.Net.Desktop.Controls/7.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HMVxEGtszGgn5GRqd1tQcWcCgAk0fAiXUWKkFLFWQyG9DA8PFgjr0g7ri5mayed8JZGvu9ptvApLizZCRLBgtw==",
+      "path": "chartdirector.net.desktop.controls/7.1.0",
+      "hashPath": "chartdirector.net.desktop.controls.7.1.0.nupkg.sha512"
     },
     "CommunityToolkit.Mvvm/8.2.2": {
       "type": "package",
@@ -669,6 +727,20 @@
       "path": "microsoft.extensions.primitives/8.0.0",
       "hashPath": "microsoft.extensions.primitives.8.0.0.nupkg.sha512"
     },
+    "Microsoft.NETCore.Platforms/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "path": "microsoft.netcore.platforms/2.0.0",
+      "hashPath": "microsoft.netcore.platforms.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LuI1oG+24TUj1ZRQQjM5Ew73BKnZE5NZ/7eAdh1o8ST5dPhUnJvIkiIn2re3MwnkRy6ELRnvEbBxHP8uALKhJw==",
+      "path": "microsoft.win32.systemevents/4.5.0",
+      "hashPath": "microsoft.win32.systemevents.4.5.0.nupkg.sha512"
+    },
     "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
       "type": "package",
       "serviceable": true,
@@ -718,6 +790,13 @@
       "path": "system.diagnostics.diagnosticsource/7.0.2",
       "hashPath": "system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512"
     },
+    "System.Drawing.Common/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AiJFxxVPdeITstiRS5aAu8+8Dpf5NawTMoapZ53Gfirml24p7HIfhjmCRxdXnmmf3IUA3AX3CcW7G73CjWxW/Q==",
+      "path": "system.drawing.common/4.5.0",
+      "hashPath": "system.drawing.common.4.5.0.nupkg.sha512"
+    },
     "System.Memory/4.5.3": {
       "type": "package",
       "serviceable": true,
@@ -754,6 +833,11 @@
       "hashPath": "xamlmath.shared.2.1.0.nupkg.sha512"
     },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OptimizationMathMethods/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

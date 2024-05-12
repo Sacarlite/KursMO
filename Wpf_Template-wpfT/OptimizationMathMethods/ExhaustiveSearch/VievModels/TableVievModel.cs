@@ -17,7 +17,14 @@ namespace OptimizationMathMethods.ExhaustiveSearch.VievModels
 
         public TableVievModel(List<List<Point>>points)
         {
-            this.points = points;
+            if (points != null)
+            {
+                this.points = points;
+            }
+            else
+            {
+                points = new List<List<Point>>() { };
+            }
             GetTable();
         }
 

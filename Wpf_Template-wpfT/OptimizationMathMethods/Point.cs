@@ -2,6 +2,10 @@
 
 public class Point
 {
+    public Point()
+    {
+      
+    }
     public Point(double T1, double T2,double Cf)
     {
         this.T1 = T1;
@@ -12,7 +16,7 @@ public class Point
     public double T2 { get; set; }
     public double Cf { get; set; }
 }
-class CorrectionFactors
+public class CorrectionFactors
 {
     public CorrectionFactors(double alpfa,double betta,double mu,double delta,double g,double a,double n)
     {
@@ -24,30 +28,49 @@ class CorrectionFactors
         A = a;
         N = n;
     }
-
-    public double Alpfa { get; }
-    public double Betta { get; }
-    public double Mu { get; }
-    public double Delta { get; }
-    public double G { get; }
-    public double A { get; }
-    public double N { get; }
+    public CorrectionFactors()
+    {
+    }
+    public double Alpfa { get; set; }
+    public double Betta { get; set; }
+    public double Mu { get; set; }
+    public double Delta { get; set; }
+    public double G { get; set; }
+    public double A { get; set; }
+    public double N { get; set; }
 }
 
-class Limitations
+public class Limitations
 {
-    public Limitations(int minT1,int maxT1, int minT2, int maxT2, int minSum)
+    public Limitations(int minT1,int maxT1, int minT2, int maxT2, int minDiff)
     {
         MinT1 = minT1;
         MaxT1 = maxT1;
         MinT2 = minT2;
         MaxT2 = maxT2;
-        MinSum = minSum;
+        MinDiff = minDiff;
+    }
+    public Limitations()
+    {
+   
     }
 
-    public int MinT1 { get; }
-    public int MaxT1 { get; }
-    public int MinT2 { get; }
-    public int MaxT2 { get; }
-    public int MinSum { get; }
+    public int MinT1 { get; set; }
+    public int MaxT1 { get; set; }
+    public int MinT2 { get; set; }
+    public int MaxT2 { get; set; }
+    public int MinDiff { get; set; }
+}
+public class ExhaustiveSearchFactors
+{
+    public ExhaustiveSearchFactors(double eps, double step)
+    {
+        Eps = eps;
+        Step = step;
+    }
+    public ExhaustiveSearchFactors()
+    {
+    }
+    public double Eps { get; set; }
+    public double Step { get; set; }
 }

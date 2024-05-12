@@ -16,4 +16,7 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\8.0.4\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\8.0.4\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgChartDirector_Net_Desktop_Controls Condition=" '$(PkgChartDirector_Net_Desktop_Controls)' == '' ">C:\Users\bokov\.nuget\packages\chartdirector.net.desktop.controls\7.1.0</PkgChartDirector_Net_Desktop_Controls>
+  </PropertyGroup>
 </Project>
