@@ -21,16 +21,14 @@ namespace VievModel.VievModels.AutorizationVievModel
     {
         private  IAutorizationWindowMementoWrapper windowMementoWrapper;
         private readonly IWindowManager windowManager;
-        //private readonly IMainVievModelFactory mainWindowVievModelFactory;
         private  IUserDatabaseLocator userDatabaseLocator;
         private  IPasswordHasher passwordHasher;
 
         public AutorizationVievModel(IAutorizationWindowMementoWrapper windowMementoWrapper,
-             IWindowManager windowManager, /*IMainVievModelFactory  MainWindowVievModelFactory, */IUserDatabaseLocator userDatabaseLocator, IPasswordHasher passwordHasher) : base(windowMementoWrapper)
+             IWindowManager windowManager, IUserDatabaseLocator userDatabaseLocator, IPasswordHasher passwordHasher) : base(windowMementoWrapper)
         {
             this.windowMementoWrapper = windowMementoWrapper;
             this.windowManager = windowManager;
-         //   mainWindowVievModelFactory = MainWindowVievModelFactory;
             this.userDatabaseLocator = userDatabaseLocator;
             this.passwordHasher = passwordHasher;
         }
@@ -45,27 +43,27 @@ namespace VievModel.VievModels.AutorizationVievModel
         [RelayCommand]
         private void LoginUser()
         {
-            //try
-            //{
-            //    var user = userDatabaseLocator.Context.Users.Where(i => i.Login == login).First();
-            //    if (user.Password == passwordHasher.GetHashPassword(password))
-            //    {
-                    //var mainVievModel = mainWindowVievModelFactory.Cre;
-                    //var mainWindow = windowManager.Show(mainVievModel);
-            //    }
-            //    else
-            //    {
-            //            MessageBox.Show("Неверный логин или пароль", "Ошибка авторизации",
-            //            MessageBoxButton.OK, MessageBoxImage.Error);
-            //        }
-                
-            
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Неверный логин или пароль", "Ошибка авторизации",
-            //          MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
+            try
+            {
+                var user = userDatabaseLocator.Context.Users.Where(i => i.Login == login).First();
+                if (user.Password == passwordHasher.GetHashPassword(password))
+                {
+                  
+                    var mainWindow = windowManager.Show(mainVievModel);
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль", "Ошибка авторизации",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Неверный логин или пароль", "Ошибка авторизации",
+                      MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         public void Dispose()
         {

@@ -18,6 +18,7 @@ internal class Application : IApplication, IDisposable
     {
         Logger.Info("Create lifetimeScope");
         _applicationlifetimeScope = lifetimeScope.BeginLifetimeScope(RegisterDependencies);
+        
     }
 
 

@@ -6,6 +6,7 @@
         xmlns:converters="clr-namespace:Vievs.Converters"
         xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:researchermainvievmodel="clr-namespace:VievModel.VievModels.ResearcherMainVievModel;assembly=VievModel" d:DataContext="{d:DesignInstance Type=researchermainvievmodel:ResearcherMainVievModel}"
+       Style="{StaticResource MaterialDesignWindow}"
         mc:Ignorable="d"
         WindowState="{Binding IsMaximized,Mode=TwoWay,Converter={x:Static converters:BoolToWindowsStateConverter.Instance}}"
         Title="{Binding Title, Mode=OneTime}"
@@ -38,6 +39,7 @@
                 HorizontalAlignment="Right"
                 materialDesign:ButtonAssist.CornerRadius="50"
                 Margin="5 5 5 5"
+                Style="{StaticResource MaterialDesignPaperLightButton}" 
              >
                 <materialDesign:PackIcon Kind="Account" />
             </Button>

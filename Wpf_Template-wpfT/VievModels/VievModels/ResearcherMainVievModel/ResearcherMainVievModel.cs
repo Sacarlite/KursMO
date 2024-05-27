@@ -51,7 +51,7 @@ namespace VievModel.VievModels.ResearcherMainVievModel
         [RelayCommand]
         private void Calculation()
         {
-
+            var a = 0;
         }
         public string Version => $"Version {_aplicationVersionProvider.Version.ToString(3)}";
 

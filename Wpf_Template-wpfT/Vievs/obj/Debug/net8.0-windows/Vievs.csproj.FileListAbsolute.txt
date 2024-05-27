@@ -51,3 +51,5 @@ C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AutorizationW
 C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AutorizationWindow\AutorizationWindow.baml
 C:\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-windows\OptimizationMathMethods.dll
 C:\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-windows\OptimizationMathMethods.pdb
+C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\RegistrationVievModel\RegistrationWindow.g.cs
+C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\RegistrationVievModel\RegistrationWindow.baml

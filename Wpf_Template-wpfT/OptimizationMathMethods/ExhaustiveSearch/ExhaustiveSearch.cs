@@ -6,30 +6,36 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace OptimizationMathMethods.ExhaustiveSearch;
 
 class ExhaustiveSearch
 {
-    private readonly CorrectionFactors correctionFactors;
-    private readonly Limitations limitations;
-    private readonly ExhaustiveSearchFactors exhaustiveSearchFactors;
+    public CorrectionFactors correctionFactors { get; set; }
+    public Limitations limitations { get; set; }
+    public ExhaustiveSearchFactors exhaustiveSearchFactors { get; set; }
     private int roundCount;
     public MainPage VisualPage { get; set; }
     public List<List<Point>>? points { get; private set; }
     public Point minNum { get; private set; }
     public Point maxNum { get; private set; }
-    public ExhaustiveSearch(CorrectionFactors correctionFactors, Limitations limitations, ExhaustiveSearchFactors exhaustiveSearchFactors)
+    public ExhaustiveSearch()
     {
-        this.correctionFactors = correctionFactors;
-        this.limitations = limitations;
-        this.exhaustiveSearchFactors = exhaustiveSearchFactors;
+    
         RoundCalc();
         GetPoints();
         GetExtr();
+        DataValidation();
         MainVisualizationPageVievModel visualizationPageVievModel = new MainVisualizationPageVievModel(points);
         VisualPage =new MainPage(visualizationPageVievModel);
     }
+
+    private void DataValidation()
+    {
+
+    }
+
     private void GetPoints()
     {
         points = new List<List<Point>>();
@@ -49,25 +55,25 @@ class ExhaustiveSearch
     private void GetExtr()
     {
 
-        double max = 0;
+         maxNum = new Point(0,0,0);
         foreach (var elem in points)
         {
             foreach (var point in elem)
             {
-                if (point.Cf > max)
+                if (point.Cf > maxNum.Cf)
                 {
-                    max = point.Cf;
+                    maxNum = point;
                 }
             }
         }
-        double min = max;
+         minNum = maxNum;
         foreach (var elem in points)
         {
             foreach (var point in elem)
             {
-                if (point.Cf < min)
+                if (point.Cf < minNum.Cf)
                 {
-                    min = point.Cf;
+                    minNum = point;
                 }
             }
         }

@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 202-1516618050
 ExhaustiveSearch\VisualzationPages\Chart2D.xaml;ExhaustiveSearch\VisualzationPages\Chart3D.xaml;ExhaustiveSearch\VisualzationPages\MainPage.xaml;ExhaustiveSearch\VisualzationPages\TabelPage.xaml;
 
-True
+False
 

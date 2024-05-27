@@ -18,6 +18,7 @@ namespace Vievs
         //Регистрация vievs в контейнере
         protected override void Load(ContainerBuilder builder)
         {
+
             builder.RegisterType<Vievs.MainWindow.MainWindow>().As<IMainWindow>().UsingConstructor(typeof(IAdminMainVievModel)).InstancePerDependency();
             builder.RegisterType<Vievs.MainWindow.MainWindow>().As<IMainWindow>().UsingConstructor(typeof(IResearcherMainVievModel)).InstancePerDependency();
             builder.RegisterType<Windows.AboutWindow.AboutWindow>().As<IAboutWindow>().InstancePerDependency();
