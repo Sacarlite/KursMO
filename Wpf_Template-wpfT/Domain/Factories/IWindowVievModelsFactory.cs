@@ -1,6 +1,6 @@
 ﻿namespace Domain.Factories;
 
-public interface IFactory<TResult>
+public interface IWindowVievModelsFactory<TResult>
 {
     TResult Create();
 }

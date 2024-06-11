@@ -12,10 +12,10 @@ namespace VievModel.VievModels.MainWindow.ControlsVievModel;
 public class MenuMainWindowVievModel : IMenuMainWindowVievModel
 {
     private readonly IWindowManager _windowManager;
-    private IFactory<IAboutWindowVievModel> _aboutWindowViewModelFactory;
+    private IWindowVievModelsFactory<IAboutWindowVievModel> _aboutWindowViewModelFactory;
     private IAboutWindowVievModel? _aboutWindowVievModel;
     public MenuMainWindowVievModel(IWindowManager windowManager,
-        IFactory<IAboutWindowVievModel> aboutWindowViewModelFactory)
+        IWindowVievModelsFactory<IAboutWindowVievModel> aboutWindowViewModelFactory)
     {
         _windowManager = windowManager;
         _aboutWindowViewModelFactory = aboutWindowViewModelFactory;

@@ -20,11 +20,11 @@ namespace VievModel.VievModels.RegistrationWindowVievModel
         private  IWindowManager windowManager;
         private  IUserDatabaseLocator userDatabaseLocator;
         private  IPasswordHasher passwordHasher;
-        private  IFactory<IResearcherMainVievModel> mainWindowVievModelFactory;
+        private  IWindowVievModelsFactory<IResearcherMainVievModel> mainWindowVievModelFactory;
 
         public RegistrationWindowVievModel(IRegistrationWindowMementoWrapper windowMementoWrapper, 
             IWindowManager windowManager, IUserDatabaseLocator userDatabaseLocator, IPasswordHasher passwordHasher,
-            IFactory<IResearcherMainVievModel> MainWindowVievModelFactory)
+            IWindowVievModelsFactory<IResearcherMainVievModel> MainWindowVievModelFactory)
             : base(windowMementoWrapper)
         {
             this.windowMementoWrapper = windowMementoWrapper;

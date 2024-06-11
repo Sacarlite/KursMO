@@ -19,11 +19,6 @@ namespace Vievs.MainWindow
 {
     public partial class MainWindow :System.Windows.Window,IMainWindow
     {
-        public MainWindow(IAdminMainVievModel adminMainWindowVievModel)
-        {
-            InitializeComponent();
-            DataContext = adminMainWindowVievModel;
-        }
         public MainWindow(IResearcherMainVievModel researcherMainWindowVievModel)
         {
             InitializeComponent();

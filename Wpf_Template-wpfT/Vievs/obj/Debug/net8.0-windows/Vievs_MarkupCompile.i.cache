@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\
 Vievs
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 
-4-1356588469
+81494112348
 
-15-165958238
-235-1172774543
-Windows\AboutWindow\AboutWindow.xaml;Windows\AutorizationWindow\AutorizationWindow.xaml;Windows\MainWindow\MainWindow.xaml;Windows\RegistrationWindow\RegistrationWindow.xaml;
+252731282
+23580652254
+Pages\AdminsListPage\AdminsListPage.xaml;Pages\MethodsListPage\MethodsListPage.xaml;Pages\UsersListPage\UsersListsPage.xaml;Windows\AboutWindow\AboutWindow.xaml;Windows\AdminWindow\AdminWindow.xaml;Windows\AutorizationWindow\AutorizationWindow.xaml;Windows\MainWindow\MainWindow.xaml;Windows\RegistrationWindow\RegistrationWindow.xaml;
 
 False
 

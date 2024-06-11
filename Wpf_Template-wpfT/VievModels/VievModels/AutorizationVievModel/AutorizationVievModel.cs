@@ -43,27 +43,27 @@ namespace VievModel.VievModels.AutorizationVievModel
         [RelayCommand]
         private void LoginUser()
         {
-            try
-            {
-                var user = userDatabaseLocator.Context.Users.Where(i => i.Login == login).First();
-                if (user.Password == passwordHasher.GetHashPassword(password))
-                {
+            //try
+            //{
+            //    var user = userDatabaseLocator.Context.Users.Where(i => i.Login == login).First();
+            //    if (user.Password == passwordHasher.GetHashPassword(password))
+            //    {
                   
-                    var mainWindow = windowManager.Show(mainVievModel);
-                }
-                else
-                {
-                    MessageBox.Show("Неверный логин или пароль", "Ошибка авторизации",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+            //        var mainWindow = windowManager.Show(mainVievModel);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Неверный логин или пароль", "Ошибка авторизации",
+            //        MessageBoxButton.OK, MessageBoxImage.Error);
+            //    }
 
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Неверный логин или пароль", "Ошибка авторизации",
-                      MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Неверный логин или пароль", "Ошибка авторизации",
+            //          MessageBoxButton.OK, MessageBoxImage.Error);
+            //}
         }
         public void Dispose()
         {

@@ -7,6 +7,7 @@ using VievModels.Windows;
 using Vievs;
 using Vievs.Windows;
 using Vievs.Windows.AboutWindow;
+using Vievs.Windows.AdminWindow;
 using Vievs.Windows.AutorizationWindow;
 using Vievs.Windows.MainWindow;
 
@@ -18,7 +19,7 @@ public class WindowFactory:IWindowFactory
     private readonly Dictionary<Type,Type> _map=new Dictionary<Type,Type>()
     {
            { typeof(IResearcherMainVievModel), typeof(IMainWindow)},
-        { typeof(IAdminMainVievModel), typeof(IMainWindow)},
+        { typeof(IAdminVievModel), typeof(IAdminWindow)},
         { typeof(IAboutWindowVievModel), typeof(IAboutWindow)},
         { typeof(IAutorizationVievModel), typeof(IAutorizationWindow)},
     };

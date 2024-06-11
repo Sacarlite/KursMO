@@ -7,7 +7,7 @@ using VievModels.Windows;
 
 namespace VievModel.VievModels.AdminMainVievModel
 {
-    public interface IAdminMainVievModel : IWindowViewModel, IDisposable
+    public interface IAdminVievModel : IWindowViewModel, IDisposable
     {
     }
 }

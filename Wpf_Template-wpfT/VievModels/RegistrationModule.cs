@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using VievModel.PageVievModels;
+using VievModel.PageVievModels.UserPageVievModel;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.AutorizationVievModel;
 using VievModel.VievModels.MainWindow.ControlsVievModel;
@@ -13,9 +15,11 @@ namespace VievModel
 {
     public class RegistrationModule:Module
     {
+        //Регистрация VievModels
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<AdminMainVievModel>().As<IAdminMainVievModel>()
+            //Регистрация VievModels окон
+            builder.RegisterType<AdminVievModel>().As<IAdminVievModel>()
                .InstancePerDependency();
             builder.RegisterType<ResearcherMainVievModel>().As<IResearcherMainVievModel>()
                .InstancePerDependency();
@@ -25,6 +29,11 @@ namespace VievModel
                 .InstancePerDependency();
             builder.RegisterType<MenuMainWindowVievModel>().As<IMenuMainWindowVievModel>()
                 .InstancePerDependency();
+            //Регистрация VievModels страниц
+            builder.RegisterType<UserPageVievModel>().As<IUserPageVievModel>()
+               .InstancePerDependency();
+            builder.RegisterType<AdminPageVievModel>().As<IAdminPageVievModel>()
+               .InstancePerDependency();
             base.Load(builder);
         }
     }

@@ -3,11 +3,11 @@ using Domain.Factories;
 
 namespace Application.Factory;
 
-public class Factory<TResult> :IFactory<TResult>
+public class WindowVievModelsFactory<TResult> :IWindowVievModelsFactory<TResult>
 {
     private readonly IComponentContext _componentContext;
 
-    public Factory(IComponentContext componentContext)
+    public WindowVievModelsFactory(IComponentContext componentContext)
     {
         _componentContext = componentContext;
     }

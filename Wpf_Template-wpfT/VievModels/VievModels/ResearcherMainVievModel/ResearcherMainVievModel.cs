@@ -22,7 +22,7 @@ namespace VievModel.VievModels.ResearcherMainVievModel
         private readonly IWindowManager _windowManager;
         private IMainWindowMementoWrapper _windowMementoWrapper;
         public ResearcherMainVievModel(IMainWindowMementoWrapper mainWindowMementoWrapper,
-             IWindowManager windowManager, IFactory<IMenuMainWindowVievModel> MenueMainWindowVievModelFactory,
+             IWindowManager windowManager, IWindowVievModelsFactory<IMenuMainWindowVievModel> MenueMainWindowVievModelFactory,
              IAplicationVersionProvider aplicationVersionProvider)
              : base(mainWindowMementoWrapper)
         {
