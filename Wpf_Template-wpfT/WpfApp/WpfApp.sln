@@ -22,7 +22,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PasswordService", "..\PasswordService\PasswordService.csproj", "{4D107F00-82FA-4C6E-BF77-1949B7BBE059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimizationMathMethods", "..\OptimizationMathMethods\OptimizationMathMethods.csproj", "{4F3C71E9-19D1-4152-B0F2-5ABDE3E750EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptimizationMathMethods", "..\OptimizationMathMethods\OptimizationMathMethods.csproj", "{4F3C71E9-19D1-4152-B0F2-5ABDE3E750EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaInfo", "..\..\..\MetaInfo\MetaInfo.csproj", "{0EFE6B80-648C-40A1-9CDF-B5370C1D7AD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{4F3C71E9-19D1-4152-B0F2-5ABDE3E750EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F3C71E9-19D1-4152-B0F2-5ABDE3E750EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F3C71E9-19D1-4152-B0F2-5ABDE3E750EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EFE6B80-648C-40A1-9CDF-B5370C1D7AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EFE6B80-648C-40A1-9CDF-B5370C1D7AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EFE6B80-648C-40A1-9CDF-B5370C1D7AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EFE6B80-648C-40A1-9CDF-B5370C1D7AD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

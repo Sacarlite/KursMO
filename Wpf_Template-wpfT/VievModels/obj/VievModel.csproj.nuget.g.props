@@ -16,6 +16,8 @@
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\8.0.4\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\8.0.4\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\vlade\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.122</PkgMicrosoft_Xaml_Behaviors_Wpf>
+    <PkgMaterialDesignThemes Condition=" '$(PkgMaterialDesignThemes)' == '' ">C:\Users\vlade\.nuget\packages\materialdesignthemes\5.0.0</PkgMaterialDesignThemes>
     <PkgChartDirector_Net_Desktop_Controls Condition=" '$(PkgChartDirector_Net_Desktop_Controls)' == '' ">C:\Users\vlade\.nuget\packages\chartdirector.net.desktop.controls\7.1.0</PkgChartDirector_Net_Desktop_Controls>
   </PropertyGroup>
 </Project>

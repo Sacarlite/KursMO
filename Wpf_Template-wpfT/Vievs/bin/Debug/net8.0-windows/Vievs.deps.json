@@ -63,7 +63,7 @@
       },
       "ControlzEx/4.3.0": {
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.122",
           "System.Text.Json": "8.0.0"
         },
         "runtime": {
@@ -107,7 +107,7 @@
       "MaterialDesignThemes/5.0.0": {
         "dependencies": {
           "MaterialDesignColors": "3.0.0",
-          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39"
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.122"
         },
         "runtime": {
           "lib/net7.0/MaterialDesignThemes.Wpf.dll": {
@@ -312,11 +312,11 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         }
       },
-      "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.122": {
         "runtime": {
-          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+          "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
             "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.39.4716"
+            "fileVersion": "1.1.122.28819"
           }
         }
       },
@@ -507,10 +507,19 @@
           "Domain.dll": {}
         }
       },
+      "MetaInfo/1.0.0": {
+        "runtime": {
+          "MetaInfo.dll": {}
+        }
+      },
       "OptimizationMathMethods/1.0.0": {
         "dependencies": {
           "ChartDirector.Net.Desktop.Controls": "7.1.0",
-          "CommunityToolkit.Mvvm": "8.2.2"
+          "CommunityToolkit.Mvvm": "8.2.2",
+          "MaterialDesignColors": "3.0.0",
+          "MaterialDesignThemes": "5.0.0",
+          "MetaInfo": "1.0.0",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.122"
         },
         "runtime": {
           "OptimizationMathMethods.dll": {}
@@ -741,12 +750,12 @@
       "path": "microsoft.win32.systemevents/4.5.0",
       "hashPath": "microsoft.win32.systemevents.4.5.0.nupkg.sha512"
     },
-    "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.122": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
-      "path": "microsoft.xaml.behaviors.wpf/1.1.39",
-      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+      "sha512": "sha512-SgcafT189u4qX++vSCV9FLQ4BsRXU9J2esnHA9IF8GOSgnPBulFw1CW4X/FYoOXvZwdDZxlSObJUGUg1U1wSyg==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.122",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.122.nupkg.sha512"
     },
     "NLog/5.2.8": {
       "type": "package",
@@ -833,6 +842,11 @@
       "hashPath": "xamlmath.shared.2.1.0.nupkg.sha512"
     },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MetaInfo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

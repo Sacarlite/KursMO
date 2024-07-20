@@ -73,6 +73,26 @@
           }
         }
       },
+      "MaterialDesignColors/3.0.0": {
+        "runtime": {
+          "lib/net7.0/MaterialDesignColors.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "MaterialDesignThemes/5.0.0": {
+        "dependencies": {
+          "MaterialDesignColors": "3.0.0",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.122"
+        },
+        "runtime": {
+          "lib/net7.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
       "Microsoft.Data.Sqlite.Core/8.0.4": {
         "dependencies": {
           "SQLitePCLRaw.core": "2.1.6"
@@ -256,6 +276,14 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         }
       },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.122": {
+        "runtime": {
+          "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.122.28819"
+          }
+        }
+      },
       "NLog/5.2.8": {
         "runtime": {
           "lib/netstandard2.0/NLog.dll": {
@@ -424,10 +452,19 @@
           "Domain.dll": {}
         }
       },
+      "MetaInfo/1.0.0": {
+        "runtime": {
+          "MetaInfo.dll": {}
+        }
+      },
       "OptimizationMathMethods/1.0.0": {
         "dependencies": {
           "ChartDirector.Net.Desktop.Controls": "7.1.0",
-          "CommunityToolkit.Mvvm": "8.2.2"
+          "CommunityToolkit.Mvvm": "8.2.2",
+          "MaterialDesignColors": "3.0.0",
+          "MaterialDesignThemes": "5.0.0",
+          "MetaInfo": "1.0.0",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.122"
         },
         "runtime": {
           "OptimizationMathMethods.dll": {}
@@ -475,6 +512,20 @@
       "sha512": "sha512-ETwTS3kEQH+FcKVlRp/qIiRdLugYdKwXirAYMpPqaMTAlzEGRjBmvqZxYhR3YSlxzCze3VR3L4HWotk86az1Sw==",
       "path": "devexpressmvvm/23.2.3",
       "hashPath": "devexpressmvvm.23.2.3.nupkg.sha512"
+    },
+    "MaterialDesignColors/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yIAqOd9RYY7JUnspmBaL/PK+NEbRFFMCS43AT1YWM5MBkGAU5rUYh9q11zzEfqFcz2jDO6Zaf9W+m4Y1dGhatQ==",
+      "path": "materialdesigncolors/3.0.0",
+      "hashPath": "materialdesigncolors.3.0.0.nupkg.sha512"
+    },
+    "MaterialDesignThemes/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Az/2+YP+AdtyNceaU42cFo7Fl7KBrFkMa56uvesR363kZyOrASb0OnMvi0Ou4j1x0zwGa19AaK/vspDUBNDlBQ==",
+      "path": "materialdesignthemes/5.0.0",
+      "hashPath": "materialdesignthemes.5.0.0.nupkg.sha512"
     },
     "Microsoft.Data.Sqlite.Core/8.0.4": {
       "type": "package",
@@ -609,6 +660,13 @@
       "path": "microsoft.win32.systemevents/4.5.0",
       "hashPath": "microsoft.win32.systemevents.4.5.0.nupkg.sha512"
     },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.122": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SgcafT189u4qX++vSCV9FLQ4BsRXU9J2esnHA9IF8GOSgnPBulFw1CW4X/FYoOXvZwdDZxlSObJUGUg1U1wSyg==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.122",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.122.nupkg.sha512"
+    },
     "NLog/5.2.8": {
       "type": "package",
       "serviceable": true,
@@ -680,6 +738,11 @@
       "hashPath": "system.text.json.8.0.0.nupkg.sha512"
     },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MetaInfo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

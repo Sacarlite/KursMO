@@ -10,6 +10,13 @@
   <ItemGroup>
     <PackageReference Include="ChartDirector.Net.Desktop.Controls" Version="7.1.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MetaInfo\MetaInfo.csproj" />
   </ItemGroup>
 
 </Project>

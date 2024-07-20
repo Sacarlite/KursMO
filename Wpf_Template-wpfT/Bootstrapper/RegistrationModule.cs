@@ -3,6 +3,7 @@ using Autofac;
 using Bootstrapper.Factory;
 using Bootstrapper.UserBd;
 using Domain.Factories;
+using Domain.MethodsBD;
 using Domain.PasswordService;
 using Domain.UserBd;
 using PasswordService;
@@ -21,6 +22,8 @@ public class RegistrationModule:Module
 
         builder.RegisterType<UserDatabaseLocator>().As<IUserDatabaseLocator>().SingleInstance();
         builder.RegisterType<UserDbContext>().SingleInstance();
+        builder.RegisterType<MethodsDatabaseLocator>().As<IMethodsDatabaseLocator>().SingleInstance();
+        builder.RegisterType<MethodsDbContext>().SingleInstance();
         builder.RegisterType<PasswordHasher>().As<IPasswordHasher>().SingleInstance();
         builder.RegisterGeneric(typeof(WindowVievModelsFactory<>)).As(typeof(IWindowVievModelsFactory<>)).SingleInstance();
         builder.RegisterGeneric(typeof(PageVievModelsFactory<>)).As(typeof(IPageVievModelsFactory<>)).SingleInstance();

@@ -58,7 +58,7 @@ namespace Vievs.Pages.UsersListPage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vievs;V1.0.0.0;component/pages/userslistpage/userslistspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vievs;component/pages/userslistpage/userslistspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\UsersListPage\UsersListsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

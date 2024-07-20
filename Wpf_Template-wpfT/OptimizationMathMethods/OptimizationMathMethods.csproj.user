@@ -2,30 +2,24 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="ExhaustiveSearch\VisualzationPages\Chart2D.xaml.cs">
+    <Compile Update="VisualzationPages\Chart2D.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ExhaustiveSearch\VisualzationPages\Chart3D.xaml.cs">
+    <Compile Update="VisualzationPages\Chart3D.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ExhaustiveSearch\VisualzationPages\MainPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="ExhaustiveSearch\VisualzationPages\TabelPage.xaml.cs">
+    <Compile Update="VisualzationPages\VisualisationPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="ExhaustiveSearch\VisualzationPages\Chart2D.xaml">
+    <Page Update="VisualzationPages\Chart2D.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ExhaustiveSearch\VisualzationPages\Chart3D.xaml">
+    <Page Update="VisualzationPages\Chart3D.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ExhaustiveSearch\VisualzationPages\MainPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ExhaustiveSearch\VisualzationPages\TabelPage.xaml">
+    <Page Update="VisualzationPages\VisualisationPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

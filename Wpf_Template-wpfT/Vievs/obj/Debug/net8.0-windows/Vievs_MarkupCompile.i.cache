@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 
 81494112348
 
-252731282
-23580652254
+241928813420
+236653332750
 Pages\AdminsListPage\AdminsListPage.xaml;Pages\MethodsListPage\MethodsListPage.xaml;Pages\UsersListPage\UsersListsPage.xaml;Windows\AboutWindow\AboutWindow.xaml;Windows\AdminWindow\AdminWindow.xaml;Windows\AutorizationWindow\AutorizationWindow.xaml;Windows\MainWindow\MainWindow.xaml;Windows\RegistrationWindow\RegistrationWindow.xaml;
 
-False
+True
 

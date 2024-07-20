@@ -14,28 +14,31 @@
     materialDesign:ColorZoneAssist.Mode="PrimaryMid"
     Style="{StaticResource MaterialDesignNavigationRailTabControl}"
    >
-                <TabItem>
+                <TabItem Width="auto">
                     <TabItem.Header>
                         <StackPanel
           Width="auto"
-          Height="auto">
+          Height="auto"
+                                Margin="5">
                             <materialDesign:PackIcon
             Width="24"
             Height="24"
             HorizontalAlignment="Center"
             Kind="AccountTie" />
                             <TextBlock
+
             HorizontalAlignment="Center"
             Text="Администраторы" />
                         </StackPanel>
                     </TabItem.Header>
-                 
+                    <Frame Content="{Binding AdminsListPage}"></Frame>
                 </TabItem>
-                <TabItem>
+                <TabItem Width="auto">
                     <TabItem.Header>
                         <StackPanel
           Width="auto"
-          Height="auto">
+          Height="auto"
+                                Margin="5">
                             <materialDesign:PackIcon
             Width="24"
             Height="24"
@@ -48,11 +51,12 @@
                     </TabItem.Header>
                   
                 </TabItem>
-                <TabItem>
+                <TabItem Width="auto">
                     <TabItem.Header>
                         <StackPanel
           Width="auto"
-          Height="auto">
+          Height="auto"
+                                Margin="5">
                             <materialDesign:PackIcon
             Width="24"
             Height="24"
@@ -65,9 +69,10 @@
                     </TabItem.Header>
                     
                 </TabItem>
-                <TabItem>
+                <TabItem Width="auto">
                     <TabItem.Header>
                         <StackPanel
+                            Margin="5"
           Width="auto"
           Height="auto">
                             <materialDesign:PackIcon

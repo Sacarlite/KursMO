@@ -16,7 +16,7 @@ namespace Domain.UserBd
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"Data Source= dis.db");
+            optionsBuilder.UseSqlite(@"Data Source= Users.db");
         }
         public DbSet<User> Users { get; set; }
     }

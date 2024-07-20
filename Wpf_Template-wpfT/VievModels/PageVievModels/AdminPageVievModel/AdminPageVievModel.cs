@@ -23,18 +23,28 @@ namespace VievModel.PageVievModels
             this.userDatabaseLocator = userDatabaseLocator;
         }
         [RelayCommand]
-        private void DeleteAdminCommand()
+        private void DeleteAdmin()
         {
             userDatabaseLocator.Context.Remove(admin);
         }
         [RelayCommand]
-        private void AddNewAdminCommand()
+        private void AddNewAdmin()
         {
             Admin = new User();
         }
         [RelayCommand]
-        private void SaveAdminCommand()
+        private void SaveAdmin()
         {
+            if (userDatabaseLocator.Context.Users.Count() == 0)
+            {
+                User newAdmin = new User();
+                newAdmin.Login = Admin.Login;
+                newAdmin.Password = Admin.Password;
+                newAdmin.Role = Domain.Roles.Roles.Admin;
+                userDatabaseLocator.Context.Add(newAdmin);
+                userDatabaseLocator.Context.SaveChanges();
+                return;
+            }
             if(userDatabaseLocator.Context.Users.Where(u => u.Id == Admin.Id).FirstOrDefault()==null) {
                 User newAdmin = new User();
                 newAdmin.Login = Admin.Login;
@@ -47,9 +57,14 @@ namespace VievModel.PageVievModels
             {
                 userDatabaseLocator.Context.SaveChanges();
             }
-            OnPageLoading();
+            ReloadPage();
         }
-       public void OnPageLoading()
+        [RelayCommand]
+        private void PageLoading()
+        {
+            ReloadPage();
+        }
+        private void ReloadPage()
         {
             if (userDatabaseLocator != null) {
                 Admins = userDatabaseLocator.Context.Users.Where(u=>u.Role==Domain.Roles.Roles.Admin).ToList();

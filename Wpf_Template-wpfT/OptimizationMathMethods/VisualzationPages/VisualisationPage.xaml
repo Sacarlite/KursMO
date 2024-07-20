@@ -1,0 +1,43 @@
+﻿<Page x:Class="OptimizationMathMethods.VisualzationPages.VisualisationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OptimizationMathMethods.VisualzationPages" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:ia="http://schemas.microsoft.com/xaml/behaviors"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="VisualisationPage">
+
+    <Grid>
+        <ia:Interaction.Triggers>
+            <ia:EventTrigger EventName="Loaded">
+                <ia:InvokeCommandAction Command="{Binding PageLoadingCommand}"/>
+            </ia:EventTrigger>
+        </ia:Interaction.Triggers>
+        <materialDesign:Card
+ >
+            <TabControl
+    HorizontalContentAlignment="Left"
+    ItemsSource="{Binding Visualisations}"
+   >
+                <TabControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel
+          Orientation="Horizontal">
+                            <TextBlock
+            Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <DataTemplate
+        DataType="domain:CustomTab">
+                        <Frame Content="{Binding Page}"/>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
+            </TabControl>
+        </materialDesign:Card>
+    </Grid>
+</Page>

@@ -57,7 +57,7 @@ namespace Vievs.Windows.RegistrationVievModel {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vievs;V1.0.0.0;component/windows/registrationwindow/registrationwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vievs;component/windows/registrationwindow/registrationwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\RegistrationWindow\RegistrationWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

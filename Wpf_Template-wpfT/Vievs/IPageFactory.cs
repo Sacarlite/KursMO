@@ -12,7 +12,7 @@ namespace Vievs
 {
     public interface IPageFactory
     {
-        IPage Create<TPageViewModel>(TPageViewModel viewModel)
+        System.Windows.Controls.Page Create<TPageViewModel>(TPageViewModel viewModel)
        where TPageViewModel : IPageVievModel;
     }
 }

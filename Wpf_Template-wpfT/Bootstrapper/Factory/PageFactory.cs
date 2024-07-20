@@ -20,6 +20,7 @@ using VievModel.PageVievModels;
 using Vievs.Pages.AdminsListPage;
 using VievModel.PageVievModels.UserPageVievModel;
 using Vievs.Pages.UsersListPage;
+using System.Windows.Controls;
 
 namespace Bootstrapper.Factory
 {
@@ -36,14 +37,14 @@ namespace Bootstrapper.Factory
             _componentContext = componentContext;
         }
 
-        public IPage Create<TPageViewModel>(TPageViewModel viewModel) where TPageViewModel : IPageVievModel
+        public Page Create<TPageViewModel>(TPageViewModel viewModel) where TPageViewModel : IPageVievModel
         {
             if (!_map.TryGetValue(typeof(TPageViewModel), out var windowType))
                 throw new InvalidOperationException($"There is no window registered for {typeof(TPageViewModel)}");
             var instance = _componentContext.Resolve(windowType, TypedParameter.From(viewModel));
 
 
-            return (IPage)instance;
+            return (Page)instance;
         }
 
        

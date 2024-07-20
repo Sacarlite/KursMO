@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "Dm5lUpDiX5k=",
+  "dgSpecHash": "A4lAsLFQ8oM=",
   "success": true,
   "projectFilePath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlade\\.nuget\\packages\\chartdirector.net\\7.1.0\\chartdirector.net.7.1.0.nupkg.sha512",
     "C:\\Users\\vlade\\.nuget\\packages\\chartdirector.net.desktop.controls\\7.1.0\\chartdirector.net.desktop.controls.7.1.0.nupkg.sha512",
     "C:\\Users\\vlade\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
+    "C:\\Users\\vlade\\.nuget\\packages\\materialdesigncolors\\3.0.0\\materialdesigncolors.3.0.0.nupkg.sha512",
+    "C:\\Users\\vlade\\.nuget\\packages\\materialdesignthemes\\5.0.0\\materialdesignthemes.5.0.0.nupkg.sha512",
     "C:\\Users\\vlade\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\vlade\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\vlade\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.122\\microsoft.xaml.behaviors.wpf.1.1.122.nupkg.sha512",
     "C:\\Users\\vlade\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512"
   ],
   "logs": []

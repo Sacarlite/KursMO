@@ -4,66 +4,39 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VievModel.PageVievModels;
 using VievModels.Windows;
+using Vievs.Pages;
 using Vievs.Windows;
 
 namespace Vievs.Page
 {
-   
-    internal class PageManager : IWindowManager
+
+    internal class PageManager : IPageManager
     {
-        private readonly Dictionary<IWindowViewModel, IWindow> _viewModelToWindowMap = new();
+        private readonly Dictionary<IPageVievModel, System.Windows.Controls.Page> _viewModelToWindowMap = new();
         private readonly IPageFactory _pageFactory;
-        private readonly Dictionary<IWindow, IWindowViewModel> _windowToViewModelMap = new();
+        private readonly Dictionary<System.Windows.Controls.Page, IPageVievModel> _windowToViewModelMap = new();
 
         public PageManager(IPageFactory pageFactory)
         {
             _pageFactory = pageFactory;
         }
 
-        public IWindow Show<TWindowVievModel>(TWindowVievModel windowVievModel) where TWindowVievModel : IWindowViewModel
+        public System.Windows.Controls.Page GetPage<TPageVievModel>(TPageVievModel pageVievModel) where TPageVievModel : IPageVievModel
         {
-            if (_viewModelToWindowMap.TryGetValue(windowVievModel, out var window))
+            if (_viewModelToWindowMap.TryGetValue(pageVievModel, out var page))
             {
-                window.Activate();
-
-                return window;
+                return page;
             }
 
-            window = _windowFactory.Create(windowVievModel);
+            page = _pageFactory.Create(pageVievModel);
 
-            _viewModelToWindowMap.Add(windowVievModel, window);
-            _windowToViewModelMap.Add(window, windowVievModel);
-
-            window.Closing += OnWindowClosing;
-            window.Closed += OnWindowClosed;
-
-            window.Show();
-
-            return window;
+            _viewModelToWindowMap.Add(pageVievModel, page);
+            _windowToViewModelMap.Add(page, pageVievModel);
+            return page;
         }
 
-        public void Close<TWindowVievModel>(TWindowVievModel windowVievModel) where TWindowVievModel : IWindowViewModel
-        {
-            if (_viewModelToWindowMap.TryGetValue(windowVievModel, out var window))
-                window.Close();
-        }
-        private void OnWindowClosed(object? sender, EventArgs e)
-        {
-            if (sender is IWindow window && _windowToViewModelMap.TryGetValue(window, out var viewModel))
-            {
-                window.Closing -= OnWindowClosing;
-                window.Closed -= OnWindowClosed;
 
-                _viewModelToWindowMap.Remove(viewModel);
-                _windowToViewModelMap.Remove(window);
-            }
-        }
-
-        private void OnWindowClosing(object? sender, CancelEventArgs e)
-        {
-            if (sender is IWindow window && _windowToViewModelMap.TryGetValue(window, out var viewModel))
-                viewModel.WindowClosing();
-        }
-    }
+    } 
 }

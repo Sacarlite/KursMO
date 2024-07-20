@@ -58,7 +58,7 @@ namespace Vievs.Pages.MethodsListPage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vievs;V1.0.0.0;component/pages/methodslistpage/methodslistpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vievs;component/pages/methodslistpage/methodslistpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\MethodsListPage\MethodsListPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

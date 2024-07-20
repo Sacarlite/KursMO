@@ -4,10 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Vievs.Pages.AdminsListPage" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:ia="http://schemas.microsoft.com/xaml/behaviors"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AdminsListPage">
-
+    <ia:Interaction.Triggers>
+        <ia:EventTrigger EventName="Loaded">
+            <ia:InvokeCommandAction Command="{Binding PageLoadingCommand}"/>
+        </ia:EventTrigger>
+    </ia:Interaction.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -15,20 +20,11 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <materialDesign:Card
-  Width="200"
+  MaxWidth="300"
  >
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="3*" />
-                        <RowDefinition Height="1*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="0*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Row="1" Grid.Column="1">
+               
+                    <Grid>
                         <Viewbox>
                             <materialDesign:Card
         Width="Auto"
@@ -62,23 +58,21 @@
                                     </Grid>
                                     <Grid Grid.Row="2" Margin="10 15 25 0">
                                         <PasswordBox
-                    materialDesign:HintAssist.HelperText="Bound to Password2"
                     materialDesign:HintAssist.Hint="Password"
                     materialDesign:TextFieldAssist.HasClearButton="True"
-                    IsEnabled="{Binding ElementName=RevealPasswordFloatingEnabled, Path=IsChecked}"
                     Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}"
                     materialDesign:PasswordBoxAssist.Password="{Binding Admin.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}"
     />
                                     </Grid>
                                     <Grid Grid.Row="4" Margin="0 15 0 10">
-                                        <Button  VerticalAlignment="Center" HorizontalAlignment="Center"
+                                        <Button  VerticalAlignment="Bottom" HorizontalAlignment="Center"
                          MinWidth="125" MinHeight="60" Content="Сохранить"
                          materialDesign:ColorZoneAssist.Mode="Light"
                          BorderBrush="#4dbbfa"
                          Background="#4dbbfa"  
                          materialDesign:ElevationAssist.Elevation="Dp2"
                          materialDesign:ButtonAssist.CornerRadius="25"
-                         Command="{Binding SaveUserCommand}"/>
+                         Command="{Binding SaveAdminCommand}" Margin="0,0,0,20"/>
                                     </Grid>
                                 </Grid>
                             </materialDesign:Card>
@@ -93,40 +87,40 @@
   ItemsSource="{Binding Admins}"
   SelectedItem="{Binding Admin}"
  >
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn
-        DisplayMemberBinding="{Binding Admins.Login}"
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn
+        DisplayMemberBinding="{Binding Login}"
         Header="Login" />
-                        <GridViewColumn
-        DisplayMemberBinding="{Binding Admins.Password}"
+                            <GridViewColumn
+        DisplayMemberBinding="{Binding Password}"
         Header="Password" />
-                        <GridViewColumn
+                            <GridViewColumn
         Header="Options">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button
                                       Style="{StaticResource MaterialDesignIconForegroundButton}"
                                         Command="{Binding DeleteAdmin}"
                                       ToolTip="MaterialDesignIconForegroundButton"
                                         Background="White"
                                         BorderBrush="White"
                                         >
-                                       <materialDesign:PackIcon
+                                            <materialDesign:PackIcon
                                             Kind="Close"
-                                            />  
-                                    </Button>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-                <Button HorizontalAlignment="Left" Background="White" Tag="{Binding ElementName=LinkTarget, Path=Text}" Style="{StaticResource HyperlinkButton}" Command="{Binding AddNewAdmin}" Focusable="False">
-                <TextBlock>
-                <Hyperlink Focusable="False">Добавить администратора</Hyperlink>
-                </TextBlock>
-            </Button>
+                                            />
+                                        </Button>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button HorizontalAlignment="Left" Background="White" Tag="{Binding ElementName=LinkTarget, Path=Text}"   Focusable="False">
+                    <TextBlock>
+                <Hyperlink Command="{Binding AddNewAdminCommand}" Focusable="False">Добавить администратора</Hyperlink>
+                    </TextBlock>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>

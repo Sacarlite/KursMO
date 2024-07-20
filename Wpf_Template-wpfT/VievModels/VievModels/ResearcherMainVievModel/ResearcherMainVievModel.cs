@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Domain.Factories;
 using Domain.Settings;
 using Domain.Version;
+using MetaInfo;
 using OptimizationMathMethods;
 using System;
 using System.Collections.Generic;

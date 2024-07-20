@@ -7,6 +7,7 @@ using Autofac;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.ResearcherMainVievModel;
 using VievModels.Windows;
+using Vievs.Page;
 using Vievs.Pages.AdminsListPage;
 using Vievs.Pages.UsersListPage;
 using Vievs.Window;
@@ -28,6 +29,7 @@ namespace Vievs
             builder.RegisterType<Windows.AutorizationWindow.AutorizationWindow>().As<Windows.AutorizationWindow.IAutorizationWindow>().InstancePerDependency();
             //Регистрация менеджеров
             builder.RegisterType<WindowManager>().As<IWindowManager>().InstancePerDependency();
+            builder.RegisterType<PageManager>().As<IPageManager>().InstancePerDependency();
             //Регистрация страниц
             builder.RegisterType<UsersListPage>().As<IUsersListPage>().InstancePerDependency();
             builder.RegisterType<AdminsListPage>().As<IAdminsListPage>().InstancePerDependency();

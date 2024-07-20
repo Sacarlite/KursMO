@@ -20,7 +20,7 @@ namespace Vievs.Pages.AdminsListPage
     /// <summary>
     /// Логика взаимодействия для AdminsListPage.xaml
     /// </summary>
-    public partial class AdminsListPage : Page, IAdminsListPage
+    public partial class AdminsListPage : System.Windows.Controls.Page, IAdminsListPage
     {
         public AdminsListPage(IAdminPageVievModel adminPageVievModel)
         {

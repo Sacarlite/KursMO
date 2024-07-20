@@ -19,7 +19,7 @@ namespace Vievs.Pages.UsersListPage
     /// <summary>
     /// Логика взаимодействия для UsersListsPage.xaml
     /// </summary>
-    public partial class UsersListPage : Page, IUsersListPage
+    public partial class UsersListPage : System.Windows.Controls.Page, IUsersListPage
     {
         public UsersListPage(IUserPageVievModel userPageVievModel)
         {
