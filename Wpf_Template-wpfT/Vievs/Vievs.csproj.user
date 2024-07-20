@@ -14,6 +14,9 @@
     <Compile Update="Windows\AboutWindow\AboutWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\AddUserWindow\AddUserWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\AdminWindow\AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +38,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\AboutWindow\AboutWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddUserWindow\AddUserWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\AdminWindow\AdminWindow.xaml">

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Autofac;
 using VievModel.PageVievModels;
 using VievModel.PageVievModels.UserPageVievModel;
+using VievModel.VievModels.AddUserVievModel;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.AutorizationVievModel;
 using VievModel.VievModels.MainWindow.ControlsVievModel;
@@ -29,6 +30,8 @@ namespace VievModel
                 .InstancePerDependency();
             builder.RegisterType<MenuMainWindowVievModel>().As<IMenuMainWindowVievModel>()
                 .InstancePerDependency();
+            builder.RegisterType<AddUserVievModel>().As<IAddUserVievModel>()
+             .InstancePerDependency();
             //Регистрация VievModels страниц
             builder.RegisterType<UserPageVievModel>().As<IUserPageVievModel>()
                .InstancePerDependency();

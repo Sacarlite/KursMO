@@ -9,9 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\FunctionsListPage\**" />
     <Compile Remove="Windows\MethodesWindow\**" />
+    <EmbeddedResource Remove="Pages\FunctionsListPage\**" />
     <EmbeddedResource Remove="Windows\MethodesWindow\**" />
+    <None Remove="Pages\FunctionsListPage\**" />
     <None Remove="Windows\MethodesWindow\**" />
+    <Page Remove="Pages\FunctionsListPage\**" />
     <Page Remove="Windows\MethodesWindow\**" />
   </ItemGroup>
 
@@ -30,7 +34,6 @@
 
   <ItemGroup>
     <Folder Include="Converters\" />
-    <Folder Include="Pages\FunctionsListPage\" />
   </ItemGroup>
 
 </Project>

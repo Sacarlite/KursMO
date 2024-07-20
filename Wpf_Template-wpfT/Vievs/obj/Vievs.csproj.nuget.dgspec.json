@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj": {}
+    "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
+    "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\ColizeumLigov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ColizeumLigov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,21 +74,107 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj": {
+    "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj",
-        "projectName": "MetaInfo",
-        "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj",
-        "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\obj\\",
+        "projectUniqueName": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ColizeumLigov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ColizeumLigov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj",
+        "projectName": "MetaInfo",
+        "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj",
+        "packagesPath": "C:\\Users\\ColizeumLigov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ColizeumLigov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -134,21 +224,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj": {
+    "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj",
+        "projectUniqueName": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj",
         "projectName": "OptimizationMathMethods",
-        "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj",
-        "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\obj\\",
+        "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj",
+        "packagesPath": "C:\\Users\\ColizeumLigov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ColizeumLigov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -163,8 +257,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj": {
-                "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj"
+              "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj": {
+                "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj"
               }
             }
           }
@@ -224,21 +318,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj": {
+    "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj",
+        "projectUniqueName": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj",
         "projectName": "VievModel",
-        "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj",
-        "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\obj\\",
+        "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj",
+        "packagesPath": "C:\\Users\\ColizeumLigov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ColizeumLigov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -253,11 +351,14 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj"
+              "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj": {
-                "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj"
+              "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj"
+              },
+              "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj": {
+                "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\OptimizationMathMethods\\OptimizationMathMethods.csproj"
               }
             }
           }
@@ -317,21 +418,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj": {
+    "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj",
+        "projectUniqueName": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj",
         "projectName": "Vievs",
-        "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj",
-        "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\obj\\",
+        "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj",
+        "packagesPath": "C:\\Users\\ColizeumLigov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ColizeumLigov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -346,8 +451,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj": {
-                "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj"
+              "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj": {
+                "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj"
               }
             }
           }
@@ -411,7 +516,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Roles
+namespace Domain.Settings
 {
-    public enum Roles
+    public interface IAddUserWindowMementoWrapper: IWindowMementoWrapper
     {
-        Admin,
-        Researcher
+
     }
-    
 }

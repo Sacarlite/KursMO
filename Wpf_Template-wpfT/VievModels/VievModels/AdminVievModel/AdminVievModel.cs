@@ -20,8 +20,7 @@ namespace VievModel.VievModels.AdminMainVievModel
 {
     public partial class AdminVievModel : WindowVievModel<IAdminWindowMementoWrapper>, IAdminVievModel
     {
-    private IAdminWindowMementoWrapper _windowMementoWrapper;
-        
+        private IAdminWindowMementoWrapper _windowMementoWrapper;
         private readonly IPageManager pageManager;
         [ObservableProperty]
         System.Windows.Controls.Page adminsListPage;
@@ -39,7 +38,7 @@ namespace VievModel.VievModels.AdminMainVievModel
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

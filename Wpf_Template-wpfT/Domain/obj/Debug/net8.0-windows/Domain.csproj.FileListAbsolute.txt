@@ -35,3 +35,16 @@ C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-win
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\refint\Domain.dll
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.pdb
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\ref\Domain.dll
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\bin\Debug\net8.0-windows\Domain.deps.json
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\bin\Debug\net8.0-windows\Domain.dll
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\bin\Debug\net8.0-windows\Domain.pdb
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.csproj.AssemblyReference.cache
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.AssemblyInfoInputs.cache
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.AssemblyInfo.cs
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.csproj.CoreCompileInputs.cache
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.sourcelink.json
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.dll
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\refint\Domain.dll
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.pdb
+C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\ref\Domain.dll

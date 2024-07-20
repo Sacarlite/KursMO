@@ -12,6 +12,7 @@ using Vievs.Pages.AdminsListPage;
 using Vievs.Pages.UsersListPage;
 using Vievs.Window;
 using Vievs.Windows.AboutWindow;
+using Vievs.Windows.AddUserWindow;
 using Vievs.Windows.AdminWindow;
 using Vievs.Windows.MainWindow;
 
@@ -27,6 +28,7 @@ namespace Vievs
             builder.RegisterType<Vievs.MainWindow.MainWindow>().As<IMainWindow>().InstancePerDependency();
             builder.RegisterType<Windows.AboutWindow.AboutWindow>().As<IAboutWindow>().InstancePerDependency();
             builder.RegisterType<Windows.AutorizationWindow.AutorizationWindow>().As<Windows.AutorizationWindow.IAutorizationWindow>().InstancePerDependency();
+            builder.RegisterType<AddUserWindow>().As<IAddUserWindow>().InstancePerDependency();
             //Регистрация менеджеров
             builder.RegisterType<WindowManager>().As<IWindowManager>().InstancePerDependency();
             builder.RegisterType<PageManager>().As<IPageManager>().InstancePerDependency();

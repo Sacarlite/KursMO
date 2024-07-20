@@ -12,7 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\vlade\\.nuget\\packages"
+      "C:\\Users\\ColizeumLigov\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
       "System.Reflection.NullabilityInfoContext.IsSupported": true,

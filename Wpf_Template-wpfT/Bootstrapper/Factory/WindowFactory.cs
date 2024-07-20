@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using VievModel.VievModels.AddUserVievModel;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.AutorizationVievModel;
 using VievModel.VievModels.ResearcherMainVievModel;
@@ -7,6 +8,7 @@ using VievModels.Windows;
 using Vievs;
 using Vievs.Windows;
 using Vievs.Windows.AboutWindow;
+using Vievs.Windows.AddUserWindow;
 using Vievs.Windows.AdminWindow;
 using Vievs.Windows.AutorizationWindow;
 using Vievs.Windows.MainWindow;
@@ -22,6 +24,7 @@ public class WindowFactory:IWindowFactory
         { typeof(IAdminVievModel), typeof(IAdminWindow)},
         { typeof(IAboutWindowVievModel), typeof(IAboutWindow)},
         { typeof(IAutorizationVievModel), typeof(IAutorizationWindow)},
+            { typeof(IAddUserVievModel), typeof(IAddUserWindow)},
     };
     public WindowFactory(IComponentContext componentContext)
     {
