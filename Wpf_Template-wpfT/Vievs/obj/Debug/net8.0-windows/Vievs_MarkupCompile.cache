@@ -13,7 +13,7 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 81494112348
 
 22356015460
-236653332750
+236-822278677
 Pages\AdminsListPage\AdminsListPage.xaml;Pages\MethodsListPage\MethodsListPage.xaml;Pages\UsersListPage\UsersListsPage.xaml;Windows\AboutWindow\AboutWindow.xaml;Windows\AdminWindow\AdminWindow.xaml;Windows\AutorizationWindow\AutorizationWindow.xaml;Windows\MainWindow\MainWindow.xaml;Windows\RegistrationWindow\RegistrationWindow.xaml;
 
 False

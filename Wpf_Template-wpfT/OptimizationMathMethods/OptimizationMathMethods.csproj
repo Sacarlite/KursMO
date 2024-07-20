@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MetaInfo\MetaInfo.csproj" />
+    <ProjectReference Include="..\MetaInfo\MetaInfo.csproj" />
   </ItemGroup>
 
 </Project>

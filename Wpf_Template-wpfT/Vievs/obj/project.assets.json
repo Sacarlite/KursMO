@@ -1968,8 +1968,8 @@
     },
     "MetaInfo/1.0.0": {
       "type": "project",
-      "path": "../../../MetaInfo/MetaInfo.csproj",
-      "msbuildProject": "../../../MetaInfo/MetaInfo.csproj"
+      "path": "../MetaInfo/MetaInfo.csproj",
+      "msbuildProject": "../MetaInfo/MetaInfo.csproj"
     },
     "OptimizationMathMethods/1.0.0": {
       "type": "project",

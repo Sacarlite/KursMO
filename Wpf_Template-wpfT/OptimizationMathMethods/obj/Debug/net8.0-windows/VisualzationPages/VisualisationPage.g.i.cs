@@ -61,8 +61,7 @@ namespace OptimizationMathMethods.VisualzationPages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/OptimizationMathMethods;V1.0.0.0;component/visualzationpages/visualisationpage.x" +
-                    "aml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/OptimizationMathMethods;component/visualzationpages/visualisationpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\VisualzationPages\VisualisationPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

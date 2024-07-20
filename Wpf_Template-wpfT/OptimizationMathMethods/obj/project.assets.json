@@ -389,8 +389,8 @@
     },
     "MetaInfo/1.0.0": {
       "type": "project",
-      "path": "../../../MetaInfo/MetaInfo.csproj",
-      "msbuildProject": "../../../MetaInfo/MetaInfo.csproj"
+      "path": "../MetaInfo/MetaInfo.csproj",
+      "msbuildProject": "../MetaInfo/MetaInfo.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -431,8 +431,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\vlade\\source\\repos\\MetaInfo\\MetaInfo.csproj": {
-              "projectPath": "C:\\Users\\vlade\\source\\repos\\MetaInfo\\MetaInfo.csproj"
+            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj": {
+              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj"
             }
           }
         }
