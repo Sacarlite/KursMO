@@ -49,11 +49,7 @@ namespace VievModel.VievModels.ResearcherMainVievModel
         private Point extraNum;
         [ObservableProperty]
         private Page visualizationFrame;
-        [RelayCommand]
-        private void Calculation()
-        {
-            var a = 0;
-        }
+     
         public string Version => $"Version {_aplicationVersionProvider.Version.ToString(3)}";
 
         public string Title => "OptKurs";

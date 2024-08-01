@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 using VievModel.PageVievModels;
-using VievModel.PageVievModels.UserPageVievModel;
+using VievModel.PageVievModels.MethodsPageVievModel;
 using VievModel.VievModels.AddUserVievModel;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.AutorizationVievModel;
@@ -33,10 +33,10 @@ namespace VievModel
             builder.RegisterType<AddUserVievModel>().As<IAddUserVievModel>()
              .InstancePerDependency();
             //Регистрация VievModels страниц
-            builder.RegisterType<UserPageVievModel>().As<IUserPageVievModel>()
-               .InstancePerDependency();
             builder.RegisterType<AdminPageVievModel>().As<IAdminPageVievModel>()
                .InstancePerDependency();
+            builder.RegisterType<MethodsPageVievModel>().As<IMethodsPageVievModel>()
+          .InstancePerDependency();
             base.Load(builder);
         }
     }

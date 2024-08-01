@@ -10,11 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Vievs;
 using VievModel.PageVievModels;
-using VievModel.PageVievModels.UserPageVievModel;
 using VievModel.VievModels.MainWindow.ControlsVievModel;
 using VievModel.Windows;
 using VievModels.Windows;
 using Vievs.Page;
+using VievModel.PageVievModels.MethodsPageVievModel;
 
 namespace VievModel.VievModels.AdminMainVievModel
 {
@@ -24,11 +24,17 @@ namespace VievModel.VievModels.AdminMainVievModel
         private readonly IPageManager pageManager;
         [ObservableProperty]
         System.Windows.Controls.Page adminsListPage;
-        public AdminVievModel(IAdminWindowMementoWrapper adminWindowMementoWrapper, IPageVievModelsFactory<IAdminPageVievModel> adminsPageVievModelsFactory,
-            IPageVievModelsFactory<IUserPageVievModel> userPageVievModelsFactory, Vievs.Page.IPageManager pageManager)
+        [ObservableProperty]
+        System.Windows.Controls.Page methodsListPage;
+        public AdminVievModel(IAdminWindowMementoWrapper adminWindowMementoWrapper, IPageVievModelsFactory<IAdminPageVievModel> adminsPageVievModelsFactory, 
+            IPageVievModelsFactory<IMethodsPageVievModel> methodsListPageVievModelFactory,
+           Vievs.Page.IPageManager pageManager)
          : base(adminWindowMementoWrapper)
     {
         _windowMementoWrapper = adminWindowMementoWrapper;
+            var methodsListPageVievModel = methodsListPageVievModelFactory.Create();
+            MethodsListPage = pageManager.GetPage(methodsListPageVievModel);
+
             var adminsPageVievModel = adminsPageVievModelsFactory.Create();
             AdminsListPage = pageManager.GetPage(adminsPageVievModel);
 

@@ -5,143 +5,190 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Vievs.Pages.MethodsListPage" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:ia="http://schemas.microsoft.com/xaml/behaviors"
+      d:DesignHeight="400" d:DesignWidth="500"
       Title="MethodsListPage">
-
+    <Page.Resources>
+        <Style x:Key="myLBStyle" TargetType="{x:Type ListBoxItem}">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                         Color="white"/>
+            </Style.Resources>
+        </Style>
+    </Page.Resources>
+    <ia:Interaction.Triggers>
+        <ia:EventTrigger EventName="Loaded">
+            <ia:InvokeCommandAction Command="{Binding PageLoadingCommand}"/>
+        </ia:EventTrigger>
+    </ia:Interaction.Triggers>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <materialDesign:Card
- Width="200"
->
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="3*" />
-                        <RowDefinition Height="1*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="0*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Row="1" Grid.Column="1">
-                        <Viewbox>
-                            <materialDesign:Card
-       Width="Auto"
-       >
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition
-                   Height="*" />
-                                        <RowDefinition
-                   Height="*" />
-                                        <RowDefinition
-                   Height="*" />
-                                        <RowDefinition
-                   Height="*" />
-                                        <RowDefinition
-                    Height="*" />
-                                        <RowDefinition
-                    Height="*" />
-                                        <RowDefinition
-                   Height="125" />
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
-                                            <materialDesign:PackIcon Kind="CogOutline" HorizontalAlignment="Center" Foreground="#4dbbfa" Height="50"  Width="50" />
-                                        </StackPanel>
-
-                                    </Grid>
-                                    <Grid Grid.Row="1" Margin="10 15 25 0">
-                                        <TextBox
-                   materialDesign:HintAssist.Hint="Название"
-                   MinWidth="250"
-                   BorderBrush="#4dbbfa"
-                   Text="{Binding  Name}"
-               />
-                                    </Grid>
-                                    <Grid Grid.Row="2" Margin="10 15 25 0">
-                                        <TextBox
-    Height="100"
-    VerticalAlignment="Top"
-    materialDesign:HintAssist.Hint="Описание"
-    AcceptsReturn="True"
-    Style="{StaticResource MaterialDesignOutlinedTextBox}"
-    TextWrapping="Wrap"
-    Text="{Binding Description}"
-    VerticalScrollBarVisibility="Auto"
-    />
-                                    </Grid>
-                                    <Grid Grid.Row="3" Margin="10 15 25 0">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Button
-
-  Style="{StaticResource MaterialDesignIconForegroundButton}"
-  ToolTip="MaterialDesignIconForegroundButton"
+       
+            <materialDesign:ColorZone
+  Padding="16"
+  Mode="PrimaryMid"
  >
-                                            <materialDesign:PackIcon
-    Kind="Plus"
-    />
-                                        </Button>
-                                            <Label Content="{Binding MethodPath}"/>
-                                        </StackPanel>
-                                    </Grid>
-                                    <Grid Grid.Row="6" Margin="0 15 0 10">
-                                        <Button  VerticalAlignment="Center" HorizontalAlignment="Center"
-                        MinWidth="125" MinHeight="60" Content="Сохранить"
-                        materialDesign:ColorZoneAssist.Mode="Light"
-                        BorderBrush="#4dbbfa"
-                        Background="#4dbbfa"  
-                        materialDesign:ElevationAssist.Elevation="Dp2"
-                        materialDesign:ButtonAssist.CornerRadius="25"
-                        Command="{Binding LoginUserCommand}"/>
-                                    </Grid>
-                                </Grid>
-                            </materialDesign:Card>
-                        </Viewbox>
-                    </Grid>
-                </Grid>
-            </materialDesign:Card>
-        </Grid>
-        <Grid Grid.Column="1">
-            <StackPanel>
-                <ListView
- ItemsSource="{Binding Admins}"
->
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn
-       DisplayMemberBinding="{Binding MethodName}"
-       Header="Название метода" />
-                            <GridViewColumn
-       Header="Options">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Button
-                                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                                     Style="{StaticResource MaterialDesignIconForegroundButton}"
-                                     ToolTip="MaterialDesignIconForegroundButton">
-                                            <materialDesign:PackIcon
-                                           Kind="Close"
-                                           />
-                                        </Button>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                        </GridView>
+            <StackPanel Orientation="Vertical">
+                <DockPanel
+   >
+                    <Label     DockPanel.Dock="Right">Методы</Label>
+                    <ToggleButton
+                IsChecked="{Binding Data}"
+                VerticalAlignment="Center"
+                DockPanel.Dock="Right" />       
+                    <Label     DockPanel.Dock="Right">Классификация</Label>
+                    <Button
+                    Margin="5 0 5 0"
+                    materialDesign:ElevationAssist.Elevation="Dp8"
+                           materialDesign:ButtonAssist.CornerRadius="25"
+                                DockPanel.Dock="Right"
+                        Command="{Binding AddDataCommand}"
+                    >
+                        <TextBlock
+                    Text="{Binding AddButtonText}" />
+                    </Button>
+                    <StackPanel
+      materialDesign:RippleAssist.IsCentered="True"
+      Orientation="Horizontal">
 
-                    </ListView.View>
-                </ListView>
-                <Button HorizontalAlignment="Left" Tag="{Binding ElementName=LinkTarget, Path=Text}" Style="{StaticResource HyperlinkButton}" Focusable="False">
-                    <TextBlock>
-         <Hyperlink Focusable="False">Добавить пользователя</Hyperlink>
-                    </TextBlock>
-                </Button>
+                        <ComboBox
+        Margin="8,0,0,0"
+        materialDesign:ColorZoneAssist.Mode="Standard"
+        materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource MaterialDesignPaper}"
+        BorderBrush="{DynamicResource MaterialDesignPaper}"
+        ItemsSource="{Binding Classifications}"
+        SelectedItem="{Binding SelectedClassification}"                 
+        Visibility="{Binding MethodsVisability}"
+        BorderThickness="0"
+        SelectedIndex="0"/>
+                        <materialDesign:ColorZone
+        Margin="8,0,0,0"
+        Padding="8,4,8,4"
+        Panel.ZIndex="1"
+        materialDesign:ElevationAssist.Elevation="Dp2"
+        CornerRadius="2"
+        Mode="Standard">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+              Width="Auto" />
+                                    <ColumnDefinition
+              Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button
+            Style="{StaticResource MaterialDesignToolButton}"
+                                    Command="{Binding SearchCommand}"
+                                    >
+                                    <materialDesign:PackIcon
+              Kind="Search"
+              Opacity=".56" />
+                                </Button>
+                                <TextBox
+            Grid.Column="1"
+            MinWidth="200"
+            Margin="8,0,8,0"
+            VerticalAlignment="Center"
+            materialDesign:HintAssist.Hint="Build a search bar"
+            materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+            BorderThickness="0" 
+            Text="{Binding SerchedName}"/>
+
+                            </Grid>
+                        </materialDesign:ColorZone>
+
+                    </StackPanel>
+                </DockPanel>
+                <ListBox Margin="5" Background="#646b63"  ItemContainerStyle="{StaticResource myLBStyle}" 
+                         ItemsSource="{Binding Methods,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         Style="{StaticResource MaterialDesignCardsListBox}" x:Name="methodsList" Visibility="{Binding MethodsVisability}">
+                    <ListBox.ItemTemplate >
+                        <DataTemplate >
+
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBox MinWidth="100"
+                     Background="#646b63"     
+         materialDesign:HintAssist.Hint="Название"
+                         materialDesign:HintAssist.Background="#646b63"
+         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+         HorizontalContentAlignment="Center"
+         Margin="5,0,6,0"
+         VerticalAlignment="Center"
+         VerticalContentAlignment="Center"
+         Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox MinWidth="100"
+                        Background="#646b63"     
+            materialDesign:HintAssist.Hint="Путь"
+                            materialDesign:HintAssist.Background="#646b63"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            HorizontalContentAlignment="Center"
+            Margin="5,0,6,0"
+            VerticalAlignment="Center"
+            VerticalContentAlignment="Center"
+            Text="{Binding Path, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBlock
+    Margin="5,0,6,0"
+    Text="{Binding Description}"
+                                    TextWrapping="Wrap" />
+                                <ComboBox HorizontalContentAlignment="Center"
+Margin="5,0,6,0" ItemsSource="{Binding Path = DataContext.Classifications, Source={x:Reference Name=methodsList }}" SelectedItem="{Binding Classification}" />
+                                <Button
+                    Background="#646b63" 
+    Margin="5,0"
+    Command="{Binding Path = DataContext.DeleteMethodCommand, Source={x:Reference Name=methodsList }}"
+    CommandParameter="{Binding Id}"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+    ToolTip="MaterialDesignFloatingActionMiniLightButton">
+                                    <materialDesign:PackIcon
+        Width="30"
+        Height="30"
+        Kind="Delete" />
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ListBox Margin="5" Background="#646b63"  ItemContainerStyle="{StaticResource myLBStyle}" 
+                     ItemsSource="{Binding Classifications,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource MaterialDesignCardsListBox}" Visibility="{Binding ClassificationVisability}"
+                         x:Name="classificationList">
+                    <ListBox.ItemTemplate >
+                        <DataTemplate >
+
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBox MinWidth="100"
+                 Background="#646b63"     
+     materialDesign:HintAssist.Hint="Login"
+                     materialDesign:HintAssist.Background="#646b63"
+     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+     HorizontalContentAlignment="Center"
+     Margin="5,0,6,0"
+     VerticalAlignment="Center"
+     VerticalContentAlignment="Center"
+     Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                               
+                                <Button
+                Background="#646b63" 
+Margin="5,0"
+Command="{Binding Path = DataContext.DeleteClassificationCommand, Source={x:Reference Name=classificationList }}"
+CommandParameter="{Binding Id}"
+VerticalAlignment="Center"
+HorizontalAlignment="Center"
+Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+ToolTip="MaterialDesignFloatingActionMiniLightButton">
+                                    <materialDesign:PackIcon
+    Width="30"
+    Height="30"
+    Kind="Delete" />
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </StackPanel>
-        </Grid>
+        </materialDesign:ColorZone>
+            
+      
     </Grid>
 </Page>

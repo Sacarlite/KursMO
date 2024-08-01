@@ -2108,24 +2108,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ColizeumLigov\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\vlade\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\Bootstrapper.csproj",
+      "projectUniqueName": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\Bootstrapper.csproj",
       "projectName": "Bootstrapper",
-      "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\Bootstrapper.csproj",
-      "packagesPath": "C:\\Users\\ColizeumLigov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\obj\\",
+      "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\Bootstrapper.csproj",
+      "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vlade\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ColizeumLigov\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2140,20 +2135,20 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj"
+            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj"
             },
-            "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\PasswordService\\PasswordService.csproj": {
-              "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\PasswordService\\PasswordService.csproj"
+            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\PasswordService\\PasswordService.csproj": {
+              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\PasswordService\\PasswordService.csproj"
             },
-            "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj": {
-              "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj"
+            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj": {
+              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj"
             },
-            "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj": {
-              "projectPath": "C:\\Users\\ColizeumLigov\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj"
+            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj": {
+              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj"
             }
           }
         }
@@ -2209,7 +2204,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

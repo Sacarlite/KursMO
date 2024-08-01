@@ -9,7 +9,7 @@ using VievModel.VievModels.ResearcherMainVievModel;
 using VievModels.Windows;
 using Vievs.Page;
 using Vievs.Pages.AdminsListPage;
-using Vievs.Pages.UsersListPage;
+using Vievs.Pages.MethodsListPage;
 using Vievs.Window;
 using Vievs.Windows.AboutWindow;
 using Vievs.Windows.AddUserWindow;
@@ -33,9 +33,8 @@ namespace Vievs
             builder.RegisterType<WindowManager>().As<IWindowManager>().InstancePerDependency();
             builder.RegisterType<PageManager>().As<IPageManager>().InstancePerDependency();
             //Регистрация страниц
-            builder.RegisterType<UsersListPage>().As<IUsersListPage>().InstancePerDependency();
             builder.RegisterType<AdminsListPage>().As<IAdminsListPage>().InstancePerDependency();
-
+            builder.RegisterType<MethodsListPage>().As<IMethodsListPage>().InstancePerDependency();
             base.Load(builder);
         }
     }

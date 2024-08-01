@@ -57,7 +57,6 @@ C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-wind
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\RegistrationWindow\RegistrationWindow.baml
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Pages\AdminsListPage\AdminsListPage.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Pages\MethodsListPage\MethodsListPage.g.cs
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Pages\UsersListPage\UsersListsPage.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AboutWindow\AboutWindow.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AdminWindow\AdminWindow.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AutorizationWindow\AutorizationWindow.g.cs
@@ -78,7 +77,6 @@ C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-wind
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-windows\OptimizationMathMethods.pdb
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Pages\AdminsListPage\AdminsListPage.baml
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Pages\MethodsListPage\MethodsListPage.baml
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Pages\UsersListPage\UsersListsPage.baml
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AboutWindow\AboutWindow.baml
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AdminWindow\AdminWindow.baml
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AutorizationWindow\AutorizationWindow.baml
@@ -135,3 +133,7 @@ C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\refint\Vievs.dll
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Vievs.pdb
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\ref\Vievs.dll
+C:\Users\vlade\Source\Repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AddUserWindow\AddUserWindow.g.cs
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-windows\Infrastructure.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-windows\Infrastructure.pdb
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AddUserWindow\AddUserWindow.baml

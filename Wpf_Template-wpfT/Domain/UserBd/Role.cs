@@ -12,6 +12,11 @@ namespace Domain.UserBd
  
     public class Role
     {
+        public Role(string? name)
+        {
+            Name = name;
+        }
+
         public int Id { get; set; }
         [Required, Display(Name = "Роль"), Column(TypeName = "varchar(25)")]
         public string? Name { get; set; }

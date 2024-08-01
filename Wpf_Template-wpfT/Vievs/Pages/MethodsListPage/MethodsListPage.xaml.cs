@@ -12,16 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VievModel.PageVievModels.MethodsPageVievModel;
 
 namespace Vievs.Pages.MethodsListPage
 {
     /// <summary>
     /// Логика взаимодействия для MethodsListPage.xaml
     /// </summary>
-    public partial class MethodsListPage : System.Windows.Controls.Page
+    public partial class MethodsListPage : System.Windows.Controls.Page, IMethodsListPage
     {
-        public MethodsListPage()
+        public MethodsListPage(IMethodsPageVievModel methodsPageVievModel)
         {
+            DataContext = methodsPageVievModel;
             InitializeComponent();
         }
     }

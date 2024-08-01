@@ -3,156 +3,103 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Vievs.Pages.AdminsListPage" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Vievs.Pages.AdminsListPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:ia="http://schemas.microsoft.com/xaml/behaviors"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminsListPage">
+      Title="AdminsListPage"
+      Background="#646b63"
+     >
+    <Page.Resources>
+        <Style x:Key="myLBStyle" TargetType="{x:Type ListBoxItem}">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                             Color="white"/>
+            </Style.Resources>
+        </Style>
+        </Page.Resources>
     <ia:Interaction.Triggers>
         <ia:EventTrigger EventName="Loaded">
             <ia:InvokeCommandAction Command="{Binding PageLoadingCommand}"/>
         </ia:EventTrigger>
     </ia:Interaction.Triggers>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition />
-            <ColumnDefinition Width="2*" />
-
-
-        </Grid.ColumnDefinitions>
-        <Grid>
-            <materialDesign:Card Margin="3">
-                <GroupBox
-                  Margin="4"
-                  Header="Администраторы">
-                    <ScrollViewer HorizontalScrollBarVisibility="Disabled"
-                                VerticalScrollBarVisibility="Auto">
-                        <ListBox ItemsSource="{Binding Admins}"
-                               Style="{StaticResource MaterialDesignCardsListBox}">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Viewbox>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBox MinWidth="100"
-                                                   materialDesign:HintAssist.Hint="Login"
-                                                   Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                                                   HorizontalContentAlignment="Center"
-                                                   Margin="5,0,6,0"
-                                                   VerticalAlignment="Center"
-                                                   VerticalContentAlignment="Center"
-                                                   Text="{Binding Name}" />
-
-                                            <PasswordBox
-                                              Margin="10"
-                                              materialDesign:PasswordBoxAssist.Password="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}"
-                                              materialDesign:HintAssist.Hint="Password"
-                                              materialDesign:TextFieldAssist.HasClearButton="True"
-                                              IsEnabled="{Binding ElementName=RevealPasswordOutlinedEnabled, Path=IsChecked}"
-                                              Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
-                                              VerticalContentAlignment="Bottom" />
-
-                                            <Button
-                                              Margin="5,0"
-                                              Command="{Binding DeleteUserCommand, Source={StaticResource UserModel}}"
-
-                                              CommandParameter="{Binding }"
-
-
-                                              VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"
-                                              Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
-                                              ToolTip="MaterialDesignFloatingActionMiniLightButton">
-                                                <materialDesign:PackIcon
-                                                  Width="30"
-                                                  Height="30"
-                                                  Kind="Delete" />
-                                            </Button>
-                                        </StackPanel>
-                                    </Viewbox>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </ScrollViewer>
-
-                </GroupBox>
-            </materialDesign:Card>
-
-        </Grid>
-        <Grid Grid.Column="1">
-            <materialDesign:Card Margin="3">
-                <Viewbox>
-                    <Button
-                      Command="{Binding AddUserCommand }"
-                      HorizontalAlignment="Center" VerticalAlignment="Center"
-                      Margin="10" Style="{ StaticResource MaterialDesignFloatingActionLightButton}">
-                        <materialDesign:PackIcon
-                          Width="40"
-                          Height="40"
-                          Kind="Plus" />
+        <materialDesign:ColorZone
+            Margin="1"
+  Padding="16"
+  Mode="PrimaryMid"
+ >
+            <StackPanel Orientation="Vertical">
+                <DockPanel >
+                <Label     DockPanel.Dock="Right">Администраторы</Label>
+                <ToggleButton
+                    IsChecked="{Binding Role}"
+      VerticalAlignment="Center"
+      DockPanel.Dock="Right" />
+                <Label     DockPanel.Dock="Right">Пользователи</Label>
+                <StackPanel
+      materialDesign:RippleAssist.IsCentered="True"
+      Orientation="Horizontal">
+                    <Button   materialDesign:ElevationAssist.Elevation="Dp8"
+                                 materialDesign:ButtonAssist.CornerRadius="25"
+                              Command="{Binding AddUserCommand}"
+                          >
+                        <TextBlock
+      Text="Добавить пользователя" />
                     </Button>
 
-                </Viewbox>
-            </materialDesign:Card>
-        </Grid>
 
-        <Grid Grid.Column="2">
-            <materialDesign:Card Margin="3">
-                <GroupBox
-                  Margin="4"
-                  Header="Исследователи"
-                    >
-                    <ScrollViewer HorizontalScrollBarVisibility="Disabled"
-                                VerticalScrollBarVisibility="Auto">
-                        <ListBox ItemsSource="{Binding Researchers}"
-                               Style="{StaticResource MaterialDesignCardsListBox}">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Viewbox>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBox MinWidth="100"
-                                                   materialDesign:HintAssist.Hint="Login"
-                                                   Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                                                   HorizontalContentAlignment="Center"
-                                                   Margin="5,0,6,0"
-                                                   VerticalAlignment="Center"
-                                                   VerticalContentAlignment="Center"
-                                                   Text="{Binding Name}" />
 
-                                            <PasswordBox
-                                              Margin="10"
-                                              materialDesign:PasswordBoxAssist.Password="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}"
-                                              materialDesign:HintAssist.Hint="Password"
-                                              materialDesign:TextFieldAssist.HasClearButton="True"
-                                              IsEnabled="{Binding ElementName=RevealPasswordOutlinedEnabled, Path=IsChecked}"
-                                              Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
-                                              VerticalContentAlignment="Bottom" />
+                </StackPanel>
+                
+            </DockPanel>
+                <ListBox Margin="5" Background="#646b63"  ItemContainerStyle="{StaticResource myLBStyle}" ItemsSource="{Binding ConsideredUsers,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignCardsListBox}" x:Name="userList">
+                    <ListBox.ItemTemplate >
+                        <DataTemplate >
 
-                                            <Button
-                                              Margin="5,0"
-                                              Command="{Binding DeleteUserCommand, Source={StaticResource UserModel}}"
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBox MinWidth="100"
+                                     Background="#646b63"     
+                         materialDesign:HintAssist.Hint="Login"
+                                         materialDesign:HintAssist.Background="#646b63"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                         HorizontalContentAlignment="Center"
+                         Margin="5,0,6,0"
+                         VerticalAlignment="Center"
+                         VerticalContentAlignment="Center"
+                         Text="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-                                              CommandParameter="{Binding }"
-
-                                              VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"
-                                              Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}">
-
-                                                <materialDesign:PackIcon
-                                                  Width="30"
-                                                  Height="30"
-                                                  Kind="Delete" />
-                                            </Button>
-                                        </StackPanel>
-                                    </Viewbox>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </ScrollViewer>
-                </GroupBox>
-            </materialDesign:Card>
-
-        </Grid>
+                                <PasswordBox
+                    Margin="10"
+                                    Background="#646b63" 
+                    materialDesign:PasswordBoxAssist.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    materialDesign:HintAssist.Hint="Password"
+                                    materialDesign:HintAssist.Background="#646b63"
+                    materialDesign:TextFieldAssist.HasClearButton="True"
+                    Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
+                    VerticalContentAlignment="Bottom" />
+                                <Button
+                                    Background="#646b63" 
+                    Margin="5,0"
+                    Command="{Binding Path = DataContext.DeleteUserCommand, Source={x:Reference Name=userList }}"
+                    CommandParameter="{Binding Id}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                    ToolTip="MaterialDesignFloatingActionMiniLightButton">
+                                    <materialDesign:PackIcon
+                        Width="30"
+                        Height="30"
+                        Kind="Delete" />
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </materialDesign:ColorZone>
+        
     </Grid>
 
 </Page>

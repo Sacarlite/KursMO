@@ -28,28 +28,10 @@
                             <TextBlock
 
             HorizontalAlignment="Center"
-            Text="Администраторы" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Frame Content="{Binding AdminsListPage}"></Frame>
-                </TabItem>
-                <TabItem Width="auto">
-                    <TabItem.Header>
-                        <StackPanel
-          Width="auto"
-          Height="auto"
-                                Margin="5">
-                            <materialDesign:PackIcon
-            Width="24"
-            Height="24"
-            HorizontalAlignment="Center"
-            Kind="Account" />
-                            <TextBlock
-            HorizontalAlignment="Center"
             Text="Пользователи" />
                         </StackPanel>
                     </TabItem.Header>
-                  
+                    <Frame Content="{Binding AdminsListPage}"></Frame>
                 </TabItem>
                 <TabItem Width="auto">
                     <TabItem.Header>
@@ -67,7 +49,7 @@
             Text="Методы" />
                         </StackPanel>
                     </TabItem.Header>
-                    
+                    <Frame Content="{Binding MethodsListPage}"></Frame>
                 </TabItem>
                 <TabItem Width="auto">
                     <TabItem.Header>

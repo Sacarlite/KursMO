@@ -23,29 +23,46 @@ namespace VievModel.VievModels.AddUserVievModel
         [ObservableProperty]
         List<Role> roles;
         [ObservableProperty]
-        Role selectedRole;
+        [NotifyCanExecuteChangedFor(nameof(AddUserCommand))]
+        Role? selectedRole;
         [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(AddUserCommand))]
         private string login = "";
         [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(AddUserCommand))]
         private string password = "";
 
-        public event Action<IEventArgs> AddNewUser;
+        public event Action<User?> AddNewUser;
         public event Action WindowClosingAct;
 
         public AddUserVievModel(IAddUserWindowMementoWrapper addUserWindowMementoWrapper, IUserDatabaseLocator userDatabaseLocator) :base(addUserWindowMementoWrapper)
         {
             this.addUserWindowMementoWrapper = addUserWindowMementoWrapper;
             this.userDatabaseLocator = userDatabaseLocator;
+            Roles= userDatabaseLocator.Context.Roles.ToList();
         }
+
+
         private bool CanOk()
         {
-            return selectedRole.Name != "" && !string.IsNullOrEmpty(Login) && !string.IsNullOrEmpty(Password);
+            if (SelectedRole is null)
+            {
+                return false;
+            }
+            return SelectedRole.Name != "" && !string.IsNullOrEmpty(Login) && !string.IsNullOrEmpty(Password);
         }
         [RelayCommand(CanExecute = nameof(CanOk))]
         void AddUser(Window window)
         {
-            AddNewUser?.Invoke(new UserEventArgs(new User(login,password,selectedRole)));
-            window.Close();
+            var user = new User(Login, Password);
+            user.Role = SelectedRole!;
+            userDatabaseLocator.Context.Users.Add(user);
+            userDatabaseLocator.Context.SaveChanges();
+            Login = "";
+            Password = "";
+            SelectedRole = null;
+            AddNewUser?.Invoke(user);
+            WindowClosingAct?.Invoke();
         }
         public void Dispose()
         {

@@ -54,7 +54,7 @@
             Margin="10"
             materialDesign:ButtonAssist.CornerRadius="10" Style="{StaticResource MaterialDesignRaisedButton}"
                 Content="Создать" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                Command="{Binding OkCommand}" CommandParameter="{Binding ElementName=this}" />
+                Command="{Binding AddUserCommand}"/>
             </Viewbox>
 
         </Grid>

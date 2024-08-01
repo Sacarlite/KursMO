@@ -1,4 +1,5 @@
-﻿using Domain.UserEventArgs;
+﻿using Domain.UserBd;
+using Domain.UserEventArgs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace VievModel.VievModels.AddUserVievModel
 {
     public interface IAddUserVievModel : IWindowViewModel, IDisposable
     {
-        event Action<IEventArgs> AddNewUser;
+        event Action<User?> AddNewUser;
         event Action WindowClosingAct;
             }
 }

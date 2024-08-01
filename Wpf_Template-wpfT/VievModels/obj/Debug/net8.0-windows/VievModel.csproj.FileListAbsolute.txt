@@ -71,3 +71,5 @@ C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\VievModels\obj\Debu
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\VievModels\obj\Debug\net8.0-windows\refint\VievModel.dll
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\VievModels\obj\Debug\net8.0-windows\VievModel.pdb
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\VievModels\obj\Debug\net8.0-windows\ref\VievModel.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\VievModels\bin\Debug\net8.0-windows\Infrastructure.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\VievModels\bin\Debug\net8.0-windows\Infrastructure.pdb

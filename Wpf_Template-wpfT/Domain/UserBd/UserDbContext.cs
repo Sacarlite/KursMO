@@ -11,6 +11,7 @@ namespace Domain.UserBd
     {
         public UserDbContext() : base()
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
@@ -19,5 +20,6 @@ namespace Domain.UserBd
             optionsBuilder.UseSqlite(@"Data Source= Users.db");
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
     }
     }

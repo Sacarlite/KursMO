@@ -8,6 +8,7 @@ namespace Domain.MethodsBD
     {
         public MethodsDbContext() : base()
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
@@ -15,6 +16,7 @@ namespace Domain.MethodsBD
         {
             optionsBuilder.UseSqlite(@"Data Source= method.db");
         }
-        public DbSet<Method> Users { get; set; }
+        public DbSet<Method> Methods { get; set; }
+        public DbSet<Сlassification> Сlasses { get; set; }
     }
 }

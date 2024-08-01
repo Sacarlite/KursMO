@@ -18,9 +18,9 @@ using Vievs;
 using Vievs.Pages;
 using VievModel.PageVievModels;
 using Vievs.Pages.AdminsListPage;
-using VievModel.PageVievModels.UserPageVievModel;
-using Vievs.Pages.UsersListPage;
 using System.Windows.Controls;
+using VievModel.PageVievModels.MethodsPageVievModel;
+using Vievs.Pages.MethodsListPage;
 
 namespace Bootstrapper.Factory
 {
@@ -29,8 +29,8 @@ namespace Bootstrapper.Factory
         private IComponentContext _componentContext;
         private readonly Dictionary<Type, Type> _map = new Dictionary<Type, Type>()
         {
-           { typeof(IAdminPageVievModel), typeof(IAdminsListPage)},
-             { typeof(IUserPageVievModel), typeof(IUsersListPage)},
+           { typeof(IAdminPageVievModel), typeof(IAdminsListPage) },
+             {   typeof(IMethodsPageVievModel), typeof(IMethodsListPage)}
     };
         public PageFactory(IComponentContext componentContext)
         {
