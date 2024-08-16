@@ -8,10 +8,12 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using static MaterialDesignThemes.Wpf.Theme.ToolBar;
 
 namespace VievModel.PageVievModels.MethodsPageVievModel
 {
@@ -23,21 +25,37 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
         [ObservableProperty]
         string serchedName;
         [ObservableProperty]
-        ObservableCollection<Method> methods;
-        private ObservableCollection<Method> allMethods;
+        BindingList<Method> methods;
+        private BindingList<Method> allMethods;
         [ObservableProperty]
         string addButtonText;
         [ObservableProperty]
         ObservableCollection<Сlassification> classifications;
         private ObservableCollection<Сlassification> allClassifications;
        [ObservableProperty]
-        Сlassification selectedClassification;
+        Сlassification? selectedClassification;
         [ObservableProperty]
         Visibility classificationVisability= Visibility.Visible;
         [ObservableProperty]
         Visibility methodsVisability = Visibility.Collapsed;
         [ObservableProperty]
         private bool? data;
+        partial void OnSelectedClassificationChanged(Сlassification? value)
+        {
+                Methods = new BindingList<Method>(allMethods.Where(u => u.Classification== value).ToObservableCollection());
+
+        }
+     
+        private void ItemsViewModel()
+        {
+            Methods.ListChanged += Methods_ListChanged; ;
+        }
+
+        private void Methods_ListChanged(object? sender, ListChangedEventArgs e)
+        {
+            OnSelectedClassificationChanged(SelectedClassification);
+        }
+
         partial void OnDataChanging(bool? value)
         {
             if (value == true)
@@ -59,7 +77,7 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
         {
             if (Data == true)
             {
-                Methods = allMethods.Where(u => u.Name == SerchedName).ToObservableCollection();
+                Methods = new BindingList<Method>(allMethods.Where(u => u.Name == SerchedName).ToList());
             }
             else
             {
@@ -71,7 +89,7 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
         {
             if (Data == true)
             {
-                Methods = allMethods.Where(u => u.Name == SerchedName).ToObservableCollection();
+                Methods = new BindingList<Method>(allMethods.Where(u => u.Name == SerchedName).ToList());
             }
             else
             {
@@ -109,24 +127,23 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
         void PageLoading()
         {
             allClassifications = methodsDatabaseLocator.Context.Сlasses.ToObservableCollection();
-            Classifications = allClassifications;
-            allMethods = methodsDatabaseLocator.Context.Methods.ToObservableCollection();
+            allMethods = new BindingList<Method>(methodsDatabaseLocator.Context.Methods.ToObservableCollection());
             Methods = allMethods;
+            Classifications = allClassifications;
+            ItemsViewModel();
             Data = false;
+         
         }
+
+        private void Elem_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (SelectedClassification is not null)
+                Methods = new BindingList<Method>(allMethods.Where(u => u.Classification.Id == SelectedClassification.Id).ToObservableCollection());
+        }
+
         public MethodsPageVievModel(IMethodsDatabaseLocator methodsDatabaseLocator)
         {
             this.methodsDatabaseLocator = methodsDatabaseLocator;
-            Сlassification сlassification1 = new Сlassification("Test1");
-            Сlassification сlassification2 = new Сlassification("Test2");
-            methodsDatabaseLocator.Context.Сlasses.AddRange(сlassification1, сlassification2);
-            Method method1 = new Method("test", "test", "test") { Classification = сlassification1 };
-            Method method2 = new Method("test", "test", "test") { Classification = сlassification1 };
-            Method method3 = new Method("test", "test", "test") { Classification = сlassification1 };
-            Method method4 = new Method("test", "test", "test") { Classification = сlassification2 };
-            Method method5 = new Method("test", "test", "test") { Classification = сlassification2 };
-            methodsDatabaseLocator.Context.Methods.AddRange(method1, method2, method3, method4, method5);
-            methodsDatabaseLocator.Context.SaveChanges();
         }
 
         public void Dispose()

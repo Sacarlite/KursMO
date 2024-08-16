@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="VisualizationPages\Chart2D.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VisualizationPages\Chart3D.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VisualizationPages\PointTable.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="VisualizationPages\Chart2D.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualizationPages\Chart3D.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualizationPages\PointTable.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

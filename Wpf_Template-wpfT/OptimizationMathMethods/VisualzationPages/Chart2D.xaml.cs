@@ -25,7 +25,6 @@ namespace OptimizationMathMethods.VisualzationPages
         private List<double> dataX;
         private List<double> dataY;
         private List<double> dataZ;
-
         public Chart2D(List<List<MetaInfo.Point>> points)
         {
             InitializeComponent();
@@ -37,10 +36,25 @@ namespace OptimizationMathMethods.VisualzationPages
             {
                 points = new List<List<MetaInfo.Point>>() { };
             }
-        }
+            // The (x, y, z) coordinates of the scattered data
+            dataX = new List<double>();
+            dataY = new List<double>();
+            dataZ = new List<double>();
+            foreach (var elem in Points)
+            {
+                foreach (var point in elem)
+                {
+                    dataX.Add(point.T1);
+                    dataY.Add(point.T2);
+                    dataZ.Add(point.Cf);
+                }
+            }
 
-        private readonly List<List<MetaInfo.Point>> Points;
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+            // Draw the chart
+            WPFChartViewer1.updateViewPort(true, false);
+        }
+        private List<List<MetaInfo.Point>> Points;
+        private void Activate(object sender, RoutedEventArgs e)
         {
             // The (x, y, z) coordinates of the scattered data
             dataX = new List<double>();
@@ -126,5 +140,9 @@ namespace OptimizationMathMethods.VisualzationPages
             viewer.ImageMap = _chart.getHTMLImageMap("", "",
                 "title='<*cdml*>X: {x|2}<*br*>Y: {y|2}<*br*>Z: {z|2}'");
         }
+
+
+
+
     }
 }

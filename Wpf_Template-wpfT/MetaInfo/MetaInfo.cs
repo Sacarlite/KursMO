@@ -19,16 +19,7 @@ namespace MetaInfo
         public double T2 { get; set; }
         public double Cf { get; set; }
     }
-    public class Visualisation
-    {
-        public Visualisation(Page page,string name)
-        {
-            Page = page;
-            Name = name;
-        }
-        public Page Page { get; }
-        public string Name { get; }
-    }
+  
     public class CorrectionFactors
     {
         public CorrectionFactors(double alpfa, double betta, double mu, double delta, double g, double a, double n)

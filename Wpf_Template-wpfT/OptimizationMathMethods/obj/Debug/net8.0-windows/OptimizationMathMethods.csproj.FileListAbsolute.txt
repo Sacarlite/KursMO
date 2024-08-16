@@ -1,6 +1,4 @@
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\OptimizationMathMethods.csproj.AssemblyReference.cache
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\Chart2D.g.cs
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\Chart3D.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\VisualisationPage.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\OptimizationMathMethods_MarkupCompile.cache
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\OptimizationMathMethods_MarkupCompile.lref
@@ -9,8 +7,6 @@ C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\bin
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\bin\Debug\net8.0-windows\OptimizationMathMethods.pdb
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\bin\Debug\net8.0-windows\MetaInfo.dll
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\bin\Debug\net8.0-windows\MetaInfo.pdb
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\Chart2D.baml
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\Chart3D.baml
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\VisualisationPage.baml
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\OptimizationMathMethods.g.resources
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\OptimizationMathMethods.GeneratedMSBuildEditorConfig.editorconfig
@@ -48,3 +44,13 @@ C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\OptimizationMathMet
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\refint\OptimizationMathMethods.dll
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\OptimizationMathMethods.pdb
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\ref\OptimizationMathMethods.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\DefaultPage.g.cs
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\DefaultPage.baml
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\bin\Debug\net8.0-windows\Domain.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\bin\Debug\net8.0-windows\Domain.pdb
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\Chart2D.g.cs
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\Chart3D.g.cs
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\PointTable.g.cs
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\Chart2D.baml
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\Chart3D.baml
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\VisualzationPages\PointTable.baml

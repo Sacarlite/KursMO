@@ -7,36 +7,32 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:ia="http://schemas.microsoft.com/xaml/behaviors"
       mc:Ignorable="d" 
+      x:Name="VisualizationPage"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="VisualisationPage">
+      Title="VisualisationPage"
+      Background="White">
 
     <Grid>
-        <ia:Interaction.Triggers>
-            <ia:EventTrigger EventName="Loaded">
-                <ia:InvokeCommandAction Command="{Binding PageLoadingCommand}"/>
-            </ia:EventTrigger>
-        </ia:Interaction.Triggers>
+
         <materialDesign:Card
+            x:Name="VisualCard"
  >
             <TabControl
-    HorizontalContentAlignment="Left"
-    ItemsSource="{Binding Visualisations}"
+   HorizontalContentAlignment="Center"
+    Style="{StaticResource MaterialDesignFilledUniformTabControl}"
    >
-                <TabControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel
-          Orientation="Horizontal">
-                            <TextBlock
-            Text="{Binding Name}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </TabControl.ItemTemplate>
-                <TabControl.ContentTemplate>
-                    <DataTemplate
-        DataType="domain:CustomTab">
-                        <Frame Content="{Binding Page}"/>
-                    </DataTemplate>
-                </TabControl.ContentTemplate>
+                <TabItem
+      Header="2D График">
+                    <Frame Content="{Binding Chart2DPage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></Frame>
+                </TabItem>
+                <TabItem
+      Header="3D График">
+                    <Frame Content="{Binding Chart3DPage}"></Frame>
+                </TabItem>
+                <TabItem
+      Header="Таблица">
+                    <Frame Content="{Binding PointTablePage}"></Frame>
+                </TabItem>
             </TabControl>
         </materialDesign:Card>
     </Grid>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VievModel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8274c06e4713ac7808a96638064f4ce46b58e34")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e422860eb7ebde04075774b101554d9c232b868")]
 [assembly: System.Reflection.AssemblyProductAttribute("VievModel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VievModel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

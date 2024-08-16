@@ -5,13 +5,14 @@ using Infrastructure.Settings;
 using NLog;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.AutorizationVievModel;
+using VievModel.VievModels.MainVievModel;
 using VievModels.Windows;
 
 namespace Application;
 
 internal class Application : IApplication, IDisposable
 {
-    private static readonly ILogger Logger = LogManager.GetLogger(nameof(Application));
+    public static readonly ILogger Logger = LogManager.GetLogger(nameof(Application));
     private readonly ILifetimeScope _applicationlifetimeScope;
 
     public Application(ILifetimeScope lifetimeScope)
@@ -26,14 +27,13 @@ internal class Application : IApplication, IDisposable
     {
         InitializeDependencies();
         _applicationlifetimeScope.Resolve<IWindowMementoWrapperInitializer>();
-        var autorizationWindowVievModelFactory = _applicationlifetimeScope.Resolve<IWindowVievModelsFactory<IAdminVievModel>>();
-        var autorizationWindowVievModel = autorizationWindowVievModelFactory.Create();
-        var windowManager = _applicationlifetimeScope.Resolve<IWindowManager>();
-        var autorizationWindow = windowManager.Show(autorizationWindowVievModel);
+        var mainWindowVievModelFactory = _applicationlifetimeScope.Resolve<IWindowVievModelsFactory<IMainVievModel>>();        
+        var mainWindowVievModel = mainWindowVievModelFactory.Create();
+        var autorizationWindow =mainWindowVievModel.Run();
         if (autorizationWindow is not Window window) throw new NotImplementedException();
-
         return window;
     }
+
 
     public void Dispose()
     {

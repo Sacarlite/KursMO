@@ -34,7 +34,6 @@ namespace OptimizationMathMethods.VisualzationPages
         private bool m_isDragging;
         public Chart3D(List<List<MetaInfo.Point>> points)
         {
-
             InitializeComponent();
             if (points != null)
             {
@@ -44,10 +43,6 @@ namespace OptimizationMathMethods.VisualzationPages
             {
                 points = new List<List<MetaInfo.Point>>() { };
             }
-        }
-        private readonly List<List<MetaInfo.Point>> Points;
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
             // The (x, y, z) coordinates of the scattered data
             dataX = new List<double>();
             dataY = new List<double>();
@@ -73,6 +68,7 @@ namespace OptimizationMathMethods.VisualzationPages
             // Draw the chart
             WPFChartViewer1.updateViewPort(true, false);
         }
+        private readonly List<List<MetaInfo.Point>> Points;
         //
         // The ViewPortChanged event handler
         //
@@ -84,60 +80,46 @@ namespace OptimizationMathMethods.VisualzationPages
         }
         public void drawChart(WPFChartViewer viewer)
         {
-            // Create a XYChart object of size 450 x 540 pixels
-            XYChart _chart = new XYChart(450, 540);
+            // Create a SurfaceChart object of size 720 x 600 pixels
+            SurfaceChart c = new SurfaceChart(720, 600);
 
-            // Add a title to the chart using 15 points Arial Italic font
-            _chart.addTitle("      Contour Chart with Scattered Data", "Arial Italic", 15);
+            // Set the center of the plot region at (330, 290), and set width x depth x height to
+            // 360 x 360 x 270 pixels
+            c.setPlotRegion(330, 290, 360, 360, 270);
 
-            // Set the plotarea at (65, 40) and of size 360 x 360 pixels. Use semi-transparent black
-            // (c0000000) for both horizontal and vertical grid lines
-            _chart.setPlotArea(65, 40, 360, 360, -1, -1, -1, unchecked((int)0xc0000000), -1);
 
-            // Set x-axis and y-axis title using 12 points Arial Bold Italic font
-            _chart.xAxis().setTitle("T1-Axis Title Place Holder", "Arial Bold Italic", 10);
-            _chart.yAxis().setTitle("T2-Axis Title Place Holder", "Arial Bold Italic", 10);
+            // Set the data to use to plot the chart
+            c.setData(dataX.ToArray(), dataY.ToArray(), dataZ.ToArray());
 
-            // Set x-axis and y-axis labels to use Arial Bold font
-            _chart.xAxis().setLabelStyle("Arial Bold");
-            _chart.yAxis().setLabelStyle("Arial Bold");
+            // Spline interpolate data to a 80 x 80 grid for a smooth surface
+            c.setInterpolation(80, 80);
 
-            // When x-axis and y-axis color to transparent
-            _chart.xAxis().setColors(Chart.Transparent);
-            _chart.yAxis().setColors(Chart.Transparent);
+            // Set the view angles
+            c.setViewAngle(m_elevationAngle, m_rotationAngle);
 
-            // Add a scatter layer to the chart to show the position of the data points. Disable the
-            // image map for the scatter layer. We will use the contour layer to provide the
-            // tooltip.
-            _chart.addScatterLayer(dataX.ToArray(), dataY.ToArray(), "", Chart.Cross2Shape(0.2), 7, 0x000000
-                ).setHTMLImageMap("{disable}");
+            // Check if draw frame only during rotation
+            if (m_isDragging)
+                c.setShadingMode(Chart.RectangularFrame);
 
-            // Add a contour layer using the given data
-            ContourLayer layer = _chart.addContourLayer(dataX.ToArray(), dataY.ToArray(), dataZ.ToArray());
+            // Add a color axis (the legend) in which the left center is anchored at (660, 270). Set
+            // the length to 200 pixels and the labels on the right side.
+            c.setColorAxis(650, 270, Chart.Left, 200, Chart.Right);
 
-            // Move the grid lines in front of the contour layer
-            _chart.getPlotArea().moveGridBefore(layer);
+            // Set the x, y and z axis titles using 10 points Arial Bold font
+            c.xAxis().setTitle("X", "Arial Bold", 15);
+            c.yAxis().setTitle("Y", "Arial Bold", 15);
 
-            // Add a color axis (the legend) in which the top center is anchored at (245, 455). Set
-            // the length to 330 pixels and the labels on the top side.
-            ColorAxis cAxis = layer.setColorAxis(245, 455, Chart.TopCenter, 330, Chart.Top);
+            // Set axis label font
+            c.xAxis().setLabelStyle("Arial", 10);
+            c.yAxis().setLabelStyle("Arial", 10);
+            c.zAxis().setLabelStyle("Arial", 10);
+            c.colorAxis().setLabelStyle("Arial", 10);
 
-            // Add a bounding box to the color axis using the default line color as border.
-            cAxis.setBoundingBox(Chart.Transparent, Chart.LineColor);
-
-            // Add a title to the color axis using 12 points Arial Bold Italic font
-            cAxis.setTitle("Color Legend Title Place Holder", "Arial Bold Italic", 10);
-
-            // Set color axis labels to use Arial Bold font
-            cAxis.setLabelStyle("Arial Bold");
-
-            // Set the color axis range as 0 to 20, with a step every 2 units
-            cAxis.setLinearScale(0, 20, 2);
             // Output the chart
-            viewer.Chart = _chart;
+            viewer.Chart = c;
 
             //include tool tip for the chart
-            viewer.ImageMap = _chart.getHTMLImageMap("", "",
+            viewer.ImageMap = c.getHTMLImageMap("", "",
                 "title='<*cdml*>X: {x|2}<*br*>Y: {y|2}<*br*>Z: {z|2}'");
         }
         //
@@ -174,5 +156,9 @@ namespace OptimizationMathMethods.VisualzationPages
             m_isDragging = false;
             WPFChartViewer1.updateViewPort(true, false);
         }
+
+
+
+
     }
 }

@@ -18,7 +18,7 @@ public partial class App
         _bootstrapper = new ApplicationBootstrapper();
         DispatcherUnhandledException += OnUnhandledExeptionRised;
         var _application = _bootstrapper.CreateApplication();
-        MainWindow = _application.Run();
+        MainWindow= _application.Run();
     }
 
     private void OnUnhandledExeptionRised(object sender, DispatcherUnhandledExceptionEventArgs e)

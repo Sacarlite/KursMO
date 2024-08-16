@@ -8,6 +8,8 @@ using Infrastructure.Settings;
 using Domain.Settings;
 using Infrastructure.Settings.WindowWrappers;
 using Domain.Version;
+using Infrastructure.ExelExplorer;
+using Domain.ExelExplorer;
 
 namespace Infrastructure
 {
@@ -27,8 +29,9 @@ namespace Infrastructure
               .As<IWindowMementoWrapperInitializer>().SingleInstance();
             builder.RegisterType<AddUserWindowMementoWrapper>().As<IAddUserWindowMementoWrapper>()
                 .As<IWindowMementoWrapperInitializer >().SingleInstance();
-
+            builder.RegisterType<ExelExplorer.ExelExplorer>().As<IExelExplorer>().SingleInstance();
             builder.RegisterType<AplicationVersionProvider>().As<IAplicationVersionProvider>().SingleInstance();
+
             base.Load(builder);
         }
     }

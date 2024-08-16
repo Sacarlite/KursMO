@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlade\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj",
+      "projectUniqueName": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj",
       "projectName": "MetaInfo",
-      "projectPath": "C:\\Users\\vlade\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj",
+      "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj",
       "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlade\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\obj\\",
+      "outputPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -70,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

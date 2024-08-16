@@ -61,3 +61,7 @@ C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Infrastructure\obj\
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Infrastructure\obj\Debug\net8.0-windows\refint\Infrastructure.dll
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Infrastructure\obj\Debug\net8.0-windows\Infrastructure.pdb
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Infrastructure\obj\Debug\net8.0-windows\ref\Infrastructure.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Infrastructure\bin\Debug\net8.0-windows\MetaInfo.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Infrastructure\bin\Debug\net8.0-windows\MetaInfo.pdb
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Infrastructure\obj\Debug\net8.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Infrastructure\obj\Debug\net8.0-windows\Infrastructure.csproj.ResolveComReference.cache

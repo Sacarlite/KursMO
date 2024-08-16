@@ -1,4 +1,5 @@
 ﻿using Autofac.Util;
+using Domain.UserBd;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace VievModel.VievModels.AutorizationVievModel
 {
     public interface IAutorizationVievModel: IWindowViewModel, IDisposable
     {
-
+        event Action<User> AutorizationAccess;
     }
 }

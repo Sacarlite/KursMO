@@ -8,6 +8,12 @@
     <Compile Update="VisualzationPages\Chart3D.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="VisualzationPages\DefaultPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VisualzationPages\PointTable.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="VisualzationPages\VisualisationPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -17,6 +23,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VisualzationPages\Chart3D.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualzationPages\DefaultPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualzationPages\PointTable.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="VisualzationPages\VisualisationPage.xaml">

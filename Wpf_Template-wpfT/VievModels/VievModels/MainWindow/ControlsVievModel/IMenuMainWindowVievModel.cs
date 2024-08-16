@@ -1,9 +1,11 @@
-﻿using System.Windows.Input;
+﻿using CommunityToolkit.Mvvm.Input;
+using Domain.MethodsBD;
+using System.Windows.Input;
 
 namespace VievModel.VievModels.MainWindow.ControlsVievModel;
 
 public interface IMenuMainWindowVievModel:IDisposable
 {
-    ICommand OpenAboutWindowCommand { get; }
+    event Action<Method>? MethodChanged;
     void CloseAboutWindow();
 }

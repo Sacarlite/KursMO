@@ -5,7 +5,6 @@ using DevExpress.Mvvm.Native;
 using DevExpress.Mvvm.POCO;
 using Domain.Factories;
 using Domain.UserBd;
-using Domain.UserEventArgs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -50,20 +49,6 @@ namespace VievModel.PageVievModels
         {
             this.userDatabaseLocator = userDatabaseLocator;
             this.windowManager = windowManager;
-            
-            Role admin = new Role("Aдминистратор");
-            Role user = new Role("Пользователь");
-            userDatabaseLocator.Context.Roles.AddRange(admin,user);
-            User user1 = new User("user1", "123") {Role= user };
-            User user2 = new User("user2", "123") { Role = user };
-            User user3 = new User("user3", "123") { Role = user };
-            User user4 = new User("user4", "123") { Role = user };
-            User user5 = new User("user5", "123") { Role = user };
-            userDatabaseLocator.Context.Users.AddRange(user1, user2, user3, user4, user5);
-            User admin1=new User("admin1","321") { Role = admin };
-            User admin2 = new User("admin2", "321") { Role = admin };
-            userDatabaseLocator.Context.Users.AddRange(admin1, admin2);
-            userDatabaseLocator.Context.SaveChanges();
             addUserVievModel = addUserWindowVievModelFactory.Create();
             addUserVievModel.AddNewUser += AddNewUser;
             addUserVievModel.WindowClosingAct += WindowClosingAct;

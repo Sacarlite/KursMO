@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace OptimizationMathMethods.VisualzationPages
 {
@@ -22,9 +23,13 @@ namespace OptimizationMathMethods.VisualzationPages
     /// </summary>
     public partial class VisualisationPage : Page
     {
-        public VisualisationPage(MainVisualizationPageVievModel mainVisualizationPageVievModel)
+        public VisualisationPage(MainVisualizationPageVievModel? mainVisualizationPageVievModel)
         {
             InitializeComponent();
+            if(mainVisualizationPageVievModel is not  null)
+            {
+                DataContext = mainVisualizationPageVievModel;
+            }
             DataContext= mainVisualizationPageVievModel;
         }
     }

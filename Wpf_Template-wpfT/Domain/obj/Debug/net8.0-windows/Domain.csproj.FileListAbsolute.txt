@@ -48,3 +48,6 @@ C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\ne
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\refint\Domain.dll
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.pdb
 C:\Users\ColizeumLigov\Source\Repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\ref\Domain.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Domain\bin\Debug\net8.0-windows\MetaInfo.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Domain\bin\Debug\net8.0-windows\MetaInfo.pdb
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Domain\obj\Debug\net8.0-windows\Domain.csproj.Up2Date

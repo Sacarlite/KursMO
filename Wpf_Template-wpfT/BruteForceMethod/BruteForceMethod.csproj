@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MetaInfo\MetaInfo.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ChartDirector.Net" Version="7.1.0" />
+    <PackageReference Include="ChartDirector.Net.Desktop.Controls" Version="7.1.0" />
+  </ItemGroup>
+
+</Project>

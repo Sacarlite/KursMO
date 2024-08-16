@@ -3,8 +3,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Domain.Settings;
 using Domain.UserBd;
-using Domain.UserEventArgs;
-using Infrastructure.UserEventArgs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -98,7 +98,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -126,7 +126,11 @@
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj": {
+                "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -144,6 +148,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.4, )"
@@ -168,7 +176,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -199,6 +207,9 @@
             "projectReferences": {
               "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj": {
+                "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj"
               }
             }
           }
@@ -246,7 +257,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -257,7 +268,7 @@
         "projectName": "MetaInfo",
         "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj",
         "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vlade\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\obj\\",
+        "outputPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -310,7 +321,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -339,6 +350,9 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
+              "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj"
+              },
               "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj": {
                 "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\MetaInfo\\MetaInfo.csproj"
               }
@@ -400,7 +414,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -465,7 +479,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -561,7 +575,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -655,7 +669,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

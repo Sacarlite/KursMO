@@ -9,30 +9,41 @@ using System.Windows.Controls;
 using MetaInfo;
 using OptimizationMathMethods.VisualzationPages;
 using OptimizationMathMethods.VievModels;
+using Domain.MethodsBD;
+using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using static System.Net.Mime.MediaTypeNames;
+using Microsoft.Extensions.Logging;
 
 namespace OptimizationMathMethods
 {
-    public class OptmizitationMethod: VisualisationOptimization, IDisposable
+    public partial class OptmizitationMethod: VisualisationOptimization, IDisposable
     {
 
-        private readonly string _name;
-        private readonly string _path;
+        private readonly string? _name;
+        private readonly string? _path;
         private Type? _type;
         private MethodInfo? _getInfo;
         private AssemblyLoadContext? _assemblyLoadContext;
-        public VisualisationPage VisualPage {  get; private set; }
-        public OptmizitationMethod(string name,string path, CorrectionFactors correctionFactors, Limitations limitations, ExhaustiveSearchFactors exhaustiveSearchFactors) :base( correctionFactors,  limitations,  exhaustiveSearchFactors)
+        public OptmizitationMethod(Method method, CorrectionFactors correctionFactors, Limitations limitations, ExhaustiveSearchFactors exhaustiveSearchFactors) :base( correctionFactors,  limitations,  exhaustiveSearchFactors)
         {
-            _name = name;
-            _path = path;
+            _name = method.Name;
+            _path = method.Path;
             LoadAssembly();
         }
-        public Point GetExtr(CorrectionFactors correctionFactors, Limitations limitations, ExhaustiveSearchFactors exhaustiveSearchFactors)
+        public OptmizitationMethod()
         {
-            var result =(Tuple<Point, List<Visualisation>>)_getInfo?.Invoke(null, new object[] { correctionFactors , limitations , exhaustiveSearchFactors });
-            ConstructVisualisation(result.Item2);
-            GetPoints();
-            return result.Item1 ;
+        }
+        public Tuple<Point,Point> GetExtr()
+        {
+            try
+            {
+                var result = (Tuple<Point, Point>)_getInfo?.Invoke(null, new object[] { correctionFactors, limitations, exhaustiveSearchFactors });
+                return new Tuple<Point, Point>(result.Item1, result.Item2);
+            }
+            catch (Exception) {
+                throw new Exception();
+            }
         }
        
         private void LoadAssembly()
@@ -42,8 +53,8 @@ namespace OptimizationMathMethods
                 _assemblyLoadContext = new AssemblyLoadContext(name: _name, isCollectible: true);
                 var asm = _assemblyLoadContext.LoadFromAssemblyPath(_path);
                 var fileName = Path.GetFileNameWithoutExtension(_path);
-                _type = asm.GetType(fileName);
-                _getInfo = _type.GetMethod("GetInfo");
+                _type = asm.GetType(fileName+'.'+ fileName);
+                _getInfo = _type.GetMethod("GetInfo", BindingFlags.Public | BindingFlags.Static);
             }
             catch (Exception)
             {
@@ -56,11 +67,6 @@ namespace OptimizationMathMethods
             _assemblyLoadContext?.Unload();
             GC.Collect();
             GC.WaitForPendingFinalizers();
-        }
-
-        public override void ConstructVisualisation(List<Visualisation> visualisation)
-        {
-            VisualisationPage VisualPage = new VisualisationPage(new MainVisualizationPageVievModel(points,visualisation));
         }
     }
 }

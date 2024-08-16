@@ -792,6 +792,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "CommunityToolkit.Mvvm": "8.2.2",
+          "MetaInfo": "1.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.4"
         },
         "compile": {
@@ -810,6 +812,7 @@
         "dependencies": {
           "Autofac": "8.0.0",
           "Domain": "1.0.0",
+          "MetaInfo": "1.0.0",
           "Newtonsoft.Json": "13.0.3"
         },
         "compile": {
@@ -841,6 +844,7 @@
         "dependencies": {
           "ChartDirector.Net.Desktop.Controls": "7.1.0",
           "CommunityToolkit.Mvvm": "8.2.2",
+          "Domain": "1.0.0",
           "MaterialDesignColors": "3.0.0",
           "MaterialDesignThemes": "5.0.0",
           "MetaInfo": "1.0.0",
@@ -2117,7 +2121,7 @@
       "projectName": "Bootstrapper",
       "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\Bootstrapper.csproj",
       "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlade\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\obj\\",
+      "outputPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2204,7 +2208,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
