@@ -1,51 +1,107 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using MetaInfo;
-using System;
-using System.Collections.Generic;
+﻿using System.Data;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using MetaInfo;
 
 namespace OptimizationMathMethods
 {
-    public abstract class VisualisationOptimization:ObservableObject
+    public abstract class VisualisationOptimization : ObservableObject
     {
-        protected  CorrectionFactors correctionFactors { get; set; }
+        protected CorrectionFactors correctionFactors { get; set; }
         protected Limitations limitations { get; set; }
         protected ExhaustiveSearchFactors exhaustiveSearchFactors { get; set; }
         protected List<List<Point>>? points;
 
-        protected VisualisationOptimization(CorrectionFactors correctionFactors, Limitations limitations, ExhaustiveSearchFactors exhaustiveSearchFactors)
+        protected VisualisationOptimization(
+            CorrectionFactors correctionFactors,
+            Limitations limitations,
+            ExhaustiveSearchFactors exhaustiveSearchFactors
+        )
         {
             this.correctionFactors = correctionFactors;
             this.limitations = limitations;
             this.exhaustiveSearchFactors = exhaustiveSearchFactors;
-            points= new List<List<Point>>();
+            points = new List<List<Point>>();
         }
-        protected VisualisationOptimization()
-        {
-        }
-        public List<List<Point>> GetPoints()
+
+        protected VisualisationOptimization() { }
+
+        public Tuple<List<List<Point>>, DataTable> GetPoints()
         {
             var eps = RoundCalc(exhaustiveSearchFactors);
-            for (double i = limitations.MinT1; i < limitations.MaxT1; i = i + exhaustiveSearchFactors.Step)
+            var dt = new DataTable();
+            DataColumn column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            dt.Columns.Add(column);
+            int counter = 0;
+            double i;
+            for (i = limitations.MinT1; i < limitations.MaxT1; i = i + exhaustiveSearchFactors.Step)
+            {
+                DataColumn new_column = new DataColumn();
+                new_column.DataType = System.Type.GetType("System.Decimal");
+                dt.Columns.Add(new_column);
+                counter++;
+            }
+            int j;
+            var r = dt.NewRow();
+            r[0] = "";
+            for (
+                i = limitations.MinT1, j = 1;
+                j < counter;
+                i = i + exhaustiveSearchFactors.Step, j++
+            )
+            {
+                r[j] = i;
+            }
+            dt.Rows.Add(r);
+            for (
+                double k = limitations.MinT2;
+                k < limitations.MaxT2;
+                k = k + exhaustiveSearchFactors.Step
+            )
             {
                 List<Point> tmp_points = new List<Point>();
-                for (double j = limitations.MinT2; j < limitations.MaxT2; j = j + exhaustiveSearchFactors.Step)
+                var row = dt.NewRow();
+                row[0] = k.ToString();
+                for (
+                    i = limitations.MinT1, j = 1;
+                    j < counter;
+                    i = i + exhaustiveSearchFactors.Step, j++
+                )
                 {
-                    var a = (Math.Pow(j - correctionFactors.Betta * correctionFactors.A, correctionFactors.N));
-                    var result = Math.Round(correctionFactors.Alpfa * correctionFactors.G * (Math.Pow(j - correctionFactors.Betta * correctionFactors.A, correctionFactors.N) + correctionFactors.Mu * Math.Exp(i + j)
-                        + correctionFactors.Delta * (j - i)), eps);
-                    tmp_points.Add(new Point(i, j, result));
+                    var a = (
+                        Math.Pow(
+                            k - correctionFactors.Betta * correctionFactors.A,
+                            correctionFactors.N
+                        )
+                    );
+                    var result = Math.Round(
+                        correctionFactors.Alpfa
+                            * correctionFactors.G
+                            * (
+                                Math.Pow(
+                                    k - correctionFactors.Betta * correctionFactors.A,
+                                    correctionFactors.N
+                                )
+                                + correctionFactors.Mu * Math.Exp(k + j)
+                                + correctionFactors.Delta * (k - i)
+                            ),
+                        eps
+                    );
+                    row[j] = result;
                 }
                 points.Add(tmp_points);
+                dt.Rows.Add(row);
             }
-            return points;
+
+            return new Tuple<List<List<Point>>, DataTable>(points!, dt);
         }
-        private  int RoundCalc(ExhaustiveSearchFactors exhaustiveSearchFactors)
+
+        private int RoundCalc(ExhaustiveSearchFactors exhaustiveSearchFactors)
         {
-            string[] tokens = exhaustiveSearchFactors.Eps.ToString("G", CultureInfo.InvariantCulture).Split(".");
+            string[] tokens = exhaustiveSearchFactors
+                .Eps.ToString("G", CultureInfo.InvariantCulture)
+                .Split(".");
             return tokens.Length > 1 ? tokens[1].Length : 0;
         }
     }

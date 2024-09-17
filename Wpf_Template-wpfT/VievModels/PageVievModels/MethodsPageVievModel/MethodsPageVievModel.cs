@@ -1,19 +1,14 @@
-﻿using Bootstrapper.UserBd;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DevExpress.Mvvm.Native;
+using Domain.Factories;
 using Domain.MethodsBD;
-using Domain.UserBd;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using static MaterialDesignThemes.Wpf.Theme.ToolBar;
+using VievModel.VievModels.AddMethodVievModel;
+using VievModels.Windows;
+using Vievs.Windows;
 
 namespace VievModel.PageVievModels.MethodsPageVievModel
 {
@@ -22,33 +17,77 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
         private const string AddClassification = "Добавить классификацию";
         private const string AddMethod = "Добавить метод";
         private IMethodsDatabaseLocator methodsDatabaseLocator;
+        private IWindowManager windowManager;
+
+        public IAddMethodVievModel methodVievModel { get; }
+        private IWindow addMethodWindow;
+
+        [ObservableProperty]
+        string classificationName;
+
         [ObservableProperty]
         string serchedName;
+
         [ObservableProperty]
         BindingList<Method> methods;
         private BindingList<Method> allMethods;
+
         [ObservableProperty]
         string addButtonText;
+
         [ObservableProperty]
         ObservableCollection<Сlassification> classifications;
         private ObservableCollection<Сlassification> allClassifications;
-       [ObservableProperty]
-        Сlassification? selectedClassification;
+
         [ObservableProperty]
-        Visibility classificationVisability= Visibility.Visible;
+        Сlassification? selectedClassification;
+
+        [ObservableProperty]
+        Visibility classificationVisability = Visibility.Visible;
+
         [ObservableProperty]
         Visibility methodsVisability = Visibility.Collapsed;
+
         [ObservableProperty]
         private bool? data;
+
+        public MethodsPageVievModel(
+            IMethodsDatabaseLocator methodsDatabaseLocator,
+            IWindowManager windowManager,
+            IWindowVievModelsFactory<IAddMethodVievModel> addMethodWindowVievModelFactory
+        )
+        {
+            this.methodsDatabaseLocator = methodsDatabaseLocator;
+            this.windowManager = windowManager;
+            methodVievModel = addMethodWindowVievModelFactory.Create();
+            methodVievModel.AddNewMethod += AddNewMethod;
+            methodVievModel.WindowClosingAct += WindowClosingAct;
+        }
+
+        private void WindowClosingAct()
+        {
+            windowManager.Close(methodVievModel);
+        }
+
+        private void AddNewMethod(Method? method)
+        {
+            if (method is not null)
+            {
+                allMethods.Add(method);
+                Methods = allMethods;
+            }
+        }
+
         partial void OnSelectedClassificationChanged(Сlassification? value)
         {
-                Methods = new BindingList<Method>(allMethods.Where(u => u.Classification== value).ToObservableCollection());
-
+            Methods = new BindingList<Method>(
+                allMethods.Where(u => u.Classification == value).ToObservableCollection()
+            );
         }
-     
+
         private void ItemsViewModel()
         {
-            Methods.ListChanged += Methods_ListChanged; ;
+            Methods.ListChanged += Methods_ListChanged;
         }
 
         private void Methods_ListChanged(object? sender, ListChangedEventArgs e)
@@ -62,7 +101,7 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
             {
                 AddButtonText = AddMethod;
                 MethodsVisability = Visibility.Visible;
-                ClassificationVisability=Visibility.Collapsed;
+                ClassificationVisability = Visibility.Collapsed;
             }
             else
             {
@@ -72,30 +111,47 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
                 ClassificationVisability = Visibility.Visible;
             }
         }
+
         [RelayCommand]
         void AddData()
         {
             if (Data == true)
             {
-                Methods = new BindingList<Method>(allMethods.Where(u => u.Name == SerchedName).ToList());
+                addMethodWindow = windowManager.Show(methodVievModel);
             }
             else
             {
-                Classifications = allClassifications.Where(u => u.Name == SerchedName).ToObservableCollection();
+                if (!string.IsNullOrEmpty(ClassificationName))
+                {
+                    methodsDatabaseLocator.Context.Сlasses.Add(
+                        new Сlassification(ClassificationName)
+                    );
+                    methodsDatabaseLocator.Context.SaveChanges();
+                    allClassifications =
+                        methodsDatabaseLocator.Context.Сlasses.ToObservableCollection();
+                    Classifications = allClassifications;
+                    MessageBox.Show("Классификация успешно сохранена");
+                }
             }
         }
+
         [RelayCommand]
         void Search()
         {
             if (Data == true)
             {
-                Methods = new BindingList<Method>(allMethods.Where(u => u.Name == SerchedName).ToList());
+                Methods = new BindingList<Method>(
+                    allMethods.Where(u => u.Name == SerchedName).ToList()
+                );
             }
             else
             {
-                Classifications = allClassifications.Where(u => u.Name == SerchedName).ToObservableCollection();
+                Classifications = allClassifications
+                    .Where(u => u.Name == SerchedName)
+                    .ToObservableCollection();
             }
         }
+
         [RelayCommand]
         void DeleteMethod(int Id)
         {
@@ -109,6 +165,7 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
             }
             MessageBox.Show("Метод успешно удалён");
         }
+
         [RelayCommand]
         void DeleteClassification(int Id)
         {
@@ -121,34 +178,34 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
                 methodsDatabaseLocator.Context.SaveChanges();
             }
             MessageBox.Show("Классификация успешно удалена");
-
         }
+
         [RelayCommand]
         void PageLoading()
         {
             allClassifications = methodsDatabaseLocator.Context.Сlasses.ToObservableCollection();
-            allMethods = new BindingList<Method>(methodsDatabaseLocator.Context.Methods.ToObservableCollection());
+            allMethods = new BindingList<Method>(
+                methodsDatabaseLocator.Context.Methods.ToObservableCollection()
+            );
             Methods = allMethods;
             Classifications = allClassifications;
             ItemsViewModel();
             Data = false;
-         
         }
 
-        private void Elem_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void Elem_PropertyChanged(
+            object? sender,
+            System.ComponentModel.PropertyChangedEventArgs e
+        )
         {
             if (SelectedClassification is not null)
-                Methods = new BindingList<Method>(allMethods.Where(u => u.Classification.Id == SelectedClassification.Id).ToObservableCollection());
+                Methods = new BindingList<Method>(
+                    allMethods
+                        .Where(u => u.Classification.Id == SelectedClassification.Id)
+                        .ToObservableCollection()
+                );
         }
 
-        public MethodsPageVievModel(IMethodsDatabaseLocator methodsDatabaseLocator)
-        {
-            this.methodsDatabaseLocator = methodsDatabaseLocator;
-        }
-
-        public void Dispose()
-        {
- 
-        }
+        public void Dispose() { }
     }
 }

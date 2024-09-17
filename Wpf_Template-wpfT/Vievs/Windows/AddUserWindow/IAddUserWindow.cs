@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Vievs.Windows.AddUserWindow
+﻿namespace Vievs.Windows.AddUserWindow
 {
-
-    public interface IAddUserWindow : IWindow
-    {
-    }
+    public interface IAddUserWindow : IWindow { }
 }

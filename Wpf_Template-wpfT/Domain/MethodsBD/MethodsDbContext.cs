@@ -1,12 +1,11 @@
-﻿using Domain.UserBd;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Domain.MethodsBD
 {
-   
-    public class MethodsDbContext : DbContext
+    public class MethodsDbContext : DbContext, IDisposable
     {
-        public MethodsDbContext() : base()
+        public MethodsDbContext()
+            : base()
         {
             Database.EnsureDeleted();
             Database.EnsureCreated();
@@ -16,7 +15,10 @@ namespace Domain.MethodsBD
         {
             optionsBuilder.UseSqlite(@"Data Source= method.db");
         }
+
         public DbSet<Method> Methods { get; set; }
         public DbSet<Сlassification> Сlasses { get; set; }
+
+        public void Dispose() { }
     }
 }

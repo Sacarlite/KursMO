@@ -7,7 +7,7 @@ using NLog.Targets.Wrappers;
 
 namespace Bootstrapper.Logging;
 
-public class LogManagerInitializer : ILogManagerInitializer,IDisposable
+public class LogManagerInitializer : ILogManagerInitializer, IDisposable
 {
     private readonly IPathService _pathService;
 

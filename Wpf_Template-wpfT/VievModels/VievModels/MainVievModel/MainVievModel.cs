@@ -1,6 +1,5 @@
-﻿using Bootstrapper.UserBd;
+﻿using System.Windows;
 using Domain.Factories;
-using System.Windows;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.AutorizationVievModel;
 using VievModel.VievModels.ResearcherMainVievModel;
@@ -11,25 +10,29 @@ namespace VievModel.VievModels.MainVievModel
 {
     public class MainVievModel : IMainVievModel
     {
-        private  IAdminVievModel adminVievModel;
-        private  IResearcherMainVievModel researcherVievModel;
-        private  IAutorizationVievModel autorizationVievModel;
-        private  IWindowManager windowManager;
-        public MainVievModel(IWindowManager windowManager,
-             IWindowVievModelsFactory<IAdminVievModel> adminVievModelsFactory,
-             IWindowVievModelsFactory<IResearcherMainVievModel> researcherVievModelsFactory, 
-             IWindowVievModelsFactory<IAutorizationVievModel> autorizationVievModelFactory) {
-             adminVievModel = adminVievModelsFactory.Create();
-             researcherVievModel = researcherVievModelsFactory.Create();
-             autorizationVievModel= autorizationVievModelFactory.Create();
+        private IAdminVievModel adminVievModel;
+        private IResearcherMainVievModel researcherVievModel;
+        private IAutorizationVievModel autorizationVievModel;
+        private IWindowManager windowManager;
+
+        public MainVievModel(
+            IWindowManager windowManager,
+            IWindowVievModelsFactory<IAdminVievModel> adminVievModelsFactory,
+            IWindowVievModelsFactory<IResearcherMainVievModel> researcherVievModelsFactory,
+            IWindowVievModelsFactory<IAutorizationVievModel> autorizationVievModelFactory
+        )
+        {
+            adminVievModel = adminVievModelsFactory.Create();
+            researcherVievModel = researcherVievModelsFactory.Create();
+            autorizationVievModel = autorizationVievModelFactory.Create();
             autorizationVievModel.AutorizationAccess += AutorizationVievModel_AutorizationAccess;
-             this.windowManager = windowManager;
+            this.windowManager = windowManager;
         }
 
         private void AutorizationVievModel_AutorizationAccess(Domain.UserBd.User obj)
         {
-            
-            switch (obj.Role.Id){
+            switch (obj.Role.Id)
+            {
                 case 1:
                     windowManager.Show(adminVievModel);
                     break;
@@ -45,17 +48,11 @@ namespace VievModel.VievModels.MainVievModel
 
         public IWindow Run()
         {
-
             return windowManager.Show(researcherVievModel);
         }
-        public void Dispose()
-        {
 
-        }
+        public void Dispose() { }
 
-        public void WindowClosing()
-        {
-
-        }
+        public void WindowClosing() { }
     }
 }

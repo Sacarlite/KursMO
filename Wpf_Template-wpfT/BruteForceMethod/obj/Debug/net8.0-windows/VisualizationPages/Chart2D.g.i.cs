@@ -62,7 +62,7 @@ namespace BruteForceMethod.VisualizationPages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BruteForceMethod;component/visualizationpages/chart2d.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BruteForceMethod;V1.0.0.0;component/visualizationpages/chart2d.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\VisualizationPages\Chart2D.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

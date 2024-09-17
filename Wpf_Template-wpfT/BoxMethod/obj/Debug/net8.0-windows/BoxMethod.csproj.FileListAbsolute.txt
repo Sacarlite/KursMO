@@ -1,0 +1,16 @@
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\bin\Debug\net8.0-windows\BoxMethod.deps.json
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\bin\Debug\net8.0-windows\BoxMethod.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\bin\Debug\net8.0-windows\BoxMethod.pdb
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\bin\Debug\net8.0-windows\MetaInfo.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\bin\Debug\net8.0-windows\MetaInfo.pdb
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\BoxMethod.csproj.AssemblyReference.cache
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\BoxMethod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\BoxMethod.AssemblyInfoInputs.cache
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\BoxMethod.AssemblyInfo.cs
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\BoxMethod.csproj.CoreCompileInputs.cache
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\BoxMethod.sourcelink.json
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\BoxMethod.csproj.Up2Date
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\BoxMethod.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\refint\BoxMethod.dll
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\BoxMethod.pdb
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BoxMethod\obj\Debug\net8.0-windows\ref\BoxMethod.dll

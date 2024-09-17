@@ -35,13 +35,49 @@
                     <ToggleButton
                 IsChecked="{Binding Data}"
                 VerticalAlignment="Center"
-                DockPanel.Dock="Right" />       
+                DockPanel.Dock="Right" />
                     <Label     DockPanel.Dock="Right">Классификация</Label>
+                    <StackPanel
+                        Orientation="Horizontal"
+                        DockPanel.Dock="Right"
+                        >
+                        <materialDesign:PopupBox
+                            Visibility="{Binding ClassificationVisability}"
+    StaysOpen="True"
+   >
+                            
+                            <materialDesign:PopupBox.ToggleContent>
+                                <Label materialDesign:ElevationAssist.Elevation="Dp4" Content="Добавить классификацию"/>
+                            </materialDesign:PopupBox.ToggleContent>
+                            <Grid Margin="10" MinWidth="250" MaxWidth=" 250">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBox Margin="0 0 0 15"
+      materialDesign:HintAssist.Hint="Название"
+     >
+                                    <TextBox.Text>
+                                        <Binding
+  Path="ClassificationName"
+  UpdateSourceTrigger="PropertyChanged">
+
+                                        </Binding>
+                                    </TextBox.Text>
+                                </TextBox>
+                                <WrapPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,15,0,0">
+                                    <Button HorizontalAlignment="Left" Command="{Binding AddDataCommand}" MinWidth="30">Добавить</Button>
+                                </WrapPanel>
+
+                            </Grid>
+                        </materialDesign:PopupBox>
+                    </StackPanel>
                     <Button
                     Margin="5 0 5 0"
                     materialDesign:ElevationAssist.Elevation="Dp8"
                            materialDesign:ButtonAssist.CornerRadius="25"
-                                DockPanel.Dock="Right"
+                                DockPanel.Dock="Right"       
+                        Visibility="{Binding MethodsVisability}"
                         Command="{Binding AddDataCommand}"
                     >
                         <TextBlock

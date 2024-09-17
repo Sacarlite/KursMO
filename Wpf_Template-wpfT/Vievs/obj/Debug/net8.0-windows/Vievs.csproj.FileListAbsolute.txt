@@ -54,14 +54,12 @@ C:\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-windows\OptimizationMathMetho
 C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\RegistrationVievModel\RegistrationWindow.g.cs
 C:\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\RegistrationVievModel\RegistrationWindow.baml
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Vievs.csproj.AssemblyReference.cache
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\RegistrationWindow\RegistrationWindow.baml
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Pages\AdminsListPage\AdminsListPage.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Pages\MethodsListPage\MethodsListPage.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AboutWindow\AboutWindow.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AdminWindow\AdminWindow.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AutorizationWindow\AutorizationWindow.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\MainWindow\MainWindow.g.cs
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\RegistrationWindow\RegistrationWindow.g.cs
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Vievs_MarkupCompile.cache
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Vievs_MarkupCompile.lref
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-windows\Vievs.deps.json
@@ -137,3 +135,7 @@ C:\Users\vlade\Source\Repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-wind
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-windows\Infrastructure.dll
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\bin\Debug\net8.0-windows\Infrastructure.pdb
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AddUserWindow\AddUserWindow.baml
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AddMethod\AddMethodWindow.g.cs
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\Windows\AddMethod\AddMethodWindow.baml
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\DialogWindows\AddClassificationDialogWindow.g.cs
+C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\DialogWindows\AddClassificationDialogWindow.baml

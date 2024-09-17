@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 
-8294369953
+92142428754
 
-251250993488
+261902841484
 238-1562831206
-Pages\AdminsListPage\AdminsListPage.xaml;Pages\MethodsListPage\MethodsListPage.xaml;Windows\AboutWindow\AboutWindow.xaml;Windows\AddUserWindow\AddUserWindow.xaml;Windows\AdminWindow\AdminWindow.xaml;Windows\AutorizationWindow\AutorizationWindow.xaml;Windows\MainWindow\MainWindow.xaml;Windows\RegistrationWindow\RegistrationWindow.xaml;
+DialogWindows\AddClassificationDialogWindow.xaml;Pages\AdminsListPage\AdminsListPage.xaml;Pages\MethodsListPage\MethodsListPage.xaml;Windows\AboutWindow\AboutWindow.xaml;Windows\AddMethod\AddMethodWindow.xaml;Windows\AddUserWindow\AddUserWindow.xaml;Windows\AdminWindow\AdminWindow.xaml;Windows\AutorizationWindow\AutorizationWindow.xaml;Windows\MainWindow\MainWindow.xaml;
 
-True
+False
 

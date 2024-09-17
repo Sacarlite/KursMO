@@ -1,9 +1,10 @@
-﻿using MetaInfo;
+﻿using System.Data;
+using MetaInfo;
 
 namespace OptimizationMathMethods.VievModels
 {
     public interface IMainVisualizationPageVievModel
     {
-       void ReloadPages(List<List<Point>> points);
+        void ReloadPages(Tuple<List<List<Point>>, DataTable> tuple);
     }
 }

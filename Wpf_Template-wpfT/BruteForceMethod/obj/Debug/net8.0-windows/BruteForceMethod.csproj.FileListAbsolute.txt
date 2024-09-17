@@ -4,15 +4,6 @@ C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\bin\Debug\
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\bin\Debug\net8.0-windows\MetaInfo.dll
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\bin\Debug\net8.0-windows\MetaInfo.pdb
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\BruteForceMethod.csproj.AssemblyReference.cache
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\VisualizationPages\Chart2D.g.cs
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\VisualizationPages\Chart3D.g.cs
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\VisualizationPages\PointTable.g.cs
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\BruteForceMethod_MarkupCompile.cache
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\BruteForceMethod_MarkupCompile.lref
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\VisualizationPages\Chart2D.baml
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\VisualizationPages\Chart3D.baml
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\VisualizationPages\PointTable.baml
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\BruteForceMethod.g.resources
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\BruteForceMethod.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\BruteForceMethod.AssemblyInfoInputs.cache
 C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\BruteForceMethod.AssemblyInfo.cs

@@ -1,31 +1,31 @@
-﻿using Bootstrapper.UserBd;
+﻿using System.Windows;
+using Bootstrapper.UserBd;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Domain.Settings;
 using Domain.UserBd;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using VievModel.VievModels.AdminMainVievModel;
 using VievModel.Windows;
 
 namespace VievModel.VievModels.AddUserVievModel
 {
-    public partial class AddUserVievModel : WindowVievModel<IAddUserWindowMementoWrapper>, IAddUserVievModel
+    public partial class AddUserVievModel
+        : WindowVievModel<IAddUserWindowMementoWrapper>,
+            IAddUserVievModel
     {
         private readonly IAddUserWindowMementoWrapper addUserWindowMementoWrapper;
-        private  IUserDatabaseLocator userDatabaseLocator;
+        private IUserDatabaseLocator userDatabaseLocator;
+
         [ObservableProperty]
         List<Role> roles;
+
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(AddUserCommand))]
         Role? selectedRole;
+
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(AddUserCommand))]
         private string login = "";
+
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(AddUserCommand))]
         private string password = "";
@@ -33,13 +33,16 @@ namespace VievModel.VievModels.AddUserVievModel
         public event Action<User?> AddNewUser;
         public event Action WindowClosingAct;
 
-        public AddUserVievModel(IAddUserWindowMementoWrapper addUserWindowMementoWrapper, IUserDatabaseLocator userDatabaseLocator) :base(addUserWindowMementoWrapper)
+        public AddUserVievModel(
+            IAddUserWindowMementoWrapper addUserWindowMementoWrapper,
+            IUserDatabaseLocator userDatabaseLocator
+        )
+            : base(addUserWindowMementoWrapper)
         {
             this.addUserWindowMementoWrapper = addUserWindowMementoWrapper;
             this.userDatabaseLocator = userDatabaseLocator;
-            Roles= userDatabaseLocator.Context.Roles.ToList();
+            Roles = userDatabaseLocator.Context.Roles.ToList();
         }
-
 
         private bool CanOk()
         {
@@ -47,8 +50,11 @@ namespace VievModel.VievModels.AddUserVievModel
             {
                 return false;
             }
-            return SelectedRole.Name != "" && !string.IsNullOrEmpty(Login) && !string.IsNullOrEmpty(Password);
+            return SelectedRole.Name != ""
+                && !string.IsNullOrEmpty(Login)
+                && !string.IsNullOrEmpty(Password);
         }
+
         [RelayCommand(CanExecute = nameof(CanOk))]
         void AddUser(Window window)
         {
@@ -62,6 +68,7 @@ namespace VievModel.VievModels.AddUserVievModel
             AddNewUser?.Invoke(user);
             WindowClosingAct?.Invoke();
         }
+
         public void Dispose()
         {
             WindowClosingAct?.Invoke();
