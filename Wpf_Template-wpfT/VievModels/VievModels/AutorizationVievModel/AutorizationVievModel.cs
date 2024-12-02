@@ -1,10 +1,11 @@
-﻿using System.Windows;
-using Bootstrapper.UserBd;
+﻿using Bootstrapper.UserBd;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Domain.Factories;
 using Domain.Settings;
 using Domain.UserBd;
+using Microsoft.EntityFrameworkCore;
+using System.Windows;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.ResearcherMainVievModel;
 using VievModel.Windows;
@@ -50,17 +51,22 @@ namespace VievModel.VievModels.AutorizationVievModel
         [ObservableProperty]
         private bool rememberMe;
 
-        public event Action<User> AutorizationAccess;
+        public event Action<Role> AutorizationAccess;
 
         [RelayCommand]
         private void LoginUser()
         {
             try
             {
-                var user = userDatabaseLocator.Context.Users.Where(i => i.Login == login).First();
+                var users = userDatabaseLocator
+                    .Context.Users.ToList();
+                var user = userDatabaseLocator
+                    .Context.Users.Include(x => x.Role)
+                    .Where(i => i.Login == login)
+                    .First();
                 if (user.Password == Password)
                 {
-                    AutorizationAccess.Invoke(user);
+                    AutorizationAccess.Invoke(user.Role);
                 }
                 else
                 {

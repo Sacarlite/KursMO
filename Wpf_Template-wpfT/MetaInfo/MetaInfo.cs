@@ -1,3 +1,7 @@
+using System.Globalization;
+using System.Windows.Controls;
+using CommunityToolkit.Mvvm.ComponentModel;
+
 namespace MetaInfo
 {
     public class Point
@@ -86,5 +90,26 @@ namespace MetaInfo
 
         public double Eps { get; set; }
         public double Step { get; set; }
+    }
+
+    public abstract class Task : ObservableObject
+    {
+        public abstract Page TaskPage { get; }
+        public abstract Tuple<double, double, double, double, double> GetFirstLimitations();
+        public abstract bool GetSecondLimitations(Point p);
+        public abstract double GetCalc(Point p);
+        public abstract void ExportInputData();
+        public abstract void ImportData(string fileName);
+        public abstract double GetEps();
+        public abstract bool GetExtrType();
+        public abstract bool AllOc();
+        public abstract double GetTau();
+        public string LatexForm;
+
+        protected int RoundCalc(double eps)
+        {
+            string[] tokens = eps.ToString("G", CultureInfo.InvariantCulture).Split(".");
+            return tokens.Length > 1 ? tokens[1].Length : 0;
+        }
     }
 }

@@ -1,18 +1,6 @@
-﻿using ChartDirector;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ChartDirector;
 
 namespace OptimizationMathMethods.VisualzationPages
 {
@@ -25,6 +13,7 @@ namespace OptimizationMathMethods.VisualzationPages
         private List<double> dataX;
         private List<double> dataY;
         private List<double> dataZ;
+
         public Chart2D(List<List<MetaInfo.Point>> points)
         {
             InitializeComponent();
@@ -53,7 +42,9 @@ namespace OptimizationMathMethods.VisualzationPages
             // Draw the chart
             WPFChartViewer1.updateViewPort(true, false);
         }
+
         private List<List<MetaInfo.Point>> Points;
+
         private void Activate(object sender, RoutedEventArgs e)
         {
             // The (x, y, z) coordinates of the scattered data
@@ -73,6 +64,7 @@ namespace OptimizationMathMethods.VisualzationPages
             // Draw the chart
             WPFChartViewer1.updateViewPort(true, false);
         }
+
         //
         // The ViewPortChanged event handler
         //
@@ -82,6 +74,7 @@ namespace OptimizationMathMethods.VisualzationPages
             if (e.NeedUpdateChart)
                 drawChart((WPFChartViewer)sender);
         }
+
         public void drawChart(WPFChartViewer viewer)
         {
             // Create a XYChart object of size 450 x 540 pixels
@@ -95,8 +88,8 @@ namespace OptimizationMathMethods.VisualzationPages
             _chart.setPlotArea(65, 40, 360, 360, -1, -1, -1, unchecked((int)0xc0000000), -1);
 
             // Set x-axis and y-axis title using 12 points Arial Bold Italic font
-            _chart.xAxis().setTitle("T1-Axis Title Place Holder", "Arial Bold Italic", 10);
-            _chart.yAxis().setTitle("T2-Axis Title Place Holder", "Arial Bold Italic", 10);
+            _chart.xAxis().setTitle("T1", "Arial Bold Italic", 10);
+            _chart.yAxis().setTitle("T2", "Arial Bold Italic", 10);
 
             // Set x-axis and y-axis labels to use Arial Bold font
             _chart.xAxis().setLabelStyle("Arial Bold");
@@ -109,11 +102,23 @@ namespace OptimizationMathMethods.VisualzationPages
             // Add a scatter layer to the chart to show the position of the data points. Disable the
             // image map for the scatter layer. We will use the contour layer to provide the
             // tooltip.
-            _chart.addScatterLayer(dataX.ToArray(), dataY.ToArray(), "", Chart.Cross2Shape(0.2), 7, 0x000000
-                ).setHTMLImageMap("{disable}");
+            _chart
+                .addScatterLayer(
+                    dataX.ToArray(),
+                    dataY.ToArray(),
+                    "",
+                    Chart.Cross2Shape(0.2),
+                    7,
+                    0x000000
+                )
+                .setHTMLImageMap("{disable}");
 
             // Add a contour layer using the given data
-            ContourLayer layer = _chart.addContourLayer(dataX.ToArray(), dataY.ToArray(), dataZ.ToArray());
+            ContourLayer layer = _chart.addContourLayer(
+                dataX.ToArray(),
+                dataY.ToArray(),
+                dataZ.ToArray()
+            );
 
             // Move the grid lines in front of the contour layer
             _chart.getPlotArea().moveGridBefore(layer);
@@ -137,12 +142,11 @@ namespace OptimizationMathMethods.VisualzationPages
             viewer.Chart = _chart;
 
             //include tool tip for the chart
-            viewer.ImageMap = _chart.getHTMLImageMap("", "",
-                "title='<*cdml*>X: {x|2}<*br*>Y: {y|2}<*br*>Z: {z|2}'");
+            viewer.ImageMap = _chart.getHTMLImageMap(
+                "",
+                "",
+                "title='<*cdml*>X: {x|2}<*br*>Y: {y|2}<*br*>Z: {z|2}'"
+            );
         }
-
-
-
-
     }
 }

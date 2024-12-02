@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Domain.ExelExplorer;
 using Domain.Settings;
 using Domain.Version;
 using Infrastructure.Settings;
@@ -44,7 +43,6 @@ namespace Infrastructure
                 .As<IAddMethodWindowMementoWrapper>()
                 .As<IWindowMementoWrapperInitializer>()
                 .SingleInstance();
-            builder.RegisterType<ExelExplorer.ExelExplorer>().As<IExelExplorer>().SingleInstance();
             builder
                 .RegisterType<AplicationVersionProvider>()
                 .As<IAplicationVersionProvider>()

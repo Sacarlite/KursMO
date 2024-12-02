@@ -29,10 +29,10 @@
       Header="3D График">
                     <Frame Content="{Binding Chart3DPage}"></Frame>
                 </TabItem>
-                <TabItem
+                <!--<TabItem
       Header="Таблица">
                     <Frame Content="{Binding PointTablePage}"></Frame>
-                </TabItem>
+                </TabItem>-->
             </TabControl>
         </materialDesign:Card>
     </Grid>

@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Domain.Factories;
+using Domain.UserBd;
 using VievModel.VievModels.AdminMainVievModel;
 using VievModel.VievModels.AutorizationVievModel;
 using VievModel.VievModels.ResearcherMainVievModel;
@@ -29,14 +30,15 @@ namespace VievModel.VievModels.MainVievModel
             this.windowManager = windowManager;
         }
 
-        private void AutorizationVievModel_AutorizationAccess(Domain.UserBd.User obj)
+        private void AutorizationVievModel_AutorizationAccess(Role obj)
         {
-            switch (obj.Role.Id)
+            var role = obj.Name;
+            switch (role)
             {
-                case 1:
+                case "Администратор":
                     windowManager.Show(adminVievModel);
                     break;
-                case 2:
+                case "Пользователь":
                     windowManager.Show(researcherVievModel);
                     break;
                 default:
@@ -48,7 +50,7 @@ namespace VievModel.VievModels.MainVievModel
 
         public IWindow Run()
         {
-            return windowManager.Show(researcherVievModel);
+            return windowManager.Show(autorizationVievModel);
         }
 
         public void Dispose() { }

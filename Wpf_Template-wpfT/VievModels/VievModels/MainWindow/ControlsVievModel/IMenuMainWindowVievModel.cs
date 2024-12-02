@@ -1,11 +1,10 @@
-﻿using CommunityToolkit.Mvvm.Input;
-using Domain.MethodsBD;
-using System.Windows.Input;
+﻿using Domain.MethodsBD;
 
 namespace VievModel.VievModels.MainWindow.ControlsVievModel;
 
-public interface IMenuMainWindowVievModel:IDisposable
+public interface IMenuMainWindowVievModel : IDisposable
 {
     event Action<Method>? MethodChanged;
+    event Action<MetaInfo.Task>? TaskChanged;
     void CloseAboutWindow();
 }

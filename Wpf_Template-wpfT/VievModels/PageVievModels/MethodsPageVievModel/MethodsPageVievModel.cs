@@ -18,8 +18,8 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
         private const string AddMethod = "Добавить метод";
         private IMethodsDatabaseLocator methodsDatabaseLocator;
         private IWindowManager windowManager;
-
-        public IAddMethodVievModel methodVievModel { get; }
+        private readonly IWindowVievModelsFactory<IAddMethodVievModel> addMethodWindowVievModelFactory;
+        private IAddMethodVievModel? addMethodVievModel { get; set; }
         private IWindow addMethodWindow;
 
         [ObservableProperty]
@@ -59,14 +59,13 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
         {
             this.methodsDatabaseLocator = methodsDatabaseLocator;
             this.windowManager = windowManager;
-            methodVievModel = addMethodWindowVievModelFactory.Create();
-            methodVievModel.AddNewMethod += AddNewMethod;
-            methodVievModel.WindowClosingAct += WindowClosingAct;
+            this.addMethodWindowVievModelFactory = addMethodWindowVievModelFactory;
         }
 
         private void WindowClosingAct()
         {
-            windowManager.Close(methodVievModel);
+            windowManager.Close(addMethodVievModel!);
+            addMethodVievModel = null;
         }
 
         private void AddNewMethod(Method? method)
@@ -117,7 +116,10 @@ namespace VievModel.PageVievModels.MethodsPageVievModel
         {
             if (Data == true)
             {
-                addMethodWindow = windowManager.Show(methodVievModel);
+                addMethodVievModel = addMethodWindowVievModelFactory.Create();
+                addMethodVievModel.AddNewMethod += AddNewMethod;
+                addMethodVievModel.WindowClosingAct += WindowClosingAct;
+                addMethodWindow = windowManager.Show(addMethodVievModel);
             }
             else
             {

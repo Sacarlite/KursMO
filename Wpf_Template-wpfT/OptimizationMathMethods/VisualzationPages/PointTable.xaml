@@ -9,6 +9,6 @@
       Title="PointTable">
 
     <Grid>
-        
+        <DataGrid x:Name="tableGrid" ItemsSource="{DynamicResource ResourceKey= table}" Loaded="tableGrid_Loaded"/>
     </Grid>
 </Page>

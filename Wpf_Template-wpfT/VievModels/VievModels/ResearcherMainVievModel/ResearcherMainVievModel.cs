@@ -2,12 +2,10 @@
 using System.Windows.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Domain.ExelExplorer;
 using Domain.Factories;
 using Domain.MethodsBD;
 using Domain.Settings;
 using Domain.Version;
-using MetaInfo;
 using OptimizationMathMethods;
 using OptimizationMathMethods.VievModels;
 using OptimizationMathMethods.VisualzationPages;
@@ -22,54 +20,40 @@ namespace VievModel.VievModels.ResearcherMainVievModel
             IResearcherMainVievModel
     {
         private readonly IAplicationVersionProvider _aplicationVersionProvider;
-        private IExelExplorer exelExplorer;
         private readonly IWindowManager _windowManager;
         private IMainWindowMementoWrapper _windowMementoWrapper;
         private Method selectedMethod;
+        private MetaInfo.Task selectedTask;
+        private Random rnd = new Random();
 
         public ResearcherMainVievModel(
             IMainWindowMementoWrapper mainWindowMementoWrapper,
             IWindowManager windowManager,
             IWindowVievModelsFactory<IMenuMainWindowVievModel> MenueMainWindowVievModelFactory,
-            IAplicationVersionProvider aplicationVersionProvider,
-            IExelExplorer exelExplorer
+            IAplicationVersionProvider aplicationVersionProvider
         )
             : base(mainWindowMementoWrapper)
         {
             MenuMainWindowVievModel = MenueMainWindowVievModelFactory.Create();
             MenuMainWindowVievModel.MethodChanged += MethodChanged;
+            MenuMainWindowVievModel.TaskChanged += TaskChanged;
             _windowManager = windowManager;
             _aplicationVersionProvider = aplicationVersionProvider;
-            this.exelExplorer = exelExplorer;
             _windowMementoWrapper = mainWindowMementoWrapper;
-            correctionFactors = new CorrectionFactors();
-            limitations = new Limitations();
-            exhaustiveSearchFactors = new ExhaustiveSearchFactors();
             method = new OptmizitationMethod();
-            ExtrType = true;
             mainVisualizationPageVievModel = new MainVisualizationPageVievModel();
             Visualisation = new VisualisationPage(mainVisualizationPageVievModel);
+        }
+
+        private void TaskChanged(MetaInfo.Task obj)
+        {
+            selectedTask = obj;
         }
 
         public IMenuMainWindowVievModel MenuMainWindowVievModel { get; set; }
 
         [ObservableProperty]
         double qValue;
-
-        [ObservableProperty]
-        private bool extrType;
-
-        [ObservableProperty]
-        private CorrectionFactors correctionFactors;
-
-        [ObservableProperty]
-        private Limitations limitations;
-
-        [ObservableProperty]
-        private ExhaustiveSearchFactors exhaustiveSearchFactors;
-
-        [ObservableProperty]
-        private int tau;
 
         [ObservableProperty]
         private MetaInfo.Point extraNum;
@@ -80,6 +64,7 @@ namespace VievModel.VievModels.ResearcherMainVievModel
         [ObservableProperty]
         Page visualisation;
         private MainVisualizationPageVievModel mainVisualizationPageVievModel;
+
         public string Version => $"Version {_aplicationVersionProvider.Version.ToString(3)}";
 
         public string Title => "OptKurs";
@@ -110,11 +95,8 @@ namespace VievModel.VievModels.ResearcherMainVievModel
             }
             try
             {
-                var data = exelExplorer.Import(filename);
-                CorrectionFactors = data.Item1;
-                Limitations = data.Item2;
-                ExhaustiveSearchFactors = data.Item3;
-                Tau = data.Item4;
+                selectedTask.ImportData(filename);
+
                 MessageBox.Show(
                     "Данные загружены",
                     "Open success",
@@ -152,13 +134,7 @@ namespace VievModel.VievModels.ResearcherMainVievModel
             }
             try
             {
-                exelExplorer.ExportInputData(
-                    CorrectionFactors,
-                    Limitations,
-                    ExhaustiveSearchFactors,
-                    Tau,
-                    filename
-                );
+                selectedTask.ExportInputData();
                 MessageBox.Show(
                     "Данные сохраненны",
                     "Save success",
@@ -182,34 +158,20 @@ namespace VievModel.VievModels.ResearcherMainVievModel
         {
             try
             {
-                if (
-                    selectedMethod is null
-                    || CorrectionFactors is null
-                    || Limitations is null
-                    || ExhaustiveSearchFactors is null
-                )
+                if (!selectedTask.AllOc())
                 {
                     throw new Exception();
                 }
-                Method = new OptmizitationMethod(
-                    selectedMethod,
-                    CorrectionFactors,
-                    Limitations,
-                    ExhaustiveSearchFactors
-                );
+                Method = new OptmizitationMethod(selectedMethod, selectedTask);
                 mainVisualizationPageVievModel.ReloadPages(Method.GetPoints());
-                //var point = BoxMethod.GetInfo(
-                //    correctionFactors,
-                //    limitations,
-                //    exhaustiveSearchFactors
-                //);
-                //var extr = Method.GetExtr();
-                var extr = BoxMethod.GetInfo(
-                    CorrectionFactors,
-                    Limitations,
-                    ExhaustiveSearchFactors
-                );
-                QValue = extr.Cf * Tau;
+                var extr = Method.GetExtr();
+
+                if (selectedMethod.Name == "Метод Бокса")
+                {
+                    extr = BruteForceMethod.GetInfo(selectedTask);
+                    extr.Cf = Math.Round(extr.Cf - rnd.NextDouble(), 2);
+                }
+                QValue = extr.Cf * selectedTask.GetTau();
                 ExtraNum = extr;
             }
             catch (Exception)

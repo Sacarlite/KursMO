@@ -14,17 +14,15 @@ namespace OptimizationMathMethods
         private MethodInfo? _getInfo;
         private AssemblyLoadContext? _assemblyLoadContext;
 
-        public OptmizitationMethod(
-            Method method,
-            CorrectionFactors correctionFactors,
-            Limitations limitations,
-            ExhaustiveSearchFactors exhaustiveSearchFactors
-        )
-            : base(correctionFactors, limitations, exhaustiveSearchFactors)
+        private bool extrType;
+
+        public OptmizitationMethod(Method method, MetaInfo.Task task)
+            : base(task)
         {
             _name = method.Name;
             _path = method.Path;
             LoadAssembly();
+            this.extrType = extrType;
         }
 
         public OptmizitationMethod(string path, string name = "")
@@ -40,11 +38,7 @@ namespace OptimizationMathMethods
         {
             try
             {
-                var result = (Point)
-                    _getInfo?.Invoke(
-                        null,
-                        new object[] { correctionFactors, limitations, exhaustiveSearchFactors }
-                    );
+                var result = (Point)_getInfo?.Invoke(null, new object[] { task });
                 return result;
             }
             catch (Exception)

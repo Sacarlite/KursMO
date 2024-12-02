@@ -38,10 +38,46 @@
           }
         }
       },
+      "CommunityToolkit.Mvvm/8.3.2": {
+        "runtime": {
+          "lib/net8.0/CommunityToolkit.Mvvm.dll": {
+            "assemblyVersion": "8.3.0.0",
+            "fileVersion": "8.3.2.1"
+          }
+        }
+      },
+      "MaterialDesignColors/3.1.0": {
+        "runtime": {
+          "lib/net8.0/MaterialDesignColors.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
+      "MaterialDesignThemes/5.1.0": {
+        "dependencies": {
+          "MaterialDesignColors": "3.1.0",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39"
+        },
+        "runtime": {
+          "lib/net8.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "5.1.0.0",
+            "fileVersion": "5.1.0.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/2.0.0": {},
       "Microsoft.Win32.SystemEvents/4.5.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0"
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.39.4716"
+          }
         }
       },
       "System.Drawing.Common/4.5.0": {
@@ -50,7 +86,32 @@
           "Microsoft.Win32.SystemEvents": "4.5.0"
         }
       },
+      "WpfMath/2.1.0": {
+        "dependencies": {
+          "XamlMath.Shared": "2.1.0"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/WpfMath.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "XamlMath.Shared/2.1.0": {
+        "runtime": {
+          "lib/net6.0/XamlMath.Shared.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
       "MetaInfo/1.0.0": {
+        "dependencies": {
+          "CommunityToolkit.Mvvm": "8.3.2",
+          "MaterialDesignColors": "3.1.0",
+          "MaterialDesignThemes": "5.1.0",
+          "WpfMath": "2.1.0"
+        },
         "runtime": {
           "MetaInfo.dll": {
             "assemblyVersion": "1.0.0",
@@ -80,6 +141,27 @@
       "path": "chartdirector.net.desktop.controls/7.1.0",
       "hashPath": "chartdirector.net.desktop.controls.7.1.0.nupkg.sha512"
     },
+    "CommunityToolkit.Mvvm/8.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m8EolE1A0Updj68WTsZSGI6VWb6mUqHPh7QFo0kt7+JPhYMNXRS1ch8TS/oITAdcxTLrwMOp3ku1KjeG1/Zdpg==",
+      "path": "communitytoolkit.mvvm/8.3.2",
+      "hashPath": "communitytoolkit.mvvm.8.3.2.nupkg.sha512"
+    },
+    "MaterialDesignColors/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J2mpZBWx0wArrMCK8E0Cqfsy+Wh3iRDVnznp5/84B1KcnTKI9u9Pyt2zN0oSQGsa6NhvwdUErbhE3jJd6iRTxw==",
+      "path": "materialdesigncolors/3.1.0",
+      "hashPath": "materialdesigncolors.3.1.0.nupkg.sha512"
+    },
+    "MaterialDesignThemes/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k5lO0NqhExrCLnFWnapI+a2XvOOm/Mwz92GwUq4CvNrahMMPx9puALE8VJlLNeNxUYjWf2+PAKPGpmr1u1QDfg==",
+      "path": "materialdesignthemes/5.1.0",
+      "hashPath": "materialdesignthemes.5.1.0.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/2.0.0": {
       "type": "package",
       "serviceable": true,
@@ -94,12 +176,33 @@
       "path": "microsoft.win32.systemevents/4.5.0",
       "hashPath": "microsoft.win32.systemevents.4.5.0.nupkg.sha512"
     },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.39",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    },
     "System.Drawing.Common/4.5.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-AiJFxxVPdeITstiRS5aAu8+8Dpf5NawTMoapZ53Gfirml24p7HIfhjmCRxdXnmmf3IUA3AX3CcW7G73CjWxW/Q==",
       "path": "system.drawing.common/4.5.0",
       "hashPath": "system.drawing.common.4.5.0.nupkg.sha512"
+    },
+    "WpfMath/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-216GtCBYFMPw5SaArNcuTgemgAWw985LihSEf7mtOjJYTN04X4BVFGPrkJ2Fiv1ffL8gX2xiRw/o+q1SC5oSAA==",
+      "path": "wpfmath/2.1.0",
+      "hashPath": "wpfmath.2.1.0.nupkg.sha512"
+    },
+    "XamlMath.Shared/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p7W78KZc2EWuVqAd704m4yGWg0HtxahjNYRVxDWhw7npf8oMD8C7EUc1pjkjZIcmk5PxXJ+t5FE2Fs3gBYjv1A==",
+      "path": "xamlmath.shared/2.1.0",
+      "hashPath": "xamlmath.shared.2.1.0.nupkg.sha512"
     },
     "MetaInfo/1.0.0": {
       "type": "project",

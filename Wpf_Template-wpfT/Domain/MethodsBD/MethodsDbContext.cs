@@ -7,7 +7,6 @@ namespace Domain.MethodsBD
         public MethodsDbContext()
             : base()
         {
-            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 

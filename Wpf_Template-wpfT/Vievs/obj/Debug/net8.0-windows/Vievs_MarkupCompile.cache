@@ -13,8 +13,8 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 92142428754
 
 24330043524
-238-1562831206
+239-1042750224
 DialogWindows\AddClassificationDialogWindow.xaml;Pages\AdminsListPage\AdminsListPage.xaml;Pages\MethodsListPage\MethodsListPage.xaml;Windows\AboutWindow\AboutWindow.xaml;Windows\AddMethod\AddMethodWindow.xaml;Windows\AddUserWindow\AddUserWindow.xaml;Windows\AdminWindow\AdminWindow.xaml;Windows\AutorizationWindow\AutorizationWindow.xaml;Windows\MainWindow\MainWindow.xaml;
 
-True
+False
 

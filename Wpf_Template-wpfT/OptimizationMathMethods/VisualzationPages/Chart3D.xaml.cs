@@ -1,18 +1,6 @@
-﻿using ChartDirector;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ChartDirector;
 
 namespace OptimizationMathMethods.VisualzationPages
 {
@@ -24,14 +12,17 @@ namespace OptimizationMathMethods.VisualzationPages
         // 3D view angles
         private double m_elevationAngle;
         private double m_rotationAngle;
+
         //Data
         private List<double> dataX;
         private List<double> dataY;
         private List<double> dataZ;
+
         // Keep track of mouse drag
         private int m_lastMouseX;
         private int m_lastMouseY;
         private bool m_isDragging;
+
         public Chart3D(List<List<MetaInfo.Point>> points)
         {
             InitializeComponent();
@@ -68,7 +59,9 @@ namespace OptimizationMathMethods.VisualzationPages
             // Draw the chart
             WPFChartViewer1.updateViewPort(true, false);
         }
+
         private readonly List<List<MetaInfo.Point>> Points;
+
         //
         // The ViewPortChanged event handler
         //
@@ -78,6 +71,7 @@ namespace OptimizationMathMethods.VisualzationPages
             if (e.NeedUpdateChart)
                 drawChart((WPFChartViewer)sender);
         }
+
         public void drawChart(WPFChartViewer viewer)
         {
             // Create a SurfaceChart object of size 720 x 600 pixels
@@ -86,7 +80,6 @@ namespace OptimizationMathMethods.VisualzationPages
             // Set the center of the plot region at (330, 290), and set width x depth x height to
             // 360 x 360 x 270 pixels
             c.setPlotRegion(330, 290, 360, 360, 270);
-
 
             // Set the data to use to plot the chart
             c.setData(dataX.ToArray(), dataY.ToArray(), dataZ.ToArray());
@@ -106,8 +99,8 @@ namespace OptimizationMathMethods.VisualzationPages
             c.setColorAxis(650, 270, Chart.Left, 200, Chart.Right);
 
             // Set the x, y and z axis titles using 10 points Arial Bold font
-            c.xAxis().setTitle("X", "Arial Bold", 15);
-            c.yAxis().setTitle("Y", "Arial Bold", 15);
+            c.xAxis().setTitle("T1", "Arial Bold", 15);
+            c.yAxis().setTitle("T2", "Arial Bold", 15);
 
             // Set axis label font
             c.xAxis().setLabelStyle("Arial", 10);
@@ -117,11 +110,8 @@ namespace OptimizationMathMethods.VisualzationPages
 
             // Output the chart
             viewer.Chart = c;
-
-            //include tool tip for the chart
-            viewer.ImageMap = c.getHTMLImageMap("", "",
-                "title='<*cdml*>X: {x|2}<*br*>Y: {y|2}<*br*>Z: {z|2}'");
         }
+
         //
         // Draw track cursor when mouse is moving over plotarea
         //
@@ -135,7 +125,7 @@ namespace OptimizationMathMethods.VisualzationPages
             {
                 if (m_isDragging)
                 {
-                    // The chart is configured to rotate by 90 degrees when the mouse moves from 
+                    // The chart is configured to rotate by 90 degrees when the mouse moves from
                     // left to right, which is the plot region width (360 pixels). Similarly, the
                     // elevation changes by 90 degrees when the mouse moves from top to buttom,
                     // which is the plot region height (270 pixels).
@@ -156,9 +146,5 @@ namespace OptimizationMathMethods.VisualzationPages
             m_isDragging = false;
             WPFChartViewer1.updateViewPort(true, false);
         }
-
-
-
-
     }
 }

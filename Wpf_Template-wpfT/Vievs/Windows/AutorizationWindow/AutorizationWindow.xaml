@@ -87,17 +87,10 @@
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
-                                <CheckBox
-                                Content="Запомнить меня"
-                               IsChecked="{Binding RememberMe}"
-                            />
+                                
                             </Grid>
                             <Grid Grid.Column="1">
-                                <Button HorizontalAlignment="Right" Tag="{Binding ElementName=LinkTarget, Path=Text}" Style="{StaticResource HyperlinkButton}" Focusable="False">
-                                    <TextBlock>
-                                         <Hyperlink Focusable="False">Зарегистрироватся</Hyperlink>
-                                    </TextBlock>
-                                </Button>
+                               
                             </Grid>
                         </Grid>
                         <Grid Grid.Row="4" Margin="0 15 0 10">

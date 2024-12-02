@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ZsCyVmJHrjk=",
+  "dgSpecHash": "4dc3jOjeC8Q=",
   "success": true,
   "projectFilePath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\BoxMethod\\BoxMethod.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\vlade\\.nuget\\packages\\communitytoolkit.mvvm\\8.3.2\\communitytoolkit.mvvm.8.3.2.nupkg.sha512",
+    "C:\\Users\\vlade\\.nuget\\packages\\materialdesigncolors\\3.1.0\\materialdesigncolors.3.1.0.nupkg.sha512",
+    "C:\\Users\\vlade\\.nuget\\packages\\materialdesignthemes\\5.1.0\\materialdesignthemes.5.1.0.nupkg.sha512",
+    "C:\\Users\\vlade\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\vlade\\.nuget\\packages\\wpfmath\\2.1.0\\wpfmath.2.1.0.nupkg.sha512",
+    "C:\\Users\\vlade\\.nuget\\packages\\xamlmath.shared\\2.1.0\\xamlmath.shared.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

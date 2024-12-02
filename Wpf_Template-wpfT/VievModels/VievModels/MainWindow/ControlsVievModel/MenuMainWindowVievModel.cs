@@ -1,13 +1,10 @@
-﻿
-
+﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.Native;
 using Domain.Factories;
 using Domain.MethodsBD;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
 using VievModels.VievModels.AboutWindowVievModel;
 using VievModels.Windows;
 using Vievs.Windows;
@@ -20,23 +17,36 @@ public partial class MenuMainWindowVievModel : ObservableObject, IMenuMainWindow
     private IWindowVievModelsFactory<IAboutWindowVievModel> _aboutWindowViewModelFactory;
     private IMethodsDatabaseLocator methodsDatabaseLocator;
     private IAboutWindowVievModel? _aboutWindowVievModel;
+
     [ObservableProperty]
     ObservableCollection<Method> methods;
+
     [ObservableProperty]
     Method selectedMethod;
 
-    public event Action<Method>? MethodChanged;
+    [ObservableProperty]
+    ObservableCollection<MetaInfo.Task> forms;
 
-    public MenuMainWindowVievModel(IWindowManager windowManager,
-        IWindowVievModelsFactory<IAboutWindowVievModel> aboutWindowViewModelFactory, IMethodsDatabaseLocator methodsDatabaseLocator)
+    [ObservableProperty]
+    MetaInfo.Task selectedForm;
+
+    public event Action<Method>? MethodChanged;
+    public event Action<MetaInfo.Task>? TaskChanged;
+
+    public MenuMainWindowVievModel(
+        IWindowManager windowManager,
+        IWindowVievModelsFactory<IAboutWindowVievModel> aboutWindowViewModelFactory,
+        IMethodsDatabaseLocator methodsDatabaseLocator
+    )
     {
+        Forms = new ObservableCollection<MetaInfo.Task>();
+        Forms.Add(new MetaInfo.DefaultTask());
+        Forms.Add(new MetaInfo.Task1());
+        Forms.Add(new MetaInfo.Task2());
+        SelectedForm = Forms.First();
         _windowManager = windowManager;
         _aboutWindowViewModelFactory = aboutWindowViewModelFactory;
         this.methodsDatabaseLocator = methodsDatabaseLocator;
-        //Заглушка
-        Method bruteForce = new Method("Метод полного перебора", @"C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\BruteForceMethod\obj\Debug\net8.0-windows\BruteForceMethod.dll", "Описание описание");
-        methodsDatabaseLocator.Context.Methods.Add(bruteForce);
-        methodsDatabaseLocator.Context.SaveChanges();
         Methods = methodsDatabaseLocator.Context.Methods.ToObservableCollection();
     }
 
@@ -44,18 +54,20 @@ public partial class MenuMainWindowVievModel : ObservableObject, IMenuMainWindow
     {
         //TODO EVENTS
     }
- 
+
     partial void OnSelectedMethodChanged(Method value)
     {
         MethodChanged?.Invoke(value);
     }
 
+    partial void OnSelectedFormChanged(MetaInfo.Task value)
+    {
+        TaskChanged?.Invoke(value);
+    }
+
     public ICommand OpenAboutWindowCommand
     {
-        get
-        {
-            return new DelegateCommand(OpenAboutWindow);
-        }
+        get { return new DelegateCommand(OpenAboutWindow); }
     }
 
     private void OpenAboutWindow()
@@ -89,7 +101,4 @@ public partial class MenuMainWindowVievModel : ObservableObject, IMenuMainWindow
         if (_aboutWindowVievModel != null)
             _windowManager.Close(_aboutWindowVievModel);
     }
-
-   
 }
-

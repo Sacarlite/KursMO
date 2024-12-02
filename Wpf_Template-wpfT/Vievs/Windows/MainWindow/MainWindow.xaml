@@ -7,10 +7,9 @@
         xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:researchermainvievmodel="clr-namespace:VievModel.VievModels.ResearcherMainVievModel;assembly=VievModel"
-        d:DataContext="{d:DesignInstance Type=researchermainvievmodel:ResearcherMainVievModel}"
         xmlns:ia="http://schemas.microsoft.com/xaml/behaviors"
-        Style="{StaticResource MaterialDesignWindow}"
         mc:Ignorable="d"
+         Style="{StaticResource MaterialDesignWindow}"
         WindowState="{Binding IsMaximized,Mode=TwoWay,Converter={x:Static converters:BoolToWindowsStateConverter.Instance}}"
         Title="{Binding Title, Mode=OneTime}"
         Height="{Binding Height, Mode=TwoWay}"
@@ -38,18 +37,20 @@
                   SelectedItem="{Binding MenuMainWindowVievModel.SelectedMethod}"
                   Style="{StaticResource MaterialDesignOutlinedComboBox}"
                  />
+                <ComboBox
+   ItemsSource="{Binding MenuMainWindowVievModel.Forms}"
+   SelectedItem="{Binding MenuMainWindowVievModel.SelectedForm}"
+   Style="{StaticResource MaterialDesignOutlinedComboBox}"
+  >
+                    <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                            <controls:FormulaControl Scale="10"  VerticalAlignment="Center" Margin="0 5 0 0" Formula="{Binding LatexForm }"/>
+                    </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <MenuItem Header="Справка" />
             </Menu>
-            <Button 
-              ToolTip="MaterialDesignFloatingActionDarkButton"
-                HorizontalAlignment="Right"
-                materialDesign:ButtonAssist.CornerRadius="50"
-                Margin="5 5 5 5"
-                Style="{StaticResource MaterialDesignPaperLightButton}" 
-             >
             
-                <materialDesign:PackIcon Kind="Account" />
-            </Button>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -57,116 +58,7 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Viewbox MaxHeight="1200" VerticalAlignment="Top">
-                    <Border Margin="5 0 5 0" Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" CornerRadius="8,8,3,3">
-                        <StackPanel Margin="10">
-                            <Label FontSize="14" FontWeight="Bold"  Content="Математическая модель:"/>
-                            <Line X1="0" Y1="1" X2="400" Y2="1" Stroke="#55B51D" />
-                            <controls:FormulaControl Scale="14"  VerticalAlignment="Center" Margin="0 5 0 0" Formula=" S=\alpha\cdot G\cdot ((T_2-\beta\cdot A)^2+(\mu\cdot e^{(T_1+T_2)})^N+\Delta\cdot(T_2-T_1)) "/>
-                            <StackPanel Margin="0 5 0 0" Orientation="Horizontal">
-                                <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="Вид экстремума:"/>
-                                <Viewbox Height="15">
-                                    <RadioButton Margin="0 0 5 0" FontSize="12" GroupName="extremeChoise" VerticalAlignment="Center" Content="min" IsChecked="{Binding ExtrType}" />
-                                </Viewbox>
-                                <Viewbox Height="15">
-                                    <RadioButton FontSize="12" GroupName="extremeChoise" VerticalAlignment="Center" Content="max" />
-                                </Viewbox>
-                            </StackPanel>
-                            <Border Margin="5" Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" CornerRadius="8,8,3,3">
-                                <StackPanel Orientation="vertical">
-                                    <Label FontSize="14" FontWeight="Bold" Content="Параметры математической модели"/>
-                                    <Line X1="0" Y1="1" X2="400" Y2="1" Stroke="#55B51D" />
-                                    <StackPanel Margin="5 5 0 5" Orientation="Horizontal">
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="Количество теплообменных устройств:"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="N ="/>
-                                        <TextBox Background="White" MinHeight="15" MinWidth="25" Text="{Binding CorrectionFactors.N}"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Content=";"/>
-
-                                    </StackPanel>
-
-                                    <StackPanel Margin="5 5 0 5" Orientation="Horizontal" >
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="Расход реакционной массы:"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="G ="/>
-                                        <TextBox Background="White" MinHeight="15" MinWidth="25"  Text="{Binding CorrectionFactors.G}"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Content="кг/ч;"/>
-                                    </StackPanel>
-                                    <StackPanel Margin="5 5 0 5" Orientation="Horizontal">
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="Давление в реакторе:"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="A ="/>
-                                        <TextBox Background="White" MinHeight="15" MinWidth="25" Text="{Binding CorrectionFactors.A}"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Кпа;"/>
-                                    </StackPanel>
-                                    <StackPanel Margin="5 5 0 5" Orientation="Horizontal">
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="Время:"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="tau ="/>
-                                        <TextBox Background="White" MinHeight="15" MinWidth="25" Text="{Binding Tau}"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="ч;"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Border Margin="5" Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" CornerRadius="8,8,3,3">
-                                <StackPanel Orientation="vertical">
-                                    <Label FontWeight="Bold" FontSize="14" Content="Ограничения"/>
-                                    <Line X1="0" Y1="1" X2="400" Y2="1" Stroke="#55B51D" />
-                                    <StackPanel Margin="5 5 0 5" HorizontalAlignment="Center" Orientation="Horizontal">
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding Limitations.MinT1}"/>
-                                        <controls:FormulaControl Scale="14" VerticalAlignment="Center" Margin="0 0 5 0" Formula="\le T_1 \le"/>
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding Limitations.MaxT1}"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Content="℃;"/>
-                                    </StackPanel>
-                                    <StackPanel Margin="5 5 0 5"  HorizontalAlignment="Center" Orientation="Horizontal" >
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding Limitations.MinT2}"/>
-                                        <controls:FormulaControl Scale="14" VerticalAlignment="Center" Margin="0 0 5 0" Formula="\le T_2 \le"/>
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding Limitations.MaxT2}"/>
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Content="℃;"/>
-                                    </StackPanel>
-                                    <StackPanel Margin="5 5 0 5"  HorizontalAlignment="Center" Orientation="Horizontal">
-                                        <controls:FormulaControl Margin="5 0 5 0" Scale="12" VerticalAlignment="Center" Formula="T_2 -T_1 \ge "/>
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding Limitations.MinDiff}"/>
-                                        <Label Margin="0 0 5 0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Content="℃;"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Border Margin="5" Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" CornerRadius="8,8,3,3">
-                                <StackPanel Orientation="vertical">
-                                    <Label FontWeight="Bold" FontSize="14" Content="Нормирующие множители"/>
-                                    <Line X1="0" Y1="1" X2="400" Y2="1" Stroke="#55B51D" />
-                                    <StackPanel Margin="0 5 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
-                                        <controls:FormulaControl Scale="14" VerticalAlignment="Center" Margin="0 0 5 0" Formula="\alpha="/>
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding CorrectionFactors.Alpfa}"/>
-                                    </StackPanel>
-                                    <StackPanel  HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 5 0 0">
-                                        <controls:FormulaControl  Scale="14" VerticalAlignment="Center" Margin="0 0 5 0" Formula="\beta="/>
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding CorrectionFactors.Betta}"/>
-                                    </StackPanel>
-                                    <StackPanel  HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 5 0 0">
-                                        <controls:FormulaControl  Scale="14" VerticalAlignment="Center" Margin="0 0 5 0" Formula="\mu="/>
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding CorrectionFactors.Mu}"/>
-                                    </StackPanel>
-                                    <StackPanel  HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 5 0 0">
-                                        <controls:FormulaControl  Scale="14" VerticalAlignment="Center" Margin="0 0 5 0" Formula="\Delta="/>
-                                        <TextBox Background="White" Margin="0 0 0 5" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding CorrectionFactors.Delta}"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Border Margin="5" Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" CornerRadius="8,8,3,3">
-                                <StackPanel Orientation="vertical">
-                                    <Label FontWeight="Bold" FontSize="14" Content="Параметры метода"/>
-                                    <Line X1="0" Y1="1" X2="400" Y2="1" Stroke="#55B51D" />
-                                    <StackPanel  Margin="0 5 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="Шаг: step = "/>
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding ExhaustiveSearchFactors.Step}"/>
-                                    </StackPanel>
-                                    <StackPanel   HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 5 0 5">
-                                        <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" Content="Допустимая погрешность: eps = "/>
-                                        <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" Text="{Binding ExhaustiveSearchFactors.Eps}"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Button Margin="0 0 5 0" HorizontalAlignment="Right" Background="#9DF793" Content="Расчитать" Command="{Binding CalculationCommand}"/>
-                        </StackPanel>
-                    </Border>
-                </Viewbox>
+                <Frame Content="{Binding MenuMainWindowVievModel.SelectedForm.TaskPage}" NavigationUIVisibility="Hidden"/>
             </Grid>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -195,7 +87,8 @@
                                     <TextBox Background="White" Margin="5 0 5 0" VerticalAlignment="Center" MinHeight="10" MinWidth="25" IsEnabled="False" Text="{Binding ExtraNum.T2}"/>
                                     <Label Margin="0 0 5 0" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Content="℃;"/>
                                 </StackPanel>
-                                <Label FontSize="14" Content="Ограничения"/>
+                                <Button Margin="0 0 5 0" HorizontalAlignment="Right" Background="#9DF793" Content="Расчитать" Command="{Binding CalculationCommand}"/>
+
                             </StackPanel>
                         </Border>
                     </Viewbox>
