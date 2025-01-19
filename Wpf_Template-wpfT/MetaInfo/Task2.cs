@@ -126,7 +126,7 @@ namespace MetaInfo
 
         public override bool GetSecondLimitations(Point p)
         {
-            return p.T2 + p.T1 <= task2ViewModel.MaxSumm;
+            return p.T2 + p.T1 >= task2ViewModel.MaxSumm;
         }
 
         public override bool AllOc()
