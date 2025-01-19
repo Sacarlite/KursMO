@@ -58,7 +58,7 @@ namespace Vievs.Windows.AddUserWindow {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vievs;V1.0.0.0;component/windows/adduserwindow/adduserwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vievs;component/windows/adduserwindow/adduserwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\AddUserWindow\AddUserWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

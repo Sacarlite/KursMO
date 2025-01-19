@@ -66,7 +66,7 @@ namespace Vievs.DialogWindows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vievs;V1.0.0.0;component/dialogwindows/addclassificationdialogwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vievs;component/dialogwindows/addclassificationdialogwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\DialogWindows\AddClassificationDialogWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

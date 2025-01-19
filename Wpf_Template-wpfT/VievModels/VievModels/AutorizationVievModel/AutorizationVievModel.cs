@@ -37,12 +37,12 @@ namespace VievModel.VievModels.AutorizationVievModel
             this.userDatabaseLocator = userDatabaseLocator;
             this.adminVievModelsFactory = adminVievModelsFactory;
             this.researcherVievModelsFactory = researcherVievModelsFactory;
+
             var users = userDatabaseLocator
-                    .Context.Users.ToList();
+                .Context.Users.ToList();
+
             if (users.Count == 0)
             {
-                userDatabaseLocator.Context.Database.EnsureDeleted();
-                userDatabaseLocator.Context.Database.EnsureCreated();
                 var adminRole = new Role("Администратор");
                 var userRole = new Role("Пользователь");
                 userDatabaseLocator
@@ -61,6 +61,7 @@ namespace VievModel.VievModels.AutorizationVievModel
                     "Пользователь: login: User password: User\n");
 
             }
+
         }
 
         [ObservableProperty]
@@ -84,7 +85,7 @@ namespace VievModel.VievModels.AutorizationVievModel
             {
                 var users = userDatabaseLocator
                     .Context.Users.ToList();
-
+               
                 var user = userDatabaseLocator
                     .Context.Users.Include(x => x.Role)
                     .Where(i => i.Login == login)

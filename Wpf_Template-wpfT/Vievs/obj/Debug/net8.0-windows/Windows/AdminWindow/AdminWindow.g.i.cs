@@ -58,7 +58,7 @@ namespace Vievs.Windows.AdminWindow {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vievs;V1.0.0.0;component/windows/adminwindow/adminwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vievs;component/windows/adminwindow/adminwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\AdminWindow\AdminWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

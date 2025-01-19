@@ -71,7 +71,7 @@ namespace Vievs.Pages.AdminsListPage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vievs;V1.0.0.0;component/pages/adminslistpage/adminslistpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vievs;component/pages/adminslistpage/adminslistpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Pages\AdminsListPage\AdminsListPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

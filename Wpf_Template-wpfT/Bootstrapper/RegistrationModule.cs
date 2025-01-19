@@ -19,7 +19,7 @@ public class RegistrationModule:Module
         //Регистрация фабрики страниц
         builder.RegisterType<PageFactory>().As<IPageFactory>().SingleInstance();
 
-        builder.RegisterType<UserDatabaseLocator>().As<IUserDatabaseLocator>().SingleInstance();
+        builder.RegisterType<UserDatabaseLocator>().As<IUserDatabaseLocator>().InstancePerDependency();
         builder.RegisterType<UserDbContext>().SingleInstance();
         builder.RegisterType<MethodsDatabaseLocator>().As<IMethodsDatabaseLocator>().SingleInstance();
         builder.RegisterType<MethodsDbContext>().SingleInstance();

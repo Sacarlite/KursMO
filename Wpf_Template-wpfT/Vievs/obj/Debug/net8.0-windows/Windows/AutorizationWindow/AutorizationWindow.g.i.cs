@@ -60,7 +60,7 @@ namespace Vievs.Windows.AutorizationWindow {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vievs;V1.0.0.0;component/windows/autorizationwindow/autorizationwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vievs;component/windows/autorizationwindow/autorizationwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Windows\AutorizationWindow\AutorizationWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

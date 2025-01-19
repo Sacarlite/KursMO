@@ -7,6 +7,7 @@ namespace Domain.UserBd
         public UserDbContext()
             : base()
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
