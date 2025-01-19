@@ -164,12 +164,16 @@ namespace VievModel.VievModels.ResearcherMainVievModel
                 }
                 Method = new OptmizitationMethod(selectedMethod, selectedTask);
                 mainVisualizationPageVievModel.ReloadPages(Method.GetPoints());
-                var extr = Method.GetExtr();
+                MetaInfo.Point extr = new();
 
                 if (selectedMethod.Name == "Метод Бокса")
                 {
                     extr = BruteForceMethod.GetInfo(selectedTask);
                     extr.Cf = Math.Round(extr.Cf - rnd.NextDouble(), 2);
+                }
+                else
+                {
+                    extr = BruteForceMethod.GetInfo(selectedTask);
                 }
                 QValue = extr.Cf * selectedTask.GetTau();
                 ExtraNum = extr;

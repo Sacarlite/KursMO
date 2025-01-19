@@ -101,6 +101,7 @@ namespace MetaInfo
         public abstract void ExportInputData();
         public abstract void ImportData(string fileName);
         public abstract double GetEps();
+        public abstract double GetStep();
         public abstract bool GetExtrType();
         public abstract bool AllOc();
         public abstract double GetTau();

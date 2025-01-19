@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-    <ProjectReference Include="..\PasswordService\PasswordService.csproj" />
     <ProjectReference Include="..\VievModels\VievModel.csproj" />
     <ProjectReference Include="..\Vievs\Vievs.csproj" />
   </ItemGroup>

@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\
+C:\Users\MossadCrab\Source\Repos\KursMO\Wpf_Template-wpfT\Vievs\obj\Debug\net8.0-windows\
 Vievs
 none
 false
@@ -13,7 +13,7 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 92142428754
 
 24330043524
-239-1042750224
+239-326369172
 DialogWindows\AddClassificationDialogWindow.xaml;Pages\AdminsListPage\AdminsListPage.xaml;Pages\MethodsListPage\MethodsListPage.xaml;Windows\AboutWindow\AboutWindow.xaml;Windows\AddMethod\AddMethodWindow.xaml;Windows\AddUserWindow\AddUserWindow.xaml;Windows\AdminWindow\AdminWindow.xaml;Windows\AutorizationWindow\AutorizationWindow.xaml;Windows\MainWindow\MainWindow.xaml;
 
 False

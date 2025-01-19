@@ -156,6 +156,11 @@ namespace MetaInfo
             ObjWorkBook.Close(false, Type.Missing, Type.Missing);
         }
 
+        public override double GetStep()
+        {
+            return task1ViewModel.Step;
+        }
+
         public new string LatexForm
         {
             get

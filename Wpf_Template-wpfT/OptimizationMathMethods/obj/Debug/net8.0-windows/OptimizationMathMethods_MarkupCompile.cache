@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\vlade\source\repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\
+C:\Users\MossadCrab\Source\Repos\KursMO\Wpf_Template-wpfT\OptimizationMathMethods\obj\Debug\net8.0-windows\
 OptimizationMathMethods
 none
 false
@@ -13,7 +13,7 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 51607771013
 
 111852227113
-2281641095480
+228696904413
 VisualzationPages\Chart2D.xaml;VisualzationPages\Chart3D.xaml;VisualzationPages\DefaultPage.xaml;VisualzationPages\PointTable.xaml;VisualzationPages\VisualisationPage.xaml;
 
 False

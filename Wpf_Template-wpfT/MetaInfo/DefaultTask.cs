@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using MetaInfo.TaskVisualization.Task1;
 
 namespace MetaInfo
 {
@@ -46,6 +47,10 @@ namespace MetaInfo
         }
 
         public override double GetTau()
+        {
+            throw new NotImplementedException();
+        }
+        public override double GetStep()
         {
             throw new NotImplementedException();
         }

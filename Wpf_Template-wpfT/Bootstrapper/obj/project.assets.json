@@ -889,19 +889,6 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "PasswordService/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/PasswordService.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PasswordService.dll": {}
-        }
-      },
       "VievModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2132,11 +2119,6 @@
       "path": "../OptimizationMathMethods/OptimizationMathMethods.csproj",
       "msbuildProject": "../OptimizationMathMethods/OptimizationMathMethods.csproj"
     },
-    "PasswordService/1.0.0": {
-      "type": "project",
-      "path": "../PasswordService/PasswordService.csproj",
-      "msbuildProject": "../PasswordService/PasswordService.csproj"
-    },
     "VievModel/1.0.0": {
       "type": "project",
       "path": "../VievModels/VievModel.csproj",
@@ -2156,29 +2138,28 @@
       "Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.0-rc.1.24451.1",
       "NLog >= 5.3.4",
-      "PasswordService >= 1.0.0",
       "VievModel >= 1.0.0",
       "Vievs >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vlade\\.nuget\\packages\\": {},
+    "C:\\Users\\MossadCrab\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\Bootstrapper.csproj",
+      "projectUniqueName": "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\Bootstrapper.csproj",
       "projectName": "Bootstrapper",
-      "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\Bootstrapper.csproj",
-      "packagesPath": "C:\\Users\\vlade\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\obj\\",
+      "projectPath": "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\Bootstrapper.csproj",
+      "packagesPath": "C:\\Users\\MossadCrab\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Bootstrapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\vlade\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MossadCrab\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2193,20 +2174,17 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj"
+            "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Infrastructure\\Infrastructure.csproj"
             },
-            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\PasswordService\\PasswordService.csproj": {
-              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\PasswordService\\PasswordService.csproj"
+            "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj": {
+              "projectPath": "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj"
             },
-            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj": {
-              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\VievModels\\VievModel.csproj"
-            },
-            "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj": {
-              "projectPath": "C:\\Users\\vlade\\source\\repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj"
+            "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj": {
+              "projectPath": "C:\\Users\\MossadCrab\\Source\\Repos\\KursMO\\Wpf_Template-wpfT\\Vievs\\Vievs.csproj"
             }
           }
         }
@@ -2219,7 +2197,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -2263,30 +2241,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "У пакета \"Microsoft.Extensions.Caching.Memory\" 9.0.0-rc.1.24431.7 есть известная уязвимость https://github.com/advisories/GHSA-qj66-m88j-hmgj (уровень серьезности: высокий)",
-      "libraryId": "Microsoft.Extensions.Caching.Memory",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1904",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "У пакета \"System.Drawing.Common\" 4.5.0 есть известная уязвимость https://github.com/advisories/GHSA-rxg9-xrhp-64gj (уровень серьезности: критический)",
-      "libraryId": "System.Drawing.Common",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }

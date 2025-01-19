@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using MetaInfo.TaskVisualization.Task1;
 using MetaInfo.TaskVisualization.Task2;
 
 namespace MetaInfo
@@ -10,7 +11,10 @@ namespace MetaInfo
         {
             get => new TaskVisualization.Task2.ComponentPage(task2ViewModel);
         }
-
+        public override double GetStep()
+        {
+            return task2ViewModel.Step;
+        }
         public override void ExportInputData()
         {
             Microsoft.Office.Interop.Excel.Application application =

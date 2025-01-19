@@ -14,7 +14,7 @@ namespace VievModel
                 for (
                     double i = limitations.Item1;
                     i < limitations.Item2;
-                    i = Math.Round(i + limitations.Item5, RoundCalc(task.GetEps()))
+                    i = i + limitations.Item5
                 )
                 {
                     List<Point> tmp_points = new List<Point>();
@@ -24,7 +24,7 @@ namespace VievModel
                         j = Math.Round(j + limitations.Item5, RoundCalc(task.GetEps()))
                     )
                     {
-                        var p = new Point(i, j);
+                        var p = new Point(Math.Round(i, RoundCalc(task.GetStep())), Math.Round(j, RoundCalc(task.GetStep())));
                         if (task.GetSecondLimitations(p))
                         {
                             p.Cf = task.GetCalc(p);

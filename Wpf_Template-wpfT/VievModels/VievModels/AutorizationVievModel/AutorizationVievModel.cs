@@ -37,6 +37,30 @@ namespace VievModel.VievModels.AutorizationVievModel
             this.userDatabaseLocator = userDatabaseLocator;
             this.adminVievModelsFactory = adminVievModelsFactory;
             this.researcherVievModelsFactory = researcherVievModelsFactory;
+            var users = userDatabaseLocator
+                    .Context.Users.ToList();
+            if (users.Count == 0)
+            {
+                userDatabaseLocator.Context.Database.EnsureDeleted();
+                userDatabaseLocator.Context.Database.EnsureCreated();
+                var adminRole = new Role("Администратор");
+                var userRole = new Role("Пользователь");
+                userDatabaseLocator
+                .Context.Roles.Add(adminRole);
+                userDatabaseLocator.Context.Roles.Add(userRole);
+                userDatabaseLocator.Context.SaveChanges();
+                var addedUser = new User("User", "User");
+                addedUser.Role = userDatabaseLocator.Context.Roles.Where(r => r.Name.Contains("Пользователь")).First();
+                userDatabaseLocator.Context.Users.Add(addedUser);
+                var addedAdmin = new User("Admin", "Admin");
+                addedAdmin.Role = userDatabaseLocator.Context.Roles.Where(r => r.Name.Contains("Администратор")).First();
+                userDatabaseLocator.Context.Users.Add(addedAdmin);
+                userDatabaseLocator.Context.SaveChanges();
+                MessageBox.Show("Было обнаружено что база данных пользователей пуста, поэтому были добавлены пользователи:\n" +
+                    "Администратор: login: Admin password: Admin\n" +
+                    "Пользователь: login: User password: User\n");
+
+            }
         }
 
         [ObservableProperty]
@@ -60,6 +84,7 @@ namespace VievModel.VievModels.AutorizationVievModel
             {
                 var users = userDatabaseLocator
                     .Context.Users.ToList();
+
                 var user = userDatabaseLocator
                     .Context.Users.Include(x => x.Role)
                     .Where(i => i.Login == login)

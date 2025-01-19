@@ -6,7 +6,6 @@ using Domain.Factories;
 using Domain.MethodsBD;
 using Domain.PasswordService;
 using Domain.UserBd;
-using PasswordService;
 using Vievs;
 
 namespace Application;
@@ -24,7 +23,6 @@ public class RegistrationModule:Module
         builder.RegisterType<UserDbContext>().SingleInstance();
         builder.RegisterType<MethodsDatabaseLocator>().As<IMethodsDatabaseLocator>().SingleInstance();
         builder.RegisterType<MethodsDbContext>().SingleInstance();
-        builder.RegisterType<PasswordHasher>().As<IPasswordHasher>().SingleInstance();
         builder.RegisterGeneric(typeof(WindowVievModelsFactory<>)).As(typeof(IWindowVievModelsFactory<>)).SingleInstance();
         builder.RegisterGeneric(typeof(PageVievModelsFactory<>)).As(typeof(IPageVievModelsFactory<>)).SingleInstance();
         base.Load(builder);

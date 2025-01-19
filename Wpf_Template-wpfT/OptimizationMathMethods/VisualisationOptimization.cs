@@ -31,10 +31,10 @@ namespace OptimizationMathMethods
             for (
                 i = limitations.Item1;
                 i < limitations.Item2;
-                i = Math.Round(i + limitations.Item5, RoundCalc(task.GetEps()))
+                i = i + limitations.Item5
             )
             {
-                DataColumn new_column = new DataColumn(Math.Round(i, eps).ToString());
+                DataColumn new_column = new DataColumn(i.ToString());
                 new_column.DataType = System.Type.GetType("System.String");
                 dt.Columns.Add(new_column);
                 counter++;

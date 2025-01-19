@@ -14,7 +14,6 @@
           "Infrastructure": "1.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.0-rc.1.24451.1",
           "NLog": "5.3.4",
-          "PasswordService": "1.0.0",
           "VievModel": "1.0.0",
           "Vievs": "1.0.0"
         },
@@ -610,17 +609,6 @@
           }
         }
       },
-      "PasswordService/1.0.0": {
-        "dependencies": {
-          "Domain": "1.0.0"
-        },
-        "runtime": {
-          "PasswordService.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "VievModel/1.0.0": {
         "dependencies": {
           "Autofac": "8.1.0",
@@ -988,11 +976,6 @@
       "sha512": ""
     },
     "OptimizationMathMethods/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "PasswordService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
